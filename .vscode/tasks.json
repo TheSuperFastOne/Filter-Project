@@ -1,0 +1,43 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build Game",
+      "type": "shell",
+      "command": "/usr/bin/clang++",
+      "args": [
+        "src/*.cpp",
+        "-o",
+        "game",
+        "-std=c++17",
+        "-I/Library/Frameworks/SDL2.framework/Headers",
+        "-I/Library/Frameworks/SDL2_image.framework/Headers",
+        "-F/Library/Frameworks",
+        "-framework", "SDL2",
+        "-framework", "SDL2_image",
+        "-rpath", "/Library/Frameworks"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "Run Game",
+      "type": "shell",
+      "command": "./game",
+      "group": {
+        "kind": "none"
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": true
+      }
+    }
+  ]
+}
