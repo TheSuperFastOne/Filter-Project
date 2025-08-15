@@ -1,7 +1,104 @@
 #include "../include/Ball.hpp"
 
-Ball::Ball(const Vec2& pos, const Vec2& velo, int radius)
-    : pos(pos), velo(velo), radius(radius) {}
+std::unordered_map<int, SDL_Texture*> Ball::textureCache;
+
+Ball::Ball(const Vec2& pos, const Vec2& velo, int radius, SDL_Renderer* renderer)
+    : pos(pos), velo(velo), radius(radius), texture(nullptr)
+{
+    int diameter = radius * 2;
+    int texSize = diameter + 1; // padding for outermost pixels
+
+    auto it = textureCache.find(radius);
+    if (it != textureCache.end()) {
+        texture = it->second;
+        return;
+    }
+
+    // Create 32-bit RGBA surface
+    SDL_Surface* surface = SDL_CreateRGBSurface(
+        0, texSize, texSize, 32,
+#if SDL_BYTEORDER == SDL_BIG_ENDIAN
+        0xFF000000, 0x00FF0000, 0x0000FF00, 0x000000FF
+#else
+        0x000000FF, 0x0000FF00, 0x00FF0000, 0xFF000000
+#endif
+    );
+
+    if (!surface) {
+        SDL_Log("SDL_CreateRGBSurface failed: %s", SDL_GetError());
+        return;
+    }
+
+    // Fill surface with transparent pixels
+    SDL_FillRect(surface, nullptr, SDL_MapRGBA(surface->format, 0, 0, 0, 0));
+
+    // Lock and get pixels
+    SDL_LockSurface(surface);
+    Uint32* pixels = static_cast<Uint32*>(surface->pixels);
+    Uint32 color = SDL_MapRGBA(surface->format, 214, 23, 57, 255); // outline color
+
+    // helper to safely set a pixel inside bounds
+    auto setPixel = [&](int x, int y) {
+        if (x >= 0 && x < texSize && y >= 0 && y < texSize) {
+            pixels[y * texSize + x] = color;
+        }
+    };
+
+    // --- midpoint circle (hollow) ---
+    int cx = radius;
+    int cy = radius;
+    int r = radius;
+
+    int dx = 0;
+    int dy = r;
+    int d = 1 - r;
+
+    while (dx <= dy)
+    {
+        setPixel(cx + dx, cy + dy);
+        setPixel(cx + dy, cy + dx);
+        setPixel(cx - dx, cy + dy);
+        setPixel(cx - dy, cy + dx);
+        setPixel(cx + dx, cy - dy);
+        setPixel(cx + dy, cy - dx);
+        setPixel(cx - dx, cy - dy);
+        setPixel(cx - dy, cy - dx);
+
+        if (d < 0) {
+            d += 2 * dx + 3;
+        } else {
+            d += 2 * (dx - dy) + 5;
+            dy--;
+        }
+        dx++;
+    }
+    // --------------------------------
+
+    SDL_UnlockSurface(surface);
+
+    // Create texture from surface and enable alpha blending
+    texture = SDL_CreateTextureFromSurface(renderer, surface);
+    textureCache[radius] = texture;
+    if (!texture) {
+        SDL_Log("SDL_CreateTextureFromSurface failed: %s", SDL_GetError());
+    } else {
+        SDL_SetTextureBlendMode(texture, SDL_BLENDMODE_BLEND);
+    }
+
+    SDL_FreeSurface(surface);
+}
+
+// Render: single fast copy
+void Ball::renderBall(SDL_Renderer* renderer) const {
+    SDL_Texture* tex = textureCache[radius];
+    if (!tex) return;
+    SDL_Rect dst;
+    dst.x = static_cast<int>(pos.getX()) - radius;
+    dst.y = static_cast<int>(pos.getY()) - radius;
+    dst.w = radius * 2;
+    dst.h = radius * 2;
+    SDL_RenderCopy(renderer, tex, nullptr, &dst);
+}
 
 // Getters returning const references or values
 const Vec2& Ball::getPos() const {
@@ -27,39 +124,6 @@ void Ball::setVelo(const Vec2& newVelo) {
 
 void Ball::setRadius(int newRadius) {
     radius = newRadius;
-}
-
-// Render the ball using Midpoint circle algorithm
-void Ball::renderBall(SDL_Renderer* renderer) const
-{
-    int cx = static_cast<int>(pos.getX());
-    int cy = static_cast<int>(pos.getY());
-    int r = radius;
-
-    int dx = 0;
-    int dy = r;
-    int d = 1 - r;
-
-    while (dx <= dy)
-    {
-        // Draw all eight octants
-        SDL_RenderDrawPoint(renderer, cx + dx, cy + dy);
-        SDL_RenderDrawPoint(renderer, cx + dy, cy + dx);
-        SDL_RenderDrawPoint(renderer, cx - dx, cy + dy);
-        SDL_RenderDrawPoint(renderer, cx - dy, cy + dx);
-        SDL_RenderDrawPoint(renderer, cx + dx, cy - dy);
-        SDL_RenderDrawPoint(renderer, cx + dy, cy - dx);
-        SDL_RenderDrawPoint(renderer, cx - dx, cy - dy);
-        SDL_RenderDrawPoint(renderer, cx - dy, cy - dx);
-
-        if (d < 0) {
-            d += 2 * dx + 3;
-        } else {
-            d += 2 * (dx - dy) + 5;
-            dy--;
-        }
-        dx++;
-    }
 }
 
 Vec2 Ball::computeCollisionVelocity(Vec2& norm)
@@ -155,6 +219,29 @@ bool Ball::handleCollisionWithCircle(const Ball& other, double deltaTime)
         }
     }
     return false;
+}
+
+Vec2 Ball::getRandomPosVector(int WIDTH, int HEIGHT, int ballRad, int grinderCircleRad, bool excludeMiddle) {
+    static std::mt19937 rng(
+        static_cast<unsigned>(std::chrono::high_resolution_clock::now().time_since_epoch().count())
+    );
+
+    int half_height = HEIGHT / 2;
+    int minY = ballRad;
+    int maxY = half_height - grinderCircleRad - ballRad;
+
+    std::uniform_int_distribution<int> distX(ballRad, WIDTH - ballRad);
+    std::uniform_int_distribution<int> distY(minY, maxY);
+
+    int randomX;
+
+    do {
+        randomX = distX(rng);
+    } while (excludeMiddle && std::abs(randomX - WIDTH / 2) < 20);
+
+    int randomY = distY(rng);
+
+    return Vec2(randomX, randomY);
 }
 
 
