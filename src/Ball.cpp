@@ -221,7 +221,7 @@ bool Ball::handleCollisionWithCircle(const Ball& other, double deltaTime)
     return false;
 }
 
-Vec2 Ball::getRandomPosVector(int WIDTH, int HEIGHT, int ballRad, int grinderCircleRad, bool excludeMiddle) {
+Vec2 Ball::getRandomPosVector(int WIDTH, int HEIGHT, int ballRad, int grinderCircleRad) {
     static std::mt19937 rng(
         static_cast<unsigned>(std::chrono::high_resolution_clock::now().time_since_epoch().count())
     );
@@ -235,11 +235,10 @@ Vec2 Ball::getRandomPosVector(int WIDTH, int HEIGHT, int ballRad, int grinderCir
 
     int randomX;
 
-    do {
-        randomX = distX(rng);
-    } while (excludeMiddle && std::abs(randomX - WIDTH / 2) < 20);
 
+    randomX = distX(rng);
     int randomY = distY(rng);
+    //std::cout << randomX << ", " << randomY << std::endl;
 
     return Vec2(randomX, randomY);
 }
