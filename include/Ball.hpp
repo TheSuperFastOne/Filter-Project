@@ -25,7 +25,7 @@ public:
     void setRadius(int newRadius);
     bool handleCollisionWithLineSegment(const Vec2& p1, const Vec2& p2, double deltaTime);
     bool handleCollisionWithCircle(const Ball& other, double deltaTime);
-    static Vec2 getRandomPosVector(int WIDTH, int HEIGHT, int ballRad, int grinderCircleRad, bool excludeMiddle);
+    static Vec2 getRandomPosVector(int WIDTH, int HEIGHT, int ballRad, int grinderCircleRad);
 
     Vec2 computeCollisionVelocity(Vec2& norm);
 
