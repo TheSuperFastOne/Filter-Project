@@ -2,6 +2,7 @@
 #include <SDL_image.h>
 #include <iostream>
 #include <vector>
+#include <math.h>
 
 #include "../include/Ball.hpp"
 #include "../include/RenderWindow.hpp"
@@ -30,7 +31,7 @@ int main(int argc, char* argv[])
 
     Ball ball(Vec2(4.5, 11), Vec2(0, 0), ballRad, window.getRenderer());
     
-    const double physicsFps = 60; // 120 Frames per Second
+    const double physicsFps = 120; // 60 Frames per Second
     const double physicsDeltaTime = 1.0 / physicsFps; // However-many seconds per frame i can't be bothered to type that into a fucking calculator
     const Uint32 frameDelay = static_cast<Uint32>(1000.0 / physicsFps); // Milliseconds
     const Uint64 perfFreq = SDL_GetPerformanceFrequency();
@@ -39,6 +40,7 @@ int main(int argc, char* argv[])
 
     bool running = true;
     SDL_Event event;
+    double previousEnergy = 0.0;
     while (running)
     {
         const Uint64 frameStart = SDL_GetPerformanceCounter();
@@ -55,7 +57,12 @@ int main(int argc, char* argv[])
         ball.handleCollisionWithLineSegment(Vec2(0, 0), Vec2(8, 0), physicsDeltaTime);
 
         double EnergyOfBall = ball.getPos().getY()*9.8 + 0.5*ball.getVelo().magnitude()*ball.getVelo().magnitude();
-        std::cout << "Energy: " << EnergyOfBall << std::endl;
+        double changeInEnergy = EnergyOfBall-previousEnergy;
+        if (abs(changeInEnergy) > 5e-12 && changeInEnergy != EnergyOfBall)
+        {
+            std::cout << "Energy was " << previousEnergy << ", but changed by " << changeInEnergy << std::endl;
+        }
+        previousEnergy = EnergyOfBall;
 
         // Remember the equation deltax = 1/2at^2 + v0t. Here, t = physicsDeltaTime. v0 is the current velocity. a is acceleration due to gravity
         Vec2 change_in_pos = (gravity*(physicsDeltaTime)*0.5 + ball.getVelo())*physicsDeltaTime;
