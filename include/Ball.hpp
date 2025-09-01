@@ -13,7 +13,10 @@ class Ball
     public:
         Ball(const Vec2& pos, const Vec2& velo, float radius, SDL_Renderer* renderer);
         void renderBall(SDL_Renderer* renderer) const;
-        bool handleCollisionWithLineSegment(const Vec2& p1, const Vec2& p2, double deltaTime);
+        bool handleCollisionWithLineSegment(const Vec2& p1,
+                                    const Vec2& p2,
+                                    double deltaTime,
+                                    const Vec2& gravity);
 
 
         // These functions are so unworthy they get an implementation in a header file
@@ -25,10 +28,6 @@ class Ball
         void setVelo(const Vec2& newvelo) {velo = newvelo;};
         void setRadius(float newRadius) {radius = newRadius;};
         //end of unworthy functions
-        void renormalizeEnergyAfterCollision(double g,
-                                         const Vec2& pos_start,
-                                         const Vec2& vel_start,
-                                         bool collision_happened);
     private:
         float radius;
         Vec2 pos;

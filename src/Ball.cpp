@@ -49,91 +49,62 @@ void Ball::renderBall(SDL_Renderer* renderer) const
 }
 
 
-bool Ball::handleCollisionWithLineSegment(const Vec2& p1, const Vec2& p2, double deltaTime)
+bool Ball::handleCollisionWithLineSegment(const Vec2& p1,
+                                         const Vec2& p2,
+                                         double deltaTime,
+                                         const Vec2& gravity)
 {
-    Vec2 gravity(0, -9.8);
-    const Vec2 a = pos - p1;
-    const Vec2 b = p2-p1;
-
-    //Vec2 AR = a - v*(a.dot(v)/v.dot(v)); ### This works for lines, not line segments
-    // Any point on the line segment can be written as p1 + t(p2-p1) for 0<=t<=1
-    // Maths covered in video explains that...
+    // Vector from p1 to current center, and segment vector
+    const Vec2 b = p2 - p1;
     const double b2 = b.dot(b);
-    // alright technically this doesn't work for b2 equals zero but JUST DONT CALL IT FOR p1 = p2!!
-    const double inv_b2 = 1/b2;
-    double t = a.dot(b) * inv_b2;
-    t = clamp(t, 0.0, 1.0);
-
-    Vec2 n = pos - (p1 + b*t); // This is the vector pointing from the closest point on the line segment to the center of the ball
-    const double d2 = n.dot(n);
-    const double r2 = radius * radius;
-
-    if (d2 >= r2 || velo.dot(n) >= 0.0) return false;
-
-    const double d = std::sqrt(d2);
-    const double penetration = radius - d; // How many pixels did it glitch through kinda
-    const double timeBack = std::min(penetration*d/(-velo.dot(n)), deltaTime);
-
-    pos = pos - velo*timeBack;
-
-    // Recompute Everything at new position
-    {
-        const Vec2 a2 = pos - p1;
-        double t2 = (b2 > 0.0) ? a2.dot(b) * inv_b2 : 0.0;
-        t2 = clamp(t2, 0.0, 1.0);
-        const Vec2 A2 = p1 + b * t2;
-        n = pos - A2;                                    
+    if (b2 == 0.0) {
+        return false; // degenerate segment
     }
 
-    const double n2 = std::max(n.dot(n), 1e-24); // small epsilon yk like in epsilon delta proofs for limits n shit
-    const double vDotN = velo.dot(n);
-    if (vDotN >= 0.0) return false;
-    velo = velo - n * (2 * vDotN / n2);
+    // Project to closest point on segment
+    const Vec2 a = pos - p1;
+    double t = a.dot(b) / b2;
+    t = std::clamp(t, 0.0, 1.0);
 
-    const double remaining = deltaTime - timeBack;
-    if (remaining > 0.0) 
-    {
-        pos = pos + velo * remaining + gravity*(0.5*remaining*remaining);
-        velo = velo + gravity*remaining;
+    const Vec2 closest = p1 + b * t;
+    const Vec2 n = pos - closest;
+    const double dist2 = n.dot(n);
+    const double r = this->radius;
+
+    if (dist2 >= r * r) {
+        return false; // no collision
     }
+
+    // Calculate normal
+    const double dist = std::sqrt(dist2);
+    Vec2 nhat = (dist > 1e-12) ? n / dist : Vec2(0.0, 1.0);
+
+    // Reflect velocity
+    const double vn = velo.dot(nhat);
+    velo = velo - nhat * (2.0 * vn);
+
+    // Add gravity for the full time step
+    pos = pos + velo * deltaTime + gravity * (0.5 * deltaTime * deltaTime);
+    velo = velo + gravity * deltaTime;
+
+    // Push ball out of collision
+    const Vec2 new_a = pos - p1;
+    double new_t = new_a.dot(b) / b2;
+    new_t = std::clamp(new_t, 0.0, 1.0);
+    
+    const Vec2 new_closest = p1 + b * new_t;
+    Vec2 new_n = pos - new_closest;
+    const double new_dist2 = new_n.dot(new_n);
+    
+    if (new_dist2 < r * r) {
+        const double new_dist = std::sqrt(new_dist2);
+        Vec2 new_nhat = (new_dist > 1e-12) ? new_n / new_dist : Vec2(0.0, 1.0);
+        const double penetration = r - new_dist;
+        pos = pos + new_nhat * penetration;
+    }
+
     return true;
 }
 
-void Ball::renormalizeEnergyAfterCollision(double g,
-                                           const Vec2& pos_start,
-                                           const Vec2& vel_start,
-                                           bool collision_happened)
-{
-    if (!collision_happened) return;
-
-    // Total energy at start
-    const double E0 = g * pos_start.getY() + 0.5 * vel_start.dot(vel_start);
-
-
-    const double Ep_now = g * pos.getY();
-    const double Ek_now = 0.5 * velo.dot(velo);
-
-
-    double Ek_target = E0 - Ep_now;
-    if (Ek_target < 0.0) Ek_target = 0.0;
-
-    if (Ek_now <= 1e-12) {
-
-        Vec2 dir = velo;
-        if (dir.magnitude() <= 1e-12) {
-
-            dir = Vec2(0.0, 1.0);
-        } else {
-            dir = dir.getUnitVector();
-        }
-        velo = dir * std::sqrt(2.0 * Ek_target);
-        return;
-    }
-
-    double scale = std::sqrt(Ek_target / Ek_now);
-    if (std::abs(scale - 1.0) > 1e-6) {
-        velo = velo * scale; // yesir boi
-    }
-}
 
 
