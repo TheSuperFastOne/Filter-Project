@@ -10,28 +10,22 @@
 
 class Ball
 {
-public:
-    Ball(const Vec2& pos, const Vec2& velo, int radius, SDL_Renderer* renderer);
+    public:
+        Ball(const Vec2& pos, const Vec2& velo, float radius, SDL_Renderer* renderer);
+        void renderBall(SDL_Renderer* renderer) const;
+        bool handleCollisionWithLineSegment(const Vec2& p1, const Vec2& p2, double deltaTime);
 
-    void renderBall(SDL_Renderer* renderer) const;
 
-    const Vec2& getPos() const;
-    static std::unordered_map<int, SDL_Texture*> textureCache;
-    const Vec2& getVelo() const;
-    int getRadius() const;
+        // These functions are so unworthy they get an implementation in a header file
+        const Vec2& getPos() const {return pos;};
+        const Vec2& getVelo() const {return velo;};
+        float getRadius() const {return radius;};
 
-    void setPos(const Vec2& pos);
-    void setVelo(const Vec2& velo);
-    void setRadius(int newRadius);
-    bool handleCollisionWithLineSegment(const Vec2& p1, const Vec2& p2, double deltaTime);
-    bool handleCollisionWithCircle(const Ball& other, double deltaTime);
-    static Vec2 getRandomPosVector(int WIDTH, int HEIGHT, int ballRad, int grinderCircleRad);
-
-    Vec2 computeCollisionVelocity(Vec2& norm);
-
-private:
-    int radius;
-    Vec2 pos;
-    Vec2 velo;
-    SDL_Texture* texture;
+        void setPos(const Vec2& newpos) {pos = newpos;};
+        void setVelo(const Vec2& newvelo) {velo = newvelo;};
+        void setRadius(float newRadius) {radius = newRadius;};
+    private:
+        float radius;
+        Vec2 pos;
+        Vec2 velo;
 };

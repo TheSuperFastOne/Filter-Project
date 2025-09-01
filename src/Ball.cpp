@@ -1,68 +1,41 @@
 #include "../include/Ball.hpp"
 
-std::unordered_map<int, SDL_Texture*> Ball::textureCache;
-
-Ball::Ball(const Vec2& pos, const Vec2& velo, int radius, SDL_Renderer* renderer)
-    : pos(pos), velo(velo), radius(radius), texture(nullptr)
+inline double clamp(double x, double minVal, double maxVal)
 {
-    int diameter = radius * 2;
-    int texSize = diameter + 1; // padding for outermost pixels
+    return (x < minVal) ? minVal : (x > maxVal ? maxVal : x);
+}
 
-    auto it = textureCache.find(radius);
-    if (it != textureCache.end()) {
-        texture = it->second;
-        return;
-    }
+Ball::Ball(const Vec2& pos, const Vec2& velo, float radius, SDL_Renderer* renderer) : pos(pos), velo(velo), radius(radius)
+{
+    // Nothing for now the constructor does everything basically
+}
 
-    // Create 32-bit RGBA surface
-    SDL_Surface* surface = SDL_CreateRGBSurface(
-        0, texSize, texSize, 32,
-#if SDL_BYTEORDER == SDL_BIG_ENDIAN
-        0xFF000000, 0x00FF0000, 0x0000FF00, 0x000000FF
-#else
-        0x000000FF, 0x0000FF00, 0x00FF0000, 0xFF000000
-#endif
-    );
+void Ball::renderBall(SDL_Renderer* renderer) const
+{
+    //Midpoint Line Algorithm, won't be covered in the video but it's a really nice algorithm. Watch here: https://www.youtube.com/watch?v=hpiILbMkF9w
+    Vec2 centerPos(pos.getX()*100, 1200 - pos.getY()*100); // Changes coordinate systems, in pixels now
+    int radiusPixels = (int)(radius * 100);
 
-    if (!surface) {
-        SDL_Log("SDL_CreateRGBSurface failed: %s", SDL_GetError());
-        return;
-    }
-
-    // Fill surface with transparent pixels
-    SDL_FillRect(surface, nullptr, SDL_MapRGBA(surface->format, 0, 0, 0, 0));
-
-    // Lock and get pixels
-    SDL_LockSurface(surface);
-    Uint32* pixels = static_cast<Uint32*>(surface->pixels);
-    Uint32 color = SDL_MapRGBA(surface->format, 214, 23, 57, 255); // outline color
-
-    // helper to safely set a pixel inside bounds
-    auto setPixel = [&](int x, int y) {
-        if (x >= 0 && x < texSize && y >= 0 && y < texSize) {
-            pixels[y * texSize + x] = color;
-        }
-    };
-
-    // --- midpoint circle (hollow) ---
-    int cx = radius;
-    int cy = radius;
-    int r = radius;
+    int cx = centerPos.getX();
+    int cy = centerPos.getY();
+    int r = radiusPixels;
 
     int dx = 0;
     int dy = r;
     int d = 1 - r;
 
+    SDL_SetRenderDrawColor(renderer, 218, 31, 15, 255);
+
     while (dx <= dy)
     {
-        setPixel(cx + dx, cy + dy);
-        setPixel(cx + dy, cy + dx);
-        setPixel(cx - dx, cy + dy);
-        setPixel(cx - dy, cy + dx);
-        setPixel(cx + dx, cy - dy);
-        setPixel(cx + dy, cy - dx);
-        setPixel(cx - dx, cy - dy);
-        setPixel(cx - dy, cy - dx);
+        SDL_RenderDrawPoint(renderer, cx + dy, cy + dx);
+        SDL_RenderDrawPoint(renderer, cx - dx, cy + dy);
+        SDL_RenderDrawPoint(renderer, cx - dy, cy + dx);
+        SDL_RenderDrawPoint(renderer, cx + dx, cy - dy);
+        SDL_RenderDrawPoint(renderer, cx + dy, cy - dx);
+        SDL_RenderDrawPoint(renderer, cx - dx, cy - dy);
+        SDL_RenderDrawPoint(renderer, cx - dy, cy - dx);
+        SDL_RenderDrawPoint(renderer, cx + dx, cy + dy);
 
         if (d < 0) {
             d += 2 * dx + 3;
@@ -72,175 +45,54 @@ Ball::Ball(const Vec2& pos, const Vec2& velo, int radius, SDL_Renderer* renderer
         }
         dx++;
     }
-    // --------------------------------
 
-    SDL_UnlockSurface(surface);
-
-    // Create texture from surface and enable alpha blending
-    texture = SDL_CreateTextureFromSurface(renderer, surface);
-    textureCache[radius] = texture;
-    if (!texture) {
-        SDL_Log("SDL_CreateTextureFromSurface failed: %s", SDL_GetError());
-    } else {
-        SDL_SetTextureBlendMode(texture, SDL_BLENDMODE_BLEND);
-    }
-
-    SDL_FreeSurface(surface);
 }
 
-// Render: single fast copy
-void Ball::renderBall(SDL_Renderer* renderer) const {
-    SDL_Texture* tex = textureCache[radius];
-    if (!tex) return;
-    SDL_Rect dst;
-    dst.x = static_cast<int>(pos.getX()) - radius;
-    dst.y = static_cast<int>(pos.getY()) - radius;
-    dst.w = radius * 2;
-    dst.h = radius * 2;
-    SDL_RenderCopy(renderer, tex, nullptr, &dst);
-}
-
-// Getters returning const references or values
-const Vec2& Ball::getPos() const {
-    return pos;
-}
-
-const Vec2& Ball::getVelo() const {
-    return velo;
-}
-
-int Ball::getRadius() const {
-    return radius;
-}
-
-// Setters
-void Ball::setPos(const Vec2& newPos) {
-    pos = newPos;
-}
-
-void Ball::setVelo(const Vec2& newVelo) {
-    velo = newVelo;
-}
-
-void Ball::setRadius(int newRadius) {
-    radius = newRadius;
-}
-
-Vec2 Ball::computeCollisionVelocity(Vec2& norm)
-{
-    Vec2 u = norm.getUnitVector(); // Normalize
-    double scalarMult = 2 * velo.dot(u);
-    return velo - (u * scalarMult);
-}
 
 bool Ball::handleCollisionWithLineSegment(const Vec2& p1, const Vec2& p2, double deltaTime)
 {
-    Vec2 ballCenter = pos;
-    Vec2 segVector = p2 - p1;
-    Vec2 lineDir = segVector.getUnitVector();
+    const Vec2 a = pos - p1;
+    const Vec2 b = p2-p1;
 
-    Vec2 p1ToCenter = ballCenter - p1;
+    //Vec2 AR = a - v*(a.dot(v)/v.dot(v)); ### This works for lines, not line segments
+    // Any point on the line segment can be written as p1 + t(p2-p1) for 0<=t<=1
+    // Maths covered in video explains that...
+    const double b2 = b.dot(b);
+    // alright technically this doesn't work for b2 equals zero but JUST DONT CALL IT FOR p1 = p2!!
+    const double inv_b2 = 1/b2;
+    double t = a.dot(b) * inv_b2;
+    t = clamp(t, 0.0, 1.0);
 
-    // Project p1ToCenter onto lineDir (scalar projection)
-    double projLength = p1ToCenter.dot(lineDir);
+    Vec2 n = pos - (p1 + b*t); // This is the vector pointing from the closest point on the line segment to the center of the ball
+    const double d2 = n.dot(n);
+    const double r2 = radius * radius;
 
-    // Clamp projection to lie on the segment
-    projLength = std::fmax(0.0, std::fmin(projLength, segVector.magnitude()));
+    if (d2 >= r2 || velo.dot(n) >= 0.0) return false;
 
-    // Closest point on segment to ball center
-    Vec2 closestPoint = p1 + lineDir * projLength;
+    const double d = std::sqrt(d2);
+    const double penetration = radius - d; // How many pixels did it glitch through kinda
+    const double timeBack = std::min(penetration*d/(-velo.dot(n)), deltaTime);
 
-    // Vector from closest point to ball center (perpendicular vector)
-    Vec2 diff = ballCenter - closestPoint;
-    double dist = diff.magnitude();
+    pos = pos - velo*timeBack;
 
-    if (dist < radius)
+    // Recompute Everything at new position
     {
-        Vec2 norm = diff.getUnitVector(); // collision normal
-
-        double penetration = radius - dist;
-
-        double velocityAlongNorm = velo.dot(norm);
-
-        if (velocityAlongNorm < 0) // ball moving toward line segment
-        {
-            double timeBack = penetration / (-velocityAlongNorm);
-
-            // rewind position
-            pos = pos - velo * timeBack;
-
-            // reflect velocity along normal with restitution
-            Vec2 vprime = velo - norm * (2 * velo.dot(norm));
-            velo = vprime;
-
-            // advance remaining time
-            double remainingTime = deltaTime - timeBack;
-            pos = pos + velo * remainingTime;
-
-            return true;
-        }
+        const Vec2 a2 = pos - p1;
+        double t2 = (b2 > 0.0) ? a2.dot(b) * inv_b2 : 0.0;
+        t2 = clamp(t2, 0.0, 1.0);
+        const Vec2 A2 = p1 + b * t2;
+        n = pos - A2;                                    
     }
-    return false;
+
+    const double n2 = std::max(n.dot(n), 1e-24); // small epsilon yk like in epsilon delta proofs for limits n shit
+    const double vDotN = velo.dot(n);
+    if (vDotN >= 0.0) return false;
+    velo = velo - n * (2 * vDotN / n2);
+
+    const double remaining = deltaTime - timeBack;
+    if (remaining > 0.0) pos = pos + velo * remaining;
+    return true;
 }
 
-bool Ball::handleCollisionWithCircle(const Ball& other, double deltaTime)
-{
-    Vec2 ballCenter = pos;
-    Vec2 otherCenter = other.getPos();
-
-    Vec2 diff = ballCenter - otherCenter;
-    double radiusSum = radius + other.getRadius();
-    double dist = diff.magnitude();
-
-    if (dist < radiusSum)
-    {
-        Vec2 norm = diff.getUnitVector(); // normal from other to ball
-
-        double penetration = radiusSum - dist;
-
-        double velocityAlongNorm = velo.dot(norm);
-
-        if (velocityAlongNorm < 0) // ball moving toward other
-        {
-            double timeBack = penetration / (-velocityAlongNorm);
-
-            // rewind position to moment of impact
-            pos = pos - velo * timeBack;
-
-            // reflect velocity vector along collision normal and apply restitution
-            Vec2 vprime = velo - norm * (2 * velo.dot(norm));
-            velo = vprime;
-
-            // advance position for remaining frame time
-            double remainingTime = deltaTime - timeBack;
-            pos = pos + velo * remainingTime;
-
-            return true;
-        }
-    }
-    return false;
-}
-
-Vec2 Ball::getRandomPosVector(int WIDTH, int HEIGHT, int ballRad, int grinderCircleRad) {
-    static std::mt19937 rng(
-        static_cast<unsigned>(std::chrono::high_resolution_clock::now().time_since_epoch().count())
-    );
-
-    int half_height = HEIGHT / 2;
-    int minY = ballRad;
-    int maxY = half_height - grinderCircleRad - ballRad;
-
-    std::uniform_int_distribution<int> distX(ballRad, WIDTH - ballRad);
-    std::uniform_int_distribution<int> distY(minY, maxY);
-
-    int randomX;
-
-
-    randomX = distX(rng);
-    int randomY = distY(rng);
-    //std::cout << randomX << ", " << randomY << std::endl;
-
-    return Vec2(randomX, randomY);
-}
 
 
