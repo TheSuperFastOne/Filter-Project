@@ -24,6 +24,11 @@ class Ball
         void setPos(const Vec2& newpos) {pos = newpos;};
         void setVelo(const Vec2& newvelo) {velo = newvelo;};
         void setRadius(float newRadius) {radius = newRadius;};
+        //end of unworthy functions
+        void renormalizeEnergyAfterCollision(double g,
+                                         const Vec2& pos_start,
+                                         const Vec2& vel_start,
+                                         bool collision_happened);
     private:
         float radius;
         Vec2 pos;
