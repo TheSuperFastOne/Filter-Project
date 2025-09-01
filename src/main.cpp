@@ -54,10 +54,7 @@ int main(int argc, char* argv[])
 
         // Physics!!
         //Collisions first
-        Vec2 pos_start = ball.getPos();
-        Vec2 vel_start = ball.getVelo();
-        bool collided = ball.handleCollisionWithLineSegment(Vec2(0, 0), Vec2(8, 0), physicsDeltaTime);
-        ball.renormalizeEnergyAfterCollision(9.8, pos_start, vel_start, collided);
+        bool collided = ball.handleCollisionWithLineSegment(Vec2(0, 0), Vec2(8, 0), physicsDeltaTime, gravity);
 
         double EnergyOfBall = ball.getPos().getY()*9.8 + 0.5*ball.getVelo().magnitude()*ball.getVelo().magnitude();
         double changeInEnergy = EnergyOfBall-previousEnergy;
