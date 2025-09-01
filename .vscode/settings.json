@@ -50,6 +50,7 @@
     "typeinfo": "cpp",
     "variant": "cpp",
     "algorithm": "cpp",
-    "charconv": "cpp"
+    "charconv": "cpp",
+    "chrono": "cpp"
   }
 }

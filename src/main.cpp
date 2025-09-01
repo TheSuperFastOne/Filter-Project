@@ -10,144 +10,75 @@ int main(int argc, char* argv[])
 {
     if (SDL_Init(SDL_INIT_VIDEO) != 0)
     {
-        std::cerr << "SDL_Init failed: " << SDL_GetError() << std::endl;
-        return 1;
+        std::cerr << "Initilization of SDL failed: " << SDL_GetError() << std::endl;
+        return 1; // return 1 means program fail
     }
     if (!(IMG_Init(IMG_INIT_PNG) & IMG_INIT_PNG))
-        {
-            std::cerr << "IMG_Init failed: " << IMG_GetError() << std::endl;
-            SDL_Quit();
-            return 1;
-        }
-
-    // Define the range of GAP_DISTANCE_MINUS_BALL_DIAMETER values you want to test
-    std::vector<int> gap_values = {50}; // Add as many as you want
-    bool running = true;
-    for (int GAP_DISTANCE_MINUS_BALL_DIAMETER : gap_values)
     {
-        int TRIALS_NUM = 5;
-        std::vector<int> trials(TRIALS_NUM);
-        int grinderCircleRad = 280;
-        int ballRad = 100;
-        bool excludeMiddle = false;
+        std::cerr << "Initialization of Images for SDL failed:  " << IMG_GetError() << std::endl;
+        SDL_Quit();
+        return 1;
+    }
 
-        
+    float grinderCircleRad = 3; // METERS
+    float ballRad = 1.0; // METERS
+    float gapDistance = 1.0;
 
-        Uint64 start = SDL_GetPerformanceCounter();
-        const int HEIGHT = 1200;
-        int half_height = HEIGHT / 2;
-        const int WIDTH = GAP_DISTANCE_MINUS_BALL_DIAMETER + grinderCircleRad*2 + 2*ballRad;
-        RenderWindow window("Minimal SDL2 Window", WIDTH, HEIGHT);
+    const int WINDOW_HEIGHT = 1200; // Pixels
+    const int WINDOW_WIDTH = (int)((gapDistance + grinderCircleRad*2 + ballRad*2)* 100); // Pixels
+    RenderWindow window("Minimal SDL2 Window", WINDOW_WIDTH, WINDOW_HEIGHT);
 
-        bool sim_running = true;
-        bool render = true;
-        SDL_Event event;
-        bool slowingdown = true;
+    Ball ball(Vec2(4.5, 11), Vec2(0, 0), ballRad, window.getRenderer());
+    
+    const double physicsFps = 60; // 120 Frames per Second
+    const double physicsDeltaTime = 1.0 / physicsFps; // However-many seconds per frame i can't be bothered to type that into a fucking calculator
+    const Uint32 frameDelay = static_cast<Uint32>(1000.0 / physicsFps); // Milliseconds
+    const Uint64 perfFreq = SDL_GetPerformanceFrequency();
 
-        Ball ball(Ball::getRandomPosVector(WIDTH, HEIGHT, ballRad, grinderCircleRad), Vec2(0,0), ballRad, window.getRenderer());
-        Ball grinder1(Vec2(0,750), Vec2(0,0), grinderCircleRad, window.getRenderer());
-        Ball grinder2(Vec2(WIDTH,750), Vec2(0,0), grinderCircleRad, window.getRenderer());
+    Vec2 gravity(0, -9.8);
 
-        int bounces = 0;
-        const double PIXELS_PER_METER = 60;
-        Vec2 gravity(0,9.8 * PIXELS_PER_METER);
-
-        const double physicsFps = 150;
-        const double physicsDeltaTime = 1.0 / physicsFps;
-        const Uint32 frameDelay = static_cast<Uint32>(1000.0 / physicsFps);
-
-        Uint64 now = SDL_GetPerformanceCounter();
-        Uint64 last = 0;
-        SDL_SetRenderDrawColor(window.getRenderer(), 214, 23, 57, 255);
-        int trial = 1;
-        while (sim_running)
-        {
-            Uint64 frameStart = SDL_GetTicks();
-
-            last = now;
-            now = SDL_GetPerformanceCounter();
-
-            while (SDL_PollEvent(&event))
+    bool running = true;
+    SDL_Event event;
+    while (running)
+    {
+        const Uint64 frameStart = SDL_GetPerformanceCounter();
+         while (SDL_PollEvent(&event))
             {
                 if (event.type == SDL_QUIT)
                 {
                     running = false;
-                    sim_running = false;
                 }
             }
-            if (!running || !sim_running)
-            {
-                break;
-            }
 
-            SDL_SetRenderDrawColor(window.getRenderer(), 0, 0, 0, 255);
-            window.clear();
+        // Physics!!
+        //Collisions first
+        ball.handleCollisionWithLineSegment(Vec2(0, 0), Vec2(8, 0), physicsDeltaTime);
 
-            ball.setVelo(ball.getVelo() + gravity * physicsDeltaTime);
-            ball.setPos(ball.getPos() + ball.getVelo() * physicsDeltaTime);
+        double EnergyOfBall = ball.getPos().getY()*9.8 + 0.5*ball.getVelo().magnitude()*ball.getVelo().magnitude();
+        std::cout << "Energy: " << EnergyOfBall << std::endl;
 
-            ball.handleCollisionWithLineSegment(Vec2(WIDTH,half_height), Vec2(WIDTH,0), physicsDeltaTime);
-            ball.handleCollisionWithLineSegment(Vec2(0,half_height), Vec2(0,0), physicsDeltaTime);
+        // Remember the equation deltax = 1/2at^2 + v0t. Here, t = physicsDeltaTime. v0 is the current velocity. a is acceleration due to gravity
+        Vec2 change_in_pos = (gravity*(physicsDeltaTime)*0.5 + ball.getVelo())*physicsDeltaTime;
+        ball.setPos(ball.getPos() + change_in_pos);
+        //v = v0 + at
+        ball.setVelo(ball.getVelo() + gravity*physicsDeltaTime);
 
-            if (ball.handleCollisionWithCircle(grinder2, physicsDeltaTime))
-            {
-                bounces++;
-            }
-            if (ball.handleCollisionWithCircle(grinder1, physicsDeltaTime))
-            {
-                bounces++;
-            }
+        
+        SDL_SetRenderDrawColor(window.getRenderer(), 0, 0, 0, 255);
+        window.clear();
 
-            if (ball.handleCollisionWithLineSegment(Vec2(0,1200), Vec2(800,1200), physicsDeltaTime))
-            {
-                if (trial == TRIALS_NUM)
-                {
-                    sim_running = false;
-                }
-                trials[trial-1] = bounces;
-                bounces = 0;
-                if (sim_running)
-                {
-                    Vec2 randomvec = Ball::getRandomPosVector(WIDTH, HEIGHT, ballRad, grinderCircleRad);
-                    ball.setPos(randomvec);
-                    ball.setVelo(Vec2(0,0));
-                    trial++;
-                }
-                
-            }
+        ball.renderBall(window.getRenderer());
+        window.display();
 
-            if (render)
-            {
-                ball.renderBall(window.getRenderer());
-                grinder1.renderBall(window.getRenderer());
-                grinder2.renderBall(window.getRenderer());
-                window.display();
-            }
-
-            Uint32 frameTime = SDL_GetTicks() - frameStart;
-            if (frameDelay > frameTime && slowingdown)
-            {
-                SDL_Delay(frameDelay - frameTime);
-            }
-        }
-
-        window.cleanUp();
-        Uint64 totalTimeTaken = SDL_GetPerformanceCounter() - start;
-        double elapsedSeconds = static_cast<double>(totalTimeTaken) / SDL_GetPerformanceFrequency();
-        std::cout << "GAP_DISTANCE_MINUS_BALL_DIAMETER = " << GAP_DISTANCE_MINUS_BALL_DIAMETER << "\n";
-        for (int i = 0; i < TRIALS_NUM; i++) {
-            std::cout << "Trial " << i+1 << ": " << trials[i] << " bounces\n";
-        }
-        std::cout << "Total time taken: " << elapsedSeconds << " seconds" << std::endl;
-        std::cout << "-----------------------------\n";
-        if (!running)
+        // 1/FPS cap
+        const Uint64 frameEnd = SDL_GetPerformanceCounter();
+        const double elapsedMs = (frameEnd - frameStart) * 1000.0 / (double)perfFreq;
+        if (elapsedMs < frameDelay) 
         {
-            break;
+            SDL_Delay((Uint32)(frameDelay - elapsedMs));
         }
     }
-    IMG_Quit();
-    SDL_Quit();
-    return 0;
+
+
+
 }
-
-
