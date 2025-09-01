@@ -51,6 +51,7 @@ void Ball::renderBall(SDL_Renderer* renderer) const
 
 bool Ball::handleCollisionWithLineSegment(const Vec2& p1, const Vec2& p2, double deltaTime)
 {
+    Vec2 gravity(0, -9.8);
     const Vec2 a = pos - p1;
     const Vec2 b = p2-p1;
 
@@ -90,9 +91,49 @@ bool Ball::handleCollisionWithLineSegment(const Vec2& p1, const Vec2& p2, double
     velo = velo - n * (2 * vDotN / n2);
 
     const double remaining = deltaTime - timeBack;
-    if (remaining > 0.0) pos = pos + velo * remaining;
+    if (remaining > 0.0) 
+    {
+        pos = pos + velo * remaining + gravity*(0.5*remaining*remaining);
+        velo = velo + gravity*remaining;
+    }
     return true;
 }
 
+void Ball::renormalizeEnergyAfterCollision(double g,
+                                           const Vec2& pos_start,
+                                           const Vec2& vel_start,
+                                           bool collision_happened)
+{
+    if (!collision_happened) return;
+
+    // Total energy at start
+    const double E0 = g * pos_start.getY() + 0.5 * vel_start.dot(vel_start);
+
+
+    const double Ep_now = g * pos.getY();
+    const double Ek_now = 0.5 * velo.dot(velo);
+
+
+    double Ek_target = E0 - Ep_now;
+    if (Ek_target < 0.0) Ek_target = 0.0;
+
+    if (Ek_now <= 1e-12) {
+
+        Vec2 dir = velo;
+        if (dir.magnitude() <= 1e-12) {
+
+            dir = Vec2(0.0, 1.0);
+        } else {
+            dir = dir.getUnitVector();
+        }
+        velo = dir * std::sqrt(2.0 * Ek_target);
+        return;
+    }
+
+    double scale = std::sqrt(Ek_target / Ek_now);
+    if (std::abs(scale - 1.0) > 1e-6) {
+        velo = velo * scale; // yesir boi
+    }
+}
 
 

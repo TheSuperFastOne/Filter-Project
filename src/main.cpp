@@ -31,7 +31,7 @@ int main(int argc, char* argv[])
 
     Ball ball(Vec2(4.5, 11), Vec2(0, 0), ballRad, window.getRenderer());
     
-    const double physicsFps = 120; // 60 Frames per Second
+    const double physicsFps = 120; // 120 Frames per Second
     const double physicsDeltaTime = 1.0 / physicsFps; // However-many seconds per frame i can't be bothered to type that into a fucking calculator
     const Uint32 frameDelay = static_cast<Uint32>(1000.0 / physicsFps); // Milliseconds
     const Uint64 perfFreq = SDL_GetPerformanceFrequency();
@@ -54,7 +54,10 @@ int main(int argc, char* argv[])
 
         // Physics!!
         //Collisions first
-        ball.handleCollisionWithLineSegment(Vec2(0, 0), Vec2(8, 0), physicsDeltaTime);
+        Vec2 pos_start = ball.getPos();
+        Vec2 vel_start = ball.getVelo();
+        bool collided = ball.handleCollisionWithLineSegment(Vec2(0, 0), Vec2(8, 0), physicsDeltaTime);
+        ball.renormalizeEnergyAfterCollision(9.8, pos_start, vel_start, collided);
 
         double EnergyOfBall = ball.getPos().getY()*9.8 + 0.5*ball.getVelo().magnitude()*ball.getVelo().magnitude();
         double changeInEnergy = EnergyOfBall-previousEnergy;
@@ -65,10 +68,15 @@ int main(int argc, char* argv[])
         previousEnergy = EnergyOfBall;
 
         // Remember the equation deltax = 1/2at^2 + v0t. Here, t = physicsDeltaTime. v0 is the current velocity. a is acceleration due to gravity
-        Vec2 change_in_pos = (gravity*(physicsDeltaTime)*0.5 + ball.getVelo())*physicsDeltaTime;
-        ball.setPos(ball.getPos() + change_in_pos);
-        //v = v0 + at
-        ball.setVelo(ball.getVelo() + gravity*physicsDeltaTime);
+        if (!collided)
+        {
+            Vec2 change_in_pos = (gravity*(physicsDeltaTime)*0.5 + ball.getVelo())*physicsDeltaTime;
+            ball.setPos(ball.getPos() + change_in_pos);
+            //v = v0 + at
+            ball.setVelo(ball.getVelo() + gravity*physicsDeltaTime);
+        }
+        
+        
 
         
         SDL_SetRenderDrawColor(window.getRenderer(), 0, 0, 0, 255);
