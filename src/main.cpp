@@ -6,6 +6,7 @@
 
 #include "../include/Ball.hpp"
 #include "../include/RenderWindow.hpp"
+#include "../include/Time.hpp"
 
 void RenderLine(const Vec2& p1, const Vec2& p2, int R, int G, int B, int A, SDL_Renderer* renderer)
 {
@@ -41,7 +42,7 @@ int main(int argc, char* argv[])
     
     const double physicsFps = 180; // 180 Frames per Second (expect this number to be really inconsistent I never really update it)
     const double physicsDeltaTime = 1.0 / physicsFps; // However-many seconds per frame i can't be bothered to type that into a fucking calculator
-    const Uint32 frameDelay = static_cast<Uint32>(1000.0 / physicsFps); // Milliseconds
+    const double targetMs = 1000.0 / physicsFps; // Milliseconds
     const Uint64 perfFreq = SDL_GetPerformanceFrequency();
 
     Vec2 gravity(0, -9.8);
@@ -49,6 +50,10 @@ int main(int argc, char* argv[])
     bool running = true;
     SDL_Event event;
     double previousEnergy = 0.0;
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------//
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------//
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------//
     while (running)
     {
         const Uint64 frameStart = SDL_GetPerformanceCounter();
@@ -61,10 +66,12 @@ int main(int argc, char* argv[])
             }
         // Physics!!
         //Collisions first
-        bool collided1 = ball.handleCollisionWithLineSegment(Vec2(0, 0), Vec2(9, 5), physicsDeltaTime, gravity);
+        bool collided;
+        bool collided1 = ball.handleCollisionWithLineSegment(Vec2(0, 0), Vec2(9, 0), physicsDeltaTime, gravity);
         bool collided2 = ball.handleCollisionWithLineSegment(Vec2(0, 0), Vec2(0, 12), physicsDeltaTime, gravity);
-        bool collided3 = ball.handleCollisionWithLineSegment(Vec2(9, 5), Vec2(9, 12), physicsDeltaTime, gravity);
-        bool collided = collided1 || collided2 || collided3;
+        bool collided3 = ball.handleCollisionWithLineSegment(Vec2(9, 0), Vec2(9, 12), physicsDeltaTime, gravity);
+        collided = collided1 || collided2 || collided3;
+
 
         double EnergyOfBall = ball.getPos().getY()*9.8 + 0.5*ball.getVelo().magnitude()*ball.getVelo().magnitude();
         double changeInEnergy = EnergyOfBall-previousEnergy;
@@ -89,21 +96,40 @@ int main(int argc, char* argv[])
         SDL_SetRenderDrawColor(window.getRenderer(), 0, 0, 0, 255);
         window.clear();
 
-        ball.renderBall(window.getRenderer());
-        RenderLine(Vec2(9.0, 5.0), Vec2(9.0, 12.0), 243, 23, 12, 255, window.getRenderer());
-        RenderLine(Vec2(0.0, 0.0), Vec2(9.0, 5.0), 243, 23, 12, 255, window.getRenderer());
-        RenderLine(Vec2(0.0, 0.0), Vec2(0.0, 12.0), 243, 23, 12, 255, window.getRenderer());
-        window.display();
+
+
+
+            SDL_SetRenderDrawColor(window.getRenderer(), 0, 0, 0, 255);
+            window.clear();
+
+
+            ball.renderBall(window.getRenderer());
+
+
+            RenderLine(Vec2(9.0, 0.0), Vec2(9.0, 12.0), 243, 23, 12, 255, window.getRenderer());
+            RenderLine(Vec2(0.0, 0.0), Vec2(9.0, 0.0), 243, 23, 12, 255, window.getRenderer());
+            RenderLine(Vec2(0.0, 0.0), Vec2(0.0, 12.0), 243, 23, 12, 255, window.getRenderer());
+
+            window.display();
+
+
 
         // 1/FPS cap
-        const Uint64 frameEnd = SDL_GetPerformanceCounter();
-        const double elapsedMs = (frameEnd - frameStart) * 1000.0 / (double)perfFreq;
-        if (elapsedMs < frameDelay) 
+        for (;;) 
         {
-            SDL_Delay((Uint32)(frameDelay - elapsedMs));
+            double elapsedMs = (SDL_GetPerformanceCounter() - frameStart) * 1000.0 / (double)perfFreq;
+            double remainMs  = targetMs - elapsedMs;
+            if (remainMs <= 0.0) break;
+
+            if (remainMs > 1.0) 
+            {
+                SDL_Delay((Uint32)(remainMs - 0.5)); // keep a small margin
+            } 
+            else 
+            {
+                // busy-wait the tail for precision
+                // (tight loop; optionally call _mm_pause() on x86)
+            }
         }
     }
-
-
-
 }
