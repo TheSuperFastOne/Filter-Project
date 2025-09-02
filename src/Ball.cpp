@@ -50,58 +50,82 @@ void Ball::renderBall(SDL_Renderer* renderer) const
 
 
 bool Ball::handleCollisionWithLineSegment(const Vec2& p1,
-                                         const Vec2& p2,
-                                         double deltaTime,
-                                         const Vec2& gravity)
+                                          const Vec2& p2,
+                                          double deltaTime,
+                                          const Vec2& gravity)
 {
-    // Vector from p1 to current center, and segment vector
     const Vec2 b = p2 - p1;
     const double b2 = b.dot(b);
     if (b2 == 0.0) {
-        return false; // degenerate segment
+        return false;
     }
 
-    // Project to closest point on segment
-    const Vec2 a = pos - p1;
-    double t = a.dot(b) / b2;
-    t = std::clamp(t, 0.0, 1.0);
+    
+    Vec2 pos_pred = pos + velo * deltaTime + gravity * (0.5 * deltaTime * deltaTime);
+    Vec2 vel_pred = velo + gravity * deltaTime;
 
-    const Vec2 closest = p1 + b * t;
-    const Vec2 n = pos - closest;
-    const double dist2 = n.dot(n);
+    
+    Vec2 a0 = pos - p1;
+    double t0 = std::clamp(a0.dot(b) / b2, 0.0, 1.0);
+    Vec2 closest0 = p1 + b * t0;
+    Vec2 n0 = pos - closest0;
+    double dist0 = n0.magnitude();
+
+    // Closest point at end
+    Vec2 a1 = pos_pred - p1;
+    double t1 = std::clamp(a1.dot(b) / b2, 0.0, 1.0);
+    Vec2 closest1 = p1 + b * t1;
+    Vec2 n1 = pos_pred - closest1;
+    double dist1 = n1.magnitude();
+
     const double r = this->radius;
 
-    if (dist2 >= r * r) {
-        return false; // no collision
+    // If both outside, no collision
+    if (dist0 >= r && dist1 >= r) 
+    {
+        return false;
     }
 
-    // Calculate normal
-    const double dist = std::sqrt(dist2);
-    Vec2 nhat = (dist > 1e-12) ? n / dist : Vec2(0.0, 1.0);
-
-    // Reflect velocity
-    const double vn = velo.dot(nhat);
-    velo = velo - nhat * (2.0 * vn);
-
-    // Add gravity for the full time step
-    pos = pos + velo * deltaTime + gravity * (0.5 * deltaTime * deltaTime);
-    velo = velo + gravity * deltaTime;
-
-    // Push ball out of collision
-    const Vec2 new_a = pos - p1;
-    double new_t = new_a.dot(b) / b2;
-    new_t = std::clamp(new_t, 0.0, 1.0);
-    
-    const Vec2 new_closest = p1 + b * new_t;
-    Vec2 new_n = pos - new_closest;
-    const double new_dist2 = new_n.dot(new_n);
-    
-    if (new_dist2 < r * r) {
-        const double new_dist = std::sqrt(new_dist2);
-        Vec2 new_nhat = (new_dist > 1e-12) ? new_n / new_dist : Vec2(0.0, 1.0);
-        const double penetration = r - new_dist;
-        pos = pos + new_nhat * penetration;
+    // binary search
+    double lo = 0.0, hi = deltaTime;
+    for (int i = 0; i < 20; ++i) {
+        double mid = 0.5 * (lo + hi);
+        Vec2 pos_mid = pos + velo * mid + gravity * (0.5 * mid * mid);
+        Vec2 a_mid = pos_mid - p1;
+        double t_mid = std::clamp(a_mid.dot(b) / b2, 0.0, 1.0);
+        Vec2 closest_mid = p1 + b * t_mid;
+        Vec2 n_mid = pos_mid - closest_mid;
+        double dist_mid = n_mid.magnitude();
+        if (dist_mid > r) {
+            lo = mid; // not yet collided
+        } else {
+            hi = mid; // penetrating, step back
+        }
     }
+
+    double toi = hi; // time of impact 
+
+
+    pos = pos + velo * toi + gravity* (0.5 * toi * toi);
+    velo = velo + gravity * toi;
+
+    Vec2 a_hit = pos - p1;
+    double t_hit = std::clamp(a_hit.dot(b) / b2, 0.0, 1.0);
+    Vec2 closest_hit = p1 + b * t_hit;
+    Vec2 n_hit = pos - closest_hit;
+    double d_hit = n_hit.magnitude();
+    Vec2 nhat = (d_hit > 1e-12) ? n_hit / d_hit : Vec2(0.0, 1.0);
+
+    // Reflect velocity with normalized n i might change this later to work with unnormalized but like I couldn't be bothered
+    double vn = velo.dot(nhat);
+    if (vn < 0.0) {
+        velo = velo - nhat * (2.0 * vn);
+    }
+
+    // okay this should be exact you know
+    double remain = deltaTime - toi;
+    pos = pos + velo * remain + gravity * (0.5 * remain * remain);
+    velo = velo + gravity * remain;
 
     return true;
 }
