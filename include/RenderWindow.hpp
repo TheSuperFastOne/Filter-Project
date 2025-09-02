@@ -4,19 +4,14 @@
 #include <SDL_image.h>
 #include <iostream>
 
-class RenderWindow
-{
+class RenderWindow {
 public:
     RenderWindow(const char* title, int width, int height);
-    ~RenderWindow();
-
+    ~RenderWindow();                    // declared
     void clear();
     void display();
-    void cleanUp();
-
-    SDL_Renderer* getRenderer() { return renderer; }
-
+    SDL_Renderer* getRenderer() const { return renderer; }
 private:
-    SDL_Window* window;
-    SDL_Renderer* renderer;
+    SDL_Window* window = nullptr;
+    SDL_Renderer* renderer = nullptr;
 };
