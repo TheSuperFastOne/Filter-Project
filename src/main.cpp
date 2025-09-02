@@ -27,11 +27,11 @@ int main(int argc, char* argv[])
 
     const int WINDOW_HEIGHT = 1200; // Pixels
     const int WINDOW_WIDTH = (int)((gapDistance + grinderCircleRad*2 + ballRad*2)* 100); // Pixels
-    RenderWindow window("Minimal SDL2 Window", WINDOW_WIDTH, WINDOW_HEIGHT);
+    RenderWindow window("Minimal SDL2 Window", WINDOW_WIDTH+1, WINDOW_HEIGHT+1);
 
     Ball ball(Vec2(4.5, 11), Vec2(0, 0), ballRad, window.getRenderer());
     
-    const double physicsFps = 120; // 120 Frames per Second
+    const double physicsFps = 180; // 120 Frames per Second
     const double physicsDeltaTime = 1.0 / physicsFps; // However-many seconds per frame i can't be bothered to type that into a fucking calculator
     const Uint32 frameDelay = static_cast<Uint32>(1000.0 / physicsFps); // Milliseconds
     const Uint64 perfFreq = SDL_GetPerformanceFrequency();
@@ -51,11 +51,13 @@ int main(int argc, char* argv[])
                     running = false;
                 }
             }
-
         // Physics!!
         //Collisions first
-        bool collided = ball.handleCollisionWithLineSegment(Vec2(0, 0), Vec2(8, 0), physicsDeltaTime, gravity);
-
+        bool collided1 = ball.handleCollisionWithLineSegment(Vec2(0, 0), Vec2(9, 5), physicsDeltaTime, gravity);
+        bool collided2 = ball.handleCollisionWithLineSegment(Vec2(0, 0), Vec2(0, 12), physicsDeltaTime, gravity);
+        bool collided3 = ball.handleCollisionWithLineSegment(Vec2(9, 5), Vec2(9, 12), physicsDeltaTime, gravity);
+        bool collided = collided1 || collided2 || collided3;
+        
         double EnergyOfBall = ball.getPos().getY()*9.8 + 0.5*ball.getVelo().magnitude()*ball.getVelo().magnitude();
         double changeInEnergy = EnergyOfBall-previousEnergy;
         if (abs(changeInEnergy) > 5e-12 && changeInEnergy != EnergyOfBall)
