@@ -7,6 +7,14 @@
 #include "../include/Ball.hpp"
 #include "../include/RenderWindow.hpp"
 
+void RenderLine(const Vec2& p1, const Vec2& p2, int R, int G, int B, int A, SDL_Renderer* renderer)
+{
+    SDL_SetRenderDrawColor(renderer, R, G, B, A);
+    SDL_RenderDrawLine(renderer,
+        (int)(p1.getX() * 100), (int)(1200-(p1.getY() * 100)),
+        (int)(p2.getX() * 100), (int)(1200-(p2.getY() * 100)));
+}
+
 int main(int argc, char* argv[])
 {
     if (SDL_Init(SDL_INIT_VIDEO) != 0)
@@ -27,11 +35,11 @@ int main(int argc, char* argv[])
 
     const int WINDOW_HEIGHT = 1200; // Pixels
     const int WINDOW_WIDTH = (int)((gapDistance + grinderCircleRad*2 + ballRad*2)* 100); // Pixels
-    RenderWindow window("Minimal SDL2 Window", WINDOW_WIDTH+1, WINDOW_HEIGHT+1);
+    RenderWindow window("Minimal SDL2 Window", WINDOW_WIDTH+1, WINDOW_HEIGHT+1); //Handles lines on the edge really well. Makes no difference to the simulation sooo idgaf
 
     Ball ball(Vec2(4.5, 11), Vec2(0, 0), ballRad, window.getRenderer());
     
-    const double physicsFps = 180; // 120 Frames per Second
+    const double physicsFps = 180; // 180 Frames per Second (expect this number to be really inconsistent I never really update it)
     const double physicsDeltaTime = 1.0 / physicsFps; // However-many seconds per frame i can't be bothered to type that into a fucking calculator
     const Uint32 frameDelay = static_cast<Uint32>(1000.0 / physicsFps); // Milliseconds
     const Uint64 perfFreq = SDL_GetPerformanceFrequency();
@@ -57,12 +65,12 @@ int main(int argc, char* argv[])
         bool collided2 = ball.handleCollisionWithLineSegment(Vec2(0, 0), Vec2(0, 12), physicsDeltaTime, gravity);
         bool collided3 = ball.handleCollisionWithLineSegment(Vec2(9, 5), Vec2(9, 12), physicsDeltaTime, gravity);
         bool collided = collided1 || collided2 || collided3;
-        
+
         double EnergyOfBall = ball.getPos().getY()*9.8 + 0.5*ball.getVelo().magnitude()*ball.getVelo().magnitude();
         double changeInEnergy = EnergyOfBall-previousEnergy;
         if (abs(changeInEnergy) > 5e-12 && changeInEnergy != EnergyOfBall)
         {
-            std::cout << "Energy was " << previousEnergy << ", but changed by " << changeInEnergy << std::endl;
+            std::cout << "Energy was " << previousEnergy << ", but changed by " << changeInEnergy << std::endl; // alr this isn't really going off which is a really, really good sign
         }
         previousEnergy = EnergyOfBall;
 
@@ -82,6 +90,9 @@ int main(int argc, char* argv[])
         window.clear();
 
         ball.renderBall(window.getRenderer());
+        RenderLine(Vec2(9.0, 5.0), Vec2(9.0, 12.0), 243, 23, 12, 255, window.getRenderer());
+        RenderLine(Vec2(0.0, 0.0), Vec2(9.0, 5.0), 243, 23, 12, 255, window.getRenderer());
+        RenderLine(Vec2(0.0, 0.0), Vec2(0.0, 12.0), 243, 23, 12, 255, window.getRenderer());
         window.display();
 
         // 1/FPS cap
