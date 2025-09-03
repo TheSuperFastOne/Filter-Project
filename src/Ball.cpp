@@ -5,7 +5,7 @@ inline double clamp(double x, double minVal, double maxVal)
     return (x < minVal) ? minVal : (x > maxVal ? maxVal : x);
 }
 
-Ball::Ball(const Vec2& pos, const Vec2& velo, float radius, SDL_Renderer* renderer) : pos(pos), velo(velo), radius(radius)
+Ball::Ball(const Vec2& pos, const Vec2& velo, float radius, SDL_Renderer* renderer) : pos(pos), velo(velo), radius(radius), prevPos(Vec2(0,0)), prevVelo(Vec2(0,0))
 {
     // Nothing for now the constructor does everything basically
 }
@@ -47,6 +47,43 @@ void Ball::renderBall(SDL_Renderer* renderer) const
     }
 
 }
+
+void Ball::renderBallAt(SDL_Renderer* renderer, const Vec2& worldPos) const
+{
+    // Midpoint Circle Algorithm
+    Vec2 centerPos(worldPos.getX() * 100, 1200 - worldPos.getY() * 100);
+    int radiusPixels = static_cast<int>(radius * 100);
+
+    int cx = centerPos.getX();
+    int cy = centerPos.getY();
+    int r  = radiusPixels;
+
+    int dx = 0;
+    int dy = r;
+    int d  = 1 - r;
+
+    SDL_SetRenderDrawColor(renderer, 218, 31, 15, 255);
+
+    while (dx <= dy)
+    {
+        SDL_RenderDrawPoint(renderer, cx + dy, cy + dx);
+        SDL_RenderDrawPoint(renderer, cx - dx, cy + dy);
+        SDL_RenderDrawPoint(renderer, cx - dy, cy - dx);
+        SDL_RenderDrawPoint(renderer, cx + dx, cy - dy);
+        SDL_RenderDrawPoint(renderer, cx + dy, cy - dx);
+        SDL_RenderDrawPoint(renderer, cx - dx, cy - dy);
+        SDL_RenderDrawPoint(renderer, cx - dy, cy + dx);
+        SDL_RenderDrawPoint(renderer, cx + dx, cy + dy);
+
+        if (d < 0) {
+            d += 2 * dx + 3;
+        } else {
+            d += 2 * (dx - dy) + 5;
+            dy--;
+        }
+        dx++;
+    }
+} // This is kinda just copy paste from Ball::renderBall but like whatever
 
 
 bool Ball::handleCollisionWithLineSegment(const Vec2& p1,
