@@ -23,7 +23,6 @@ class Ball
         const Vec2& getPos() const {return pos;};
         const Vec2& getVelo() const {return velo;};
         float getRadius() const {return radius;};
-        void beginStep() { prevPos = pos; prevVelo = velo; }
 
         void setPos(const Vec2& newpos) {pos = newpos;};
         void setVelo(const Vec2& newvelo) {velo = newvelo;};
@@ -31,8 +30,6 @@ class Ball
         //end of unworthy functions
     private:
         float radius;
-        Vec2 prevPos, prevVelo;
-        void renderBallAt(SDL_Renderer* r, const Vec2& p) const;
         Vec2 pos;
         Vec2 velo;
 };
