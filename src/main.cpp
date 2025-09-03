@@ -40,7 +40,7 @@ int main(int argc, char* argv[])
 
     Ball ball(Vec2(4.5, 11), Vec2(0, 0), ballRad, window.getRenderer());
     
-    const double physicsFps = 180; // 180 Frames per Second (expect this number to be really inconsistent I never really update it)
+    const double physicsFps = 60; // 180 Frames per Second (expect this number to be really inconsistent I never really update it)
     const double physicsDeltaTime = 1.0 / physicsFps; // However-many seconds per frame i can't be bothered to type that into a fucking calculator
     const double targetMs = 1000.0 / physicsFps; // Milliseconds
     const Uint64 perfFreq = SDL_GetPerformanceFrequency();
