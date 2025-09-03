@@ -51,23 +51,12 @@ int main(int argc, char* argv[])
     SDL_Event event;
     double previousEnergy = 0.0;
 
-    // --- NEW: fixed-step accumulator timing state ---
-    double accumulator = 0.0;
-    Uint64 prevCounter = SDL_GetPerformanceCounter();
-
 //----------------------------------------------------------------------------------------------------------------------------------------------------------------//
 //----------------------------------------------------------------------------------------------------------------------------------------------------------------//
 //----------------------------------------------------------------------------------------------------------------------------------------------------------------//
     while (running)
     {
         const Uint64 frameStart = SDL_GetPerformanceCounter();
-
-        // --- NEW: frame time bookkeeping for accumulator ---
-        double frameTime = (frameStart - prevCounter) / (double)perfFreq;
-        prevCounter = frameStart;
-        if (frameTime > 0.25) frameTime = 0.25; // avoid spiral-of-death on big pauses
-        accumulator += frameTime;
-
          while (SDL_PollEvent(&event))
             {
                 if (event.type == SDL_QUIT)
@@ -75,32 +64,15 @@ int main(int argc, char* argv[])
                     running = false;
                 }
             }
-
         // Physics!!
         //Collisions first
-        // --- NEW: do fixed-timestep physics in a loop ---
-        while (accumulator >= physicsDeltaTime)
-        {
-            ball.snapshot(); // remember previous state for interpolation
+        bool collided;
+        bool collided1 = ball.handleCollisionWithLineSegment(Vec2(0, 0), Vec2(9, 0), physicsDeltaTime, gravity);
+        bool collided2 = ball.handleCollisionWithLineSegment(Vec2(0, 0), Vec2(0, 12), physicsDeltaTime, gravity);
+        bool collided3 = ball.handleCollisionWithLineSegment(Vec2(9, 0), Vec2(9, 12), physicsDeltaTime, gravity);
+        collided = collided1 || collided2 || collided3;
 
-            bool collided1 = ball.handleCollisionWithLineSegment(Vec2(0, 0), Vec2(9, 0), physicsDeltaTime, gravity);
-            bool collided2 = ball.handleCollisionWithLineSegment(Vec2(0, 0), Vec2(0, 12), physicsDeltaTime, gravity);
-            bool collided3 = ball.handleCollisionWithLineSegment(Vec2(9, 0), Vec2(9, 12), physicsDeltaTime, gravity);
-            bool collided = collided1 || collided2 || collided3;
 
-            // Remember the equation deltax = 1/2at^2 + v0t. Here, t = physicsDeltaTime. v0 is the current velocity. a is acceleration due to gravity
-            if (!collided)
-            {
-                Vec2 change_in_pos = (gravity*(physicsDeltaTime)*0.5 + ball.getVelo())*physicsDeltaTime;
-                ball.setPos(ball.getPos() + change_in_pos);
-                //v = v0 + at
-                ball.setVelo(ball.getVelo() + gravity*physicsDeltaTime);
-            }
-
-            accumulator -= physicsDeltaTime;
-        }
-
-        // --- Energy check (same logic, just using the current state after fixed steps) ---
         double EnergyOfBall = ball.getPos().getY()*9.8 + 0.5*ball.getVelo().magnitude()*ball.getVelo().magnitude();
         double changeInEnergy = EnergyOfBall-previousEnergy;
         if (abs(changeInEnergy) > 5e-12 && changeInEnergy != EnergyOfBall)
@@ -109,8 +81,17 @@ int main(int argc, char* argv[])
         }
         previousEnergy = EnergyOfBall;
 
-        // --- NEW: render interpolation factor in [0,1) from leftover accumulator ---
-        double alpha = accumulator / physicsDeltaTime;
+        // Remember the equation deltax = 1/2at^2 + v0t. Here, t = physicsDeltaTime. v0 is the current velocity. a is acceleration due to gravity
+        if (!collided)
+        {
+            Vec2 change_in_pos = (gravity*(physicsDeltaTime)*0.5 + ball.getVelo())*physicsDeltaTime;
+            ball.setPos(ball.getPos() + change_in_pos);
+            //v = v0 + at
+            ball.setVelo(ball.getVelo() + gravity*physicsDeltaTime);
+        }
+        
+        
+
         
         SDL_SetRenderDrawColor(window.getRenderer(), 0, 0, 0, 255);
         window.clear();
@@ -121,13 +102,9 @@ int main(int argc, char* argv[])
             SDL_SetRenderDrawColor(window.getRenderer(), 0, 0, 0, 255);
             window.clear();
 
-            // --- NEW: interpolate between previous and current physics states
-            Vec2 p0 = ball.getPrevPos();
-            Vec2 p1 = ball.getPos();
-            Vec2 pInterp = p0 * (1.0 - alpha) + p1 * alpha;
 
-            // ball.renderBall(window.getRenderer()); // old direct render at pos
-            ball.renderBallAt(window.getRenderer(), pInterp); // NEW: smooth render at interpolated position
+            ball.renderBall(window.getRenderer());
+
 
             RenderLine(Vec2(9.0, 0.0), Vec2(9.0, 12.0), 243, 23, 12, 255, window.getRenderer());
             RenderLine(Vec2(0.0, 0.0), Vec2(9.0, 0.0), 243, 23, 12, 255, window.getRenderer());
@@ -147,9 +124,6 @@ int main(int argc, char* argv[])
             if (remainMs > 1.0) 
             {
                 SDL_Delay((Uint32)(remainMs - 0.5)); // keep a small margin
-            } 
-            else 
-            {
             }
         }
     }
