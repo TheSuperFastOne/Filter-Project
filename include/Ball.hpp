@@ -21,6 +21,9 @@ class Ball
 
         // These functions are so unworthy they get an implementation in a header file
         const Vec2& getPos() const {return pos;};
+        void snapshot() { prevPos = pos; prevVelo = velo; }
+        const Vec2& getPrevPos() const { return prevPos; }
+        void renderBallAt(SDL_Renderer* r, const Vec2& worldPos) const;
         const Vec2& getVelo() const {return velo;};
         float getRadius() const {return radius;};
 
@@ -29,6 +32,7 @@ class Ball
         void setRadius(float newRadius) {radius = newRadius;};
         //end of unworthy functions
     private:
+        Vec2 prevPos, prevVelo;
         float radius;
         Vec2 pos;
         Vec2 velo;
