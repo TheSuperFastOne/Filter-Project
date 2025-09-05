@@ -17,6 +17,7 @@ class Ball
                                     const Vec2& p2,
                                     double deltaTime,
                                     const Vec2& gravity);
+        bool handleCollisionWithCircle(const Ball& otherball, double deltaTime, const Vec2& gravity);
 
 
         // These functions are so unworthy they get an implementation in a header file

@@ -40,10 +40,14 @@ int main(int argc, char* argv[])
 
     Ball ball(Vec2(4.5, 11), Vec2(0, 0), ballRad, window.getRenderer());
     
-    const double physicsFps = 60; // 180 Frames per Second (expect this number to be really inconsistent I never really update it)
+    const double physicsFps = 1200; // 180 Frames per Second (expect this number to be really inconsistent I never really update it)
     const double physicsDeltaTime = 1.0 / physicsFps; // However-many seconds per frame i can't be bothered to type that into a fucking calculator
     const double targetMs = 1000.0 / physicsFps; // Milliseconds
     const Uint64 perfFreq = SDL_GetPerformanceFrequency();
+
+    const double renderFps = 60;
+    const double renderDeltaTime = 1.0 / renderFps;
+    const double renderTargetMs = 1000.0 / renderFps;
 
     Vec2 gravity(0, -9.8);
 
@@ -54,9 +58,20 @@ int main(int argc, char* argv[])
 //----------------------------------------------------------------------------------------------------------------------------------------------------------------//
 //----------------------------------------------------------------------------------------------------------------------------------------------------------------//
 //----------------------------------------------------------------------------------------------------------------------------------------------------------------//
+Uint64 lastCounter = SDL_GetPerformanceCounter();
+double accumulator = 0.0;
+Ball grinder(Vec2(4, 3.5), Vec2(0, 0), grinderCircleRad, window.getRenderer());
     while (running)
     {
-        const Uint64 frameStart = SDL_GetPerformanceCounter();
+        {//ScopedTimer timer("Main loop");
+        Uint64 now = SDL_GetPerformanceCounter();
+        double frameSec = (now - lastCounter) / (double)perfFreq;
+        lastCounter = now;
+
+        if (frameSec > 0.25) frameSec = 0.25;
+
+        accumulator += frameSec;
+        //std::cout << "pos = (" << ball.getPos().getX() << ", " << ball.getPos().getY() << ")\n";
          while (SDL_PollEvent(&event))
             {
                 if (event.type == SDL_QUIT)
@@ -66,44 +81,50 @@ int main(int argc, char* argv[])
             }
         // Physics!!
         //Collisions first
-        bool collided;
-        bool collided1 = ball.handleCollisionWithLineSegment(Vec2(0, 0), Vec2(9, 0), physicsDeltaTime, gravity);
-        bool collided2 = ball.handleCollisionWithLineSegment(Vec2(0, 0), Vec2(0, 12), physicsDeltaTime, gravity);
-        bool collided3 = ball.handleCollisionWithLineSegment(Vec2(9, 0), Vec2(9, 12), physicsDeltaTime, gravity);
-        collided = collided1 || collided2 || collided3;
-
-
-        double EnergyOfBall = ball.getPos().getY()*9.8 + 0.5*ball.getVelo().magnitude()*ball.getVelo().magnitude();
-        double changeInEnergy = EnergyOfBall-previousEnergy;
-        if (abs(changeInEnergy) > 5e-12 && changeInEnergy != EnergyOfBall)
+        //{ScopedTimer timer("Physics"); // This is just for profiling, ignore it
+        while (accumulator >= physicsDeltaTime)
         {
-            std::cout << "Energy was " << previousEnergy << ", but changed by " << changeInEnergy << std::endl; // alr this isn't really going off which is a really, really good sign
+            // Save previous state for interpolation
+            ball.snapshot();
+
+            //Collisions first at fixed dt
+            bool collided1 = ball.handleCollisionWithLineSegment(Vec2(0, 0), Vec2(9, 0), physicsDeltaTime, gravity);
+            bool collided2 = ball.handleCollisionWithLineSegment(Vec2(0, 0), Vec2(0, 12), physicsDeltaTime, gravity);
+            bool collided3 = ball.handleCollisionWithLineSegment(Vec2(9, 0), Vec2(9, 12), physicsDeltaTime, gravity);
+            bool collided4 = ball.handleCollisionWithCircle(grinder, physicsDeltaTime, gravity);
+            bool collided = collided1 || collided2 || collided3 || collided4;
+
+            // Energy check
+            double EnergyOfBall = ball.getPos().getY()*9.8 + 0.5*ball.getVelo().magnitude()*ball.getVelo().magnitude();
+            double changeInEnergy = EnergyOfBall - previousEnergy;
+            if ((std::abs(changeInEnergy) > 5e-12 && changeInEnergy != EnergyOfBall) || true)
+            {
+                std::cout << "Energy was " << previousEnergy << ", but changed by " << changeInEnergy << std::endl;
+            }
+            previousEnergy = EnergyOfBall;
+
+            // Integrate one fixed step if no collision consumed it
+            if (!collided)
+            {
+                Vec2 change_in_pos = (gravity*(physicsDeltaTime)*0.5 + ball.getVelo())*physicsDeltaTime; // 0.5 a dt^2 + v dt
+                ball.setPos(ball.getPos() + change_in_pos);
+                ball.setVelo(ball.getVelo() + gravity*physicsDeltaTime); // v = v0 + a dt
+            }
+
+            accumulator -= physicsDeltaTime;
         }
-        previousEnergy = EnergyOfBall;
+        //}
+            //{ScopedTimer timer("Render"); // This is just for profiling, ignore it
 
-        // Remember the equation deltax = 1/2at^2 + v0t. Here, t = physicsDeltaTime. v0 is the current velocity. a is acceleration due to gravity
-        if (!collided)
-        {
-            Vec2 change_in_pos = (gravity*(physicsDeltaTime)*0.5 + ball.getVelo())*physicsDeltaTime;
-            ball.setPos(ball.getPos() + change_in_pos);
-            //v = v0 + at
-            ball.setVelo(ball.getVelo() + gravity*physicsDeltaTime);
-        }
-        
-        
-
-        
-        SDL_SetRenderDrawColor(window.getRenderer(), 0, 0, 0, 255);
-        window.clear();
-
-
-
+            double alpha = accumulator / physicsDeltaTime; // in [0,1)
+            Vec2 interpPos = ball.getPrevPos() * (1.0 - alpha) + ball.getPos() * alpha;
 
             SDL_SetRenderDrawColor(window.getRenderer(), 0, 0, 0, 255);
             window.clear();
 
 
-            ball.renderBall(window.getRenderer());
+            ball.renderBallAt(window.getRenderer(), interpPos);
+            grinder.renderBall(window.getRenderer());
 
 
             RenderLine(Vec2(9.0, 0.0), Vec2(9.0, 12.0), 243, 23, 12, 255, window.getRenderer());
@@ -111,20 +132,27 @@ int main(int argc, char* argv[])
             RenderLine(Vec2(0.0, 0.0), Vec2(0.0, 12.0), 243, 23, 12, 255, window.getRenderer());
 
             window.display();
-
+            //}
 
 
         // 1/FPS cap
+        { 
+        //ScopedTimer timer("FPS cap");
         for (;;) 
         {
-            double elapsedMs = (SDL_GetPerformanceCounter() - frameStart) * 1000.0 / (double)perfFreq;
-            double remainMs  = targetMs - elapsedMs;
+            double frameMs = (SDL_GetPerformanceCounter() - now) * 1000.0 / (double)perfFreq;
+            double remainMs = renderTargetMs - frameMs;
             if (remainMs <= 0.0) break;
 
-            if (remainMs > 1.0) 
-            {
-                SDL_Delay((Uint32)(remainMs - 0.5)); // keep a small margin
+            if (remainMs > 1.0) {
+                SDL_Delay((Uint32)(remainMs - 0.5)); // bulk sleep
+            } else {
+                // busy-wait the last fraction for more precise pacing
+                while (((SDL_GetPerformanceCounter() - now) * 1000.0 / (double)perfFreq) < renderTargetMs) { }
+                break;
             }
         }
+    }
+    }
     }
 }
