@@ -32,18 +32,21 @@ int main(int argc, char* argv[])
 
     float grinderCircleRad = 3; // METERS
     float ballRad = 1.0; // METERS
-    float gapDistance = 1.0;
+    float gapDistance = 0.5;
 
     const int WINDOW_HEIGHT = 1200; // Pixels
-    const int WINDOW_WIDTH = (int)((gapDistance + grinderCircleRad*2 + ballRad*2)* 100); // Pixels
+    const double WORLD_WIDTH = gapDistance + grinderCircleRad*2 + ballRad*2; // Meters
+    const int WINDOW_WIDTH = (int)(WORLD_WIDTH*100); // Pixels
     RenderWindow window("Minimal SDL2 Window", WINDOW_WIDTH+1, WINDOW_HEIGHT+1); //Handles lines on the edge really well. Makes no difference to the simulation sooo idgaf
 
-    Ball ball(Vec2(4.5, 11), Vec2(0, 0), ballRad, window.getRenderer());
+    Ball ball(Vec2(WORLD_WIDTH/2+1, 11), Vec2(0, 0), ballRad, window.getRenderer());
     
     const double physicsFps = 1200; // 180 Frames per Second (expect this number to be really inconsistent I never really update it)
     const double physicsDeltaTime = 1.0 / physicsFps; // However-many seconds per frame i can't be bothered to type that into a fucking calculator
     const double targetMs = 1000.0 / physicsFps; // Milliseconds
     const Uint64 perfFreq = SDL_GetPerformanceFrequency();
+
+
 
     const double renderFps = 60;
     const double renderDeltaTime = 1.0 / renderFps;
@@ -60,7 +63,8 @@ int main(int argc, char* argv[])
 //----------------------------------------------------------------------------------------------------------------------------------------------------------------//
 Uint64 lastCounter = SDL_GetPerformanceCounter();
 double accumulator = 0.0;
-Ball grinder(Vec2(4, 3.5), Vec2(0, 0), grinderCircleRad, window.getRenderer());
+Ball grinder1(Vec2(0,4.5), Vec2(0, 0), grinderCircleRad, window.getRenderer());
+Ball grinder2(Vec2(WORLD_WIDTH,4.5), Vec2(0, 0), grinderCircleRad, window.getRenderer());
     while (running)
     {
         {//ScopedTimer timer("Main loop");
@@ -88,16 +92,17 @@ Ball grinder(Vec2(4, 3.5), Vec2(0, 0), grinderCircleRad, window.getRenderer());
             ball.snapshot();
 
             //Collisions first at fixed dt
-            bool collided1 = ball.handleCollisionWithLineSegment(Vec2(0, 0), Vec2(9, 0), physicsDeltaTime, gravity);
+            bool collided1 = ball.handleCollisionWithLineSegment(Vec2(0, 0), Vec2(WORLD_WIDTH, 0), physicsDeltaTime, gravity);
             bool collided2 = ball.handleCollisionWithLineSegment(Vec2(0, 0), Vec2(0, 12), physicsDeltaTime, gravity);
-            bool collided3 = ball.handleCollisionWithLineSegment(Vec2(9, 0), Vec2(9, 12), physicsDeltaTime, gravity);
-            bool collided4 = ball.handleCollisionWithCircle(grinder, physicsDeltaTime, gravity);
-            bool collided = collided1 || collided2 || collided3 || collided4;
+            bool collided3 = ball.handleCollisionWithLineSegment(Vec2(WORLD_WIDTH, 0), Vec2(WORLD_WIDTH, 12), physicsDeltaTime, gravity);
+            bool collided4 = ball.handleCollisionWithCircle(grinder1, physicsDeltaTime, gravity);
+            bool collided5 = ball.handleCollisionWithCircle(grinder2, physicsDeltaTime, gravity);
+            bool collided = collided1 || collided2 || collided3 || collided4 || collided5;
 
             // Energy check
             double EnergyOfBall = ball.getPos().getY()*9.8 + 0.5*ball.getVelo().magnitude()*ball.getVelo().magnitude();
             double changeInEnergy = EnergyOfBall - previousEnergy;
-            if ((std::abs(changeInEnergy) > 5e-12 && changeInEnergy != EnergyOfBall) || true)
+            if ((std::abs(changeInEnergy) > 5e-12 && changeInEnergy != EnergyOfBall))
             {
                 std::cout << "Energy was " << previousEnergy << ", but changed by " << changeInEnergy << std::endl;
             }
@@ -124,11 +129,12 @@ Ball grinder(Vec2(4, 3.5), Vec2(0, 0), grinderCircleRad, window.getRenderer());
 
 
             ball.renderBallAt(window.getRenderer(), interpPos);
-            grinder.renderBall(window.getRenderer());
+            grinder1.renderBall(window.getRenderer());
+            grinder2.renderBall(window.getRenderer());
 
 
-            RenderLine(Vec2(9.0, 0.0), Vec2(9.0, 12.0), 243, 23, 12, 255, window.getRenderer());
-            RenderLine(Vec2(0.0, 0.0), Vec2(9.0, 0.0), 243, 23, 12, 255, window.getRenderer());
+            RenderLine(Vec2(WORLD_WIDTH, 0.0), Vec2(WORLD_WIDTH, 12.0), 243, 23, 12, 255, window.getRenderer());
+            RenderLine(Vec2(0.0, 0.0), Vec2(WORLD_WIDTH, 0.0), 243, 23, 12, 255, window.getRenderer());
             RenderLine(Vec2(0.0, 0.0), Vec2(0.0, 12.0), 243, 23, 12, 255, window.getRenderer());
 
             window.display();
