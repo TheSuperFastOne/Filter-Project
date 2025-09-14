@@ -2,7 +2,9 @@
 #include <SDL_image.h>
 #include <iostream>
 #include <vector>
+#include <random>
 #include <math.h>
+#include <fstream>
 
 #include "../include/Ball.hpp"
 #include "../include/RenderWindow.hpp"
@@ -14,6 +16,17 @@ void RenderLine(const Vec2& p1, const Vec2& p2, int R, int G, int B, int A, SDL_
     SDL_RenderDrawLine(renderer,
         (int)(p1.getX() * 100), (int)(1200-(p1.getY() * 100)),
         (int)(p2.getX() * 100), (int)(1200-(p2.getY() * 100)));
+}
+
+std::random_device rd;
+std::mt19937 gen(rd());
+std::ofstream stuckFile("output.txt", std::ios::app);
+Vec2 getRandomPositionVector(float minX, float maxX, float minY, float maxY)
+{
+    std::uniform_real_distribution<float> distX(minX, maxX);
+    std::uniform_real_distribution<float> distY(minY, maxY);
+    return Vec2(distX(gen), distY(gen));
+
 }
 
 int main(int argc, char* argv[])
@@ -33,13 +46,15 @@ int main(int argc, char* argv[])
     float grinderCircleRad = 3; // METERS
     float ballRad = 1.0; // METERS
     float gapDistance = 0.5;
+    Vec2 spawnedPos = getRandomPositionVector(ballRad, grinderCircleRad*2+gapDistance+ballRad, 8.5, 11.0); // MaxX is the same as WORLD_WIDTH - ballRad.
 
     const int WINDOW_HEIGHT = 1200; // Pixels
     const double WORLD_WIDTH = gapDistance + grinderCircleRad*2 + ballRad*2; // Meters
     const int WINDOW_WIDTH = (int)(WORLD_WIDTH*100); // Pixels
     RenderWindow window("Minimal SDL2 Window", WINDOW_WIDTH+1, WINDOW_HEIGHT+1); //Handles lines on the edge really well. Makes no difference to the simulation sooo idgaf
+    SDL_RenderSetVSync(window.getRenderer(), 1); // Enable VSync to prevent screen tearing
 
-    Ball ball(Vec2(WORLD_WIDTH/2+1, 11), Vec2(0, 0), ballRad, window.getRenderer());
+    Ball ball(spawnedPos, Vec2(0, 0), ballRad, window.getRenderer());
     
     const double physicsFps = 1200; // 180 Frames per Second (expect this number to be really inconsistent I never really update it)
     const double physicsDeltaTime = 1.0 / physicsFps; // However-many seconds per frame i can't be bothered to type that into a fucking calculator
@@ -48,15 +63,20 @@ int main(int argc, char* argv[])
 
 
 
-    const double renderFps = 60;
+    const double renderFps = 120;
     const double renderDeltaTime = 1.0 / renderFps;
     const double renderTargetMs = 1000.0 / renderFps;
 
     Vec2 gravity(0, -9.8);
+    bool render = true; // If false, don't render and also, don't wait at all.
 
     bool running = true;
     SDL_Event event;
     double previousEnergy = 0.0;
+    int bounces = 0;
+
+    int trials_num = 100000000; // Goddamn thats big im js tryna get some data yk
+    int trial = 1;
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------------------//
 //----------------------------------------------------------------------------------------------------------------------------------------------------------------//
@@ -86,7 +106,7 @@ Ball grinder2(Vec2(WORLD_WIDTH,4.5), Vec2(0, 0), grinderCircleRad, window.getRen
         // Physics!!
         //Collisions first
         //{ScopedTimer timer("Physics"); // This is just for profiling, ignore it
-        while (accumulator >= physicsDeltaTime)
+        while (accumulator >= physicsDeltaTime || !render)
         {
             // Save previous state for interpolation
             ball.snapshot();
@@ -97,6 +117,45 @@ Ball grinder2(Vec2(WORLD_WIDTH,4.5), Vec2(0, 0), grinderCircleRad, window.getRen
             bool collided3 = ball.handleCollisionWithLineSegment(Vec2(WORLD_WIDTH, 0), Vec2(WORLD_WIDTH, 12), physicsDeltaTime, gravity);
             bool collided4 = ball.handleCollisionWithCircle(grinder1, physicsDeltaTime, gravity);
             bool collided5 = ball.handleCollisionWithCircle(grinder2, physicsDeltaTime, gravity);
+            if (collided4 || collided5) {
+                bounces++;
+                if (bounces > 1000)
+                {
+                    std::cout << "Goddamn it ball got stuck\n";
+                    stuckFile << "Stuck ball at (" << spawnedPos.getX() << ", " << spawnedPos.getY() << ")\n";
+                    stuckFile.flush();
+                    bounces = 0;
+                trial++;
+                if (trial > trials_num)
+                {
+                    running = false;
+                    std::cout << "All trials complete\n";
+                    break;
+                }
+                spawnedPos = getRandomPositionVector(ballRad, WORLD_WIDTH-(ballRad), 8.5, 11.0);
+                //std::cout << "New ball at (" << spawnedPos.getX() << ", " << spawnedPos.getY() << ")\n";
+                ball.setPos(spawnedPos); // Has to be more than 8.5 to not start in a grinder
+                ball.setVelo(Vec2(0, 0));
+                    continue;
+                }
+                //
+            }
+            if (collided1)
+            {
+                std::cout << bounces << " bounces on trial " << trial << "\n";
+                bounces = 0;
+                trial++;
+                if (trial > trials_num)
+                {
+                    running = false;
+                    std::cout << "All trials complete\n";
+                    break;
+                }
+                spawnedPos = getRandomPositionVector(ballRad, WORLD_WIDTH-(ballRad), 8.5, 11.0);
+                //std::cout << "New ball at (" << spawnedPos.getX() << ", " << spawnedPos.getY() << ")\n";
+                ball.setPos(spawnedPos); // Has to be more than 8.5 to not start in a grinder
+                ball.setVelo(Vec2(0, 0));
+            }
             bool collided = collided1 || collided2 || collided3 || collided4 || collided5;
 
             // Energy check
@@ -104,7 +163,7 @@ Ball grinder2(Vec2(WORLD_WIDTH,4.5), Vec2(0, 0), grinderCircleRad, window.getRen
             double changeInEnergy = EnergyOfBall - previousEnergy;
             if ((std::abs(changeInEnergy) > 5e-12 && changeInEnergy != EnergyOfBall))
             {
-                std::cout << "Energy was " << previousEnergy << ", but changed by " << changeInEnergy << std::endl;
+                //std::cout << "Energy was " << previousEnergy << ", but changed by " << changeInEnergy << std::endl;
             }
             previousEnergy = EnergyOfBall;
 
@@ -119,7 +178,7 @@ Ball grinder2(Vec2(WORLD_WIDTH,4.5), Vec2(0, 0), grinderCircleRad, window.getRen
             accumulator -= physicsDeltaTime;
         }
         //}
-            //{ScopedTimer timer("Render"); // This is just for profiling, ignore it
+            if (render){//ScopedTimer timer("Render"); // This is just for profiling, ignore it
 
             double alpha = accumulator / physicsDeltaTime; // in [0,1)
             Vec2 interpPos = ball.getPrevPos() * (1.0 - alpha) + ball.getPos() * alpha;
@@ -138,12 +197,13 @@ Ball grinder2(Vec2(WORLD_WIDTH,4.5), Vec2(0, 0), grinderCircleRad, window.getRen
             RenderLine(Vec2(0.0, 0.0), Vec2(0.0, 12.0), 243, 23, 12, 255, window.getRenderer());
 
             window.display();
-            //}
+            }
 
 
         // 1/FPS cap
         { 
         //ScopedTimer timer("FPS cap");
+        if (render){
         for (;;) 
         {
             double frameMs = (SDL_GetPerformanceCounter() - now) * 1000.0 / (double)perfFreq;
@@ -161,4 +221,6 @@ Ball grinder2(Vec2(WORLD_WIDTH,4.5), Vec2(0, 0), grinderCircleRad, window.getRen
     }
     }
     }
+    }
+    stuckFile.close();
 }

@@ -1,4 +1,5 @@
 #include "../include/RenderWindow.hpp"
+#include "../include/Time.hpp"
 #include <cmath>
 
 RenderWindow::RenderWindow(const char* title, int width, int height)
@@ -13,13 +14,13 @@ RenderWindow::RenderWindow(const char* title, int width, int height)
                               width, height, winFlags);
 
     if (!window) {
-        std::cerr << "Window initialization failed: " << SDL_GetError() << std::endl;
+        std::cerr << "Window initialization failed: " << SDL_GetError() << "\n";
     }
 
     // 3) Accelerated renderer; disable blending unless you need it
     renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
     if (!renderer) {
-        std::cerr << "Renderer initialization failed: " << SDL_GetError() << std::endl;
+        std::cerr << "Renderer initialization failed: " << SDL_GetError() << "\n";
     }
 
     // 4) Optional: make pixel math exact by locking a logical size
@@ -36,7 +37,9 @@ void RenderWindow::clear()
 
 void RenderWindow::display()
 {
+    {//ScopedTimer timer("Render Present"); // This is just for profiling, ignore it
     SDL_RenderPresent(renderer);
+    }
 }
 
 RenderWindow::~RenderWindow() {

@@ -1,1440 +1,1438 @@
-pos = (4.5, 11)
-Physics: 1 us
-Render: 1126 us
-pos = (4.5, 10.9986)
-Physics: 1 us
-Render: 635 us
-pos = (4.5, 10.9946)
-Physics: 1 us
-Render: 260 us
-pos = (4.5, 10.9878)
-Physics: 1 us
-Render: 251 us
-pos = (4.5, 10.9782)
-Physics: 1 us
-Render: 1122 us
-pos = (4.5, 10.966)
-Physics: 1 us
-Render: 232 us
-pos = (4.5, 10.951)
-Physics: 1 us
-Render: 240 us
-pos = (4.5, 10.9333)
-Physics: 1 us
-Render: 271 us
-pos = (4.5, 10.9129)
-Physics: 1 us
-Render: 254 us
-pos = (4.5, 10.8897)
-Physics: 1 us
-Render: 302 us
-pos = (4.5, 10.8639)
-Physics: 1 us
-Render: 260 us
-pos = (4.5, 10.8353)
-Physics: 1 us
-Render: 266 us
-pos = (4.5, 10.804)
-Physics: 1 us
-Render: 281 us
-pos = (4.5, 10.77)
-Physics: 1 us
-Render: 291 us
-pos = (4.5, 10.7332)
-Physics: 1 us
-Render: 258 us
-pos = (4.5, 10.6937)
-Physics: 1 us
-Render: 290 us
-pos = (4.5, 10.6516)
-Physics: 0 us
-Render: 278 us
-pos = (4.5, 10.6066)
-Physics: 1 us
-Render: 292 us
-pos = (4.5, 10.559)
-Physics: 1 us
-Render: 329 us
-pos = (4.5, 10.5086)
-Physics: 1 us
-Render: 298 us
-pos = (4.5, 10.4556)
-Physics: 1 us
-Render: 275 us
-pos = (4.5, 10.3997)
-Physics: 1 us
-Render: 275 us
-pos = (4.5, 10.3412)
-Physics: 1 us
-Render: 266 us
-pos = (4.5, 10.28)
-Physics: 1 us
-Render: 275 us
-pos = (4.5, 10.216)
-Physics: 1 us
-Render: 271 us
-pos = (4.5, 10.1493)
-Physics: 1 us
-Render: 257 us
-pos = (4.5, 10.0799)
-Physics: 1 us
-Render: 242 us
-pos = (4.5, 10.0077)
-Physics: 1 us
-Render: 255 us
-pos = (4.5, 9.93289)
-Physics: 1 us
-Render: 253 us
-pos = (4.5, 9.85531)
-Physics: 1 us
-Render: 255 us
-pos = (4.5, 9.775)
-Physics: 1 us
-Render: 237 us
-pos = (4.5, 9.69197)
-Physics: 0 us
-Render: 229 us
-pos = (4.5, 9.60622)
-Physics: 0 us
-Render: 238 us
-pos = (4.5, 9.51775)
-Physics: 0 us
-Render: 252 us
-pos = (4.5, 9.42656)
-Physics: 1 us
-Render: 257 us
-pos = (4.5, 9.33264)
-Physics: 0 us
-Render: 230 us
-pos = (4.5, 9.236)
-Physics: 1 us
-Render: 322 us
-pos = (4.5, 9.13664)
-Physics: 1 us
-Render: 252 us
-pos = (4.5, 9.03456)
-Physics: 1 us
-Render: 265 us
-pos = (4.5, 8.92975)
-Physics: 0 us
-Render: 230 us
-pos = (4.5, 8.82222)
-Physics: 1 us
-Render: 274 us
-pos = (4.5, 8.71197)
-Physics: 1 us
-Render: 281 us
-pos = (4.5, 8.599)
-Physics: 1 us
-Render: 289 us
-pos = (4.5, 8.48331)
-Physics: 0 us
-Render: 225 us
-pos = (4.5, 8.36489)
-Physics: 1 us
-Render: 258 us
-pos = (4.5, 8.24375)
-Physics: 0 us
-Render: 228 us
-pos = (4.5, 8.11989)
-Physics: 0 us
-Render: 226 us
-pos = (4.5, 7.99331)
-Physics: 1 us
-Render: 227 us
-pos = (4.5, 7.864)
-Physics: 1 us
-Render: 265 us
-pos = (4.5, 7.73197)
-Physics: 1 us
-Render: 235 us
-pos = (4.5, 7.59722)
-Physics: 0 us
-Render: 234 us
-pos = (4.5, 7.45975)
-Physics: 1 us
-Render: 276 us
-pos = (4.5, 7.31956)
-Physics: 1 us
-Render: 260 us
-pos = (4.5, 7.17664)
-Physics: 1 us
-Render: 269 us
-pos = (4.5, 7.031)
-Physics: 0 us
-Render: 226 us
-pos = (4.5, 6.88264)
-Physics: 0 us
-Render: 219 us
-pos = (4.5, 6.73156)
-Physics: 0 us
-Render: 224 us
-pos = (4.5, 6.57775)
-Physics: 0 us
-Render: 228 us
-pos = (4.5, 6.42122)
-Physics: 1 us
-Render: 257 us
-pos = (4.5, 6.26197)
-Physics: 1 us
-Render: 291 us
-pos = (4.5, 6.1)
-Physics: 1 us
-Render: 253 us
-pos = (4.5, 5.93531)
-Physics: 1 us
-Render: 264 us
-pos = (4.5, 5.76789)
-Physics: 1 us
-Render: 253 us
-pos = (4.5, 5.59775)
-Physics: 0 us
-Render: 221 us
-pos = (4.5, 5.42489)
-Physics: 0 us
-Render: 261 us
-pos = (4.5, 5.24931)
-Physics: 0 us
-Render: 238 us
-pos = (4.5, 5.071)
-Physics: 1 us
-Render: 258 us
-pos = (4.5, 4.88997)
-Physics: 1 us
-Render: 265 us
-pos = (4.5, 4.70622)
-Physics: 1 us
-Render: 262 us
-pos = (4.5, 4.51975)
-Physics: 0 us
-Render: 234 us
-pos = (4.5, 4.33056)
-Physics: 0 us
-Render: 224 us
-pos = (4.5, 4.13864)
-Physics: 0 us
-Render: 220 us
-pos = (4.5, 3.944)
-Physics: 1 us
-Render: 260 us
-pos = (4.5, 3.74664)
-Physics: 1 us
-Render: 263 us
-pos = (4.5, 3.54656)
-Physics: 1 us
-Render: 262 us
-pos = (4.5, 3.34375)
-Physics: 1 us
-Render: 255 us
-pos = (4.5, 3.13822)
-Physics: 1 us
-Render: 256 us
-pos = (4.5, 2.92997)
-Physics: 0 us
-Render: 224 us
-pos = (4.5, 2.719)
-Physics: 0 us
-Render: 225 us
-pos = (4.5, 2.50531)
-Physics: 0 us
-Render: 251 us
-pos = (4.5, 2.28889)
-Physics: 0 us
-Render: 224 us
-pos = (4.5, 2.06975)
-Physics: 1 us
-Render: 260 us
-pos = (4.5, 1.84789)
-Physics: 1 us
-Render: 267 us
-pos = (4.5, 1.62331)
-Physics: 0 us
-Render: 229 us
-pos = (4.5, 1.396)
-Physics: 0 us
-Render: 259 us
-pos = (4.5, 1.16597)
-Physics: 2 us
-Render: 220 us
-pos = (4.5, 1.06656)
-Physics: 1 us
-Render: 234 us
-pos = (4.5, 1.29775)
-Physics: 0 us
-Render: 251 us
-pos = (4.5, 1.52622)
-Physics: 1 us
-Render: 264 us
-pos = (4.5, 1.75197)
-Physics: 0 us
-Render: 226 us
-pos = (4.5, 1.975)
-Physics: 0 us
-Render: 223 us
-pos = (4.5, 2.19531)
-Physics: 1 us
-Render: 255 us
-pos = (4.5, 2.41289)
-Physics: 0 us
-Render: 242 us
-pos = (4.5, 2.62775)
-Physics: 1 us
-Render: 274 us
-pos = (4.5, 2.83989)
-Physics: 1 us
-Render: 265 us
-pos = (4.5, 3.04931)
-Physics: 1 us
-Render: 287 us
-pos = (4.5, 3.256)
-Physics: 1 us
-Render: 281 us
-pos = (4.5, 3.45997)
-Physics: 0 us
-Render: 273 us
-pos = (4.5, 3.66122)
-Physics: 1 us
-Render: 274 us
-pos = (4.5, 3.85975)
-Physics: 1 us
-Render: 272 us
-pos = (4.5, 4.05556)
-Physics: 1 us
-Render: 265 us
-pos = (4.5, 4.24864)
-Physics: 1 us
-Render: 282 us
-pos = (4.5, 4.439)
-Physics: 1 us
-Render: 262 us
-pos = (4.5, 4.62664)
-Physics: 1 us
-Render: 250 us
-pos = (4.5, 4.81156)
-Physics: 0 us
-Render: 240 us
-pos = (4.5, 4.99375)
-Physics: 1 us
-Render: 264 us
-pos = (4.5, 5.17322)
-Physics: 1 us
-Render: 262 us
-pos = (4.5, 5.34997)
-Physics: 1 us
-Render: 257 us
-pos = (4.5, 5.524)
-Physics: 1 us
-Render: 266 us
-pos = (4.5, 5.69531)
-Physics: 1 us
-Render: 270 us
-pos = (4.5, 5.86389)
-Physics: 1 us
-Render: 267 us
-pos = (4.5, 6.02975)
-Physics: 1 us
-Render: 264 us
-pos = (4.5, 6.19289)
-Physics: 1 us
-Render: 259 us
-pos = (4.5, 6.35331)
-Physics: 1 us
-Render: 272 us
-pos = (4.5, 6.511)
-Physics: 1 us
-Render: 261 us
-pos = (4.5, 6.66597)
-Physics: 0 us
-Render: 229 us
-pos = (4.5, 6.81822)
-Physics: 0 us
-Render: 220 us
-pos = (4.5, 6.96775)
-Physics: 1 us
-Render: 255 us
-pos = (4.5, 7.11456)
-Physics: 0 us
-Render: 229 us
-pos = (4.5, 7.25864)
-Physics: 1 us
-Render: 225 us
-pos = (4.5, 7.4)
-Physics: 1 us
-Render: 240 us
-pos = (4.5, 7.53864)
-Physics: 0 us
-Render: 226 us
-pos = (4.5, 7.67456)
-Physics: 1 us
-Render: 276 us
-pos = (4.5, 7.80775)
-Physics: 1 us
-Render: 256 us
-pos = (4.5, 7.93822)
-Physics: 0 us
-Render: 222 us
-pos = (4.5, 8.06597)
-Physics: 1 us
-Render: 308 us
-pos = (4.5, 8.191)
-Physics: 1 us
-Render: 302 us
-pos = (4.5, 8.31331)
-Physics: 1 us
-Render: 281 us
-pos = (4.5, 8.43289)
-Physics: 1 us
-Render: 296 us
-pos = (4.5, 8.54975)
-Physics: 1 us
-Render: 293 us
-pos = (4.5, 8.66389)
-Physics: 1 us
-Render: 278 us
-pos = (4.5, 8.77531)
-Physics: 1 us
-Render: 275 us
-pos = (4.5, 8.884)
-Physics: 1 us
-Render: 273 us
-pos = (4.5, 8.98997)
-Physics: 1 us
-Render: 265 us
-pos = (4.5, 9.09322)
-Physics: 1 us
-Render: 245 us
-pos = (4.5, 9.19375)
-Physics: 1 us
-Render: 259 us
-pos = (4.5, 9.29156)
-Physics: 1 us
-Render: 265 us
-pos = (4.5, 9.38664)
-Physics: 0 us
-Render: 235 us
-pos = (4.5, 9.479)
-Physics: 1 us
-Render: 228 us
-pos = (4.5, 9.56864)
-Physics: 1 us
-Render: 256 us
-pos = (4.5, 9.65556)
-Physics: 1 us
-Render: 263 us
-pos = (4.5, 9.73975)
-Physics: 1 us
-Render: 256 us
-pos = (4.5, 9.82122)
-Physics: 1 us
-Render: 239 us
-pos = (4.5, 9.89997)
-Physics: 1 us
-Render: 230 us
-pos = (4.5, 9.976)
-Physics: 1 us
-Render: 269 us
-pos = (4.5, 10.0493)
-Physics: 1 us
-Render: 265 us
-pos = (4.5, 10.1199)
-Physics: 0 us
-Render: 246 us
-pos = (4.5, 10.1877)
-Physics: 1 us
-Render: 246 us
-pos = (4.5, 10.2529)
-Physics: 0 us
-Render: 235 us
-pos = (4.5, 10.3153)
-Physics: 1 us
-Render: 270 us
-pos = (4.5, 10.375)
-Physics: 0 us
-Render: 232 us
-pos = (4.5, 10.432)
-Physics: 0 us
-Render: 225 us
-pos = (4.5, 10.4862)
-Physics: 0 us
-Render: 218 us
-pos = (4.5, 10.5377)
-Physics: 1 us
-Render: 255 us
-pos = (4.5, 10.5866)
-Physics: 1 us
-Render: 224 us
-pos = (4.5, 10.6326)
-Physics: 1 us
-Render: 262 us
-pos = (4.5, 10.676)
-Physics: 0 us
-Render: 236 us
-pos = (4.5, 10.7166)
-Physics: 0 us
-Render: 277 us
-pos = (4.5, 10.7546)
-Physics: 0 us
-Render: 229 us
-pos = (4.5, 10.7897)
-Physics: 1 us
-Render: 227 us
-pos = (4.5, 10.8222)
-Physics: 0 us
-Render: 233 us
-pos = (4.5, 10.852)
-Physics: 1 us
-Render: 285 us
-pos = (4.5, 10.879)
-Physics: 1 us
-Render: 292 us
-pos = (4.5, 10.9033)
-Physics: 1 us
-Render: 230 us
-pos = (4.5, 10.9249)
-Physics: 0 us
-Render: 232 us
-pos = (4.5, 10.9437)
-Physics: 1 us
-Render: 233 us
-pos = (4.5, 10.9599)
-Physics: 0 us
-Render: 231 us
-pos = (4.5, 10.9733)
-Physics: 0 us
-Render: 239 us
-pos = (4.5, 10.984)
-Physics: 1 us
-Render: 260 us
-pos = (4.5, 10.992)
-Physics: 1 us
-Render: 264 us
-pos = (4.5, 10.9972)
-Physics: 0 us
-Render: 222 us
-pos = (4.5, 10.9997)
-Physics: 0 us
-Render: 215 us
-pos = (4.5, 10.9996)
-Physics: 0 us
-Render: 230 us
-pos = (4.5, 10.9966)
-Physics: 1 us
-Render: 231 us
-pos = (4.5, 10.991)
-Physics: 0 us
-Render: 231 us
-pos = (4.5, 10.9826)
-Physics: 1 us
-Render: 248 us
-pos = (4.5, 10.9716)
-Physics: 1 us
-Render: 253 us
-pos = (4.5, 10.9578)
-Physics: 1 us
-Render: 250 us
-pos = (4.5, 10.9412)
-Physics: 0 us
-Render: 225 us
-pos = (4.5, 10.922)
-Physics: 0 us
-Render: 239 us
-pos = (4.5, 10.9)
-Physics: 0 us
-Render: 227 us
-pos = (4.5, 10.8753)
-Physics: 0 us
-Render: 224 us
-pos = (4.5, 10.8479)
-Physics: 1 us
-Render: 232 us
-pos = (4.5, 10.8178)
-Physics: 0 us
-Render: 263 us
-pos = (4.5, 10.7849)
-Physics: 1 us
-Render: 250 us
-pos = (4.5, 10.7493)
-Physics: 1 us
-Render: 268 us
-pos = (4.5, 10.711)
-Physics: 0 us
-Render: 221 us
-pos = (4.5, 10.67)
-Physics: 1 us
-Render: 220 us
-pos = (4.5, 10.6262)
-Physics: 1 us
-Render: 227 us
-pos = (4.5, 10.5798)
-Physics: 0 us
-Render: 263 us
-pos = (4.5, 10.5306)
-Physics: 1 us
-Render: 222 us
-pos = (4.5, 10.4786)
-Physics: 0 us
-Render: 231 us
-pos = (4.5, 10.424)
-Physics: 1 us
-Render: 261 us
-pos = (4.5, 10.3666)
-Physics: 1 us
-Render: 235 us
-pos = (4.5, 10.3066)
-Physics: 0 us
-Render: 251 us
-pos = (4.5, 10.2438)
-Physics: 0 us
-Render: 239 us
-pos = (4.5, 10.1782)
-Physics: 0 us
-Render: 219 us
-pos = (4.5, 10.11)
-Physics: 0 us
-Render: 231 us
-pos = (4.5, 10.039)
-Physics: 0 us
-Render: 224 us
-pos = (4.5, 9.96531)
-Physics: 0 us
-Render: 222 us
-pos = (4.5, 9.88889)
-Physics: 0 us
-Render: 231 us
-pos = (4.5, 9.80975)
-Physics: 1 us
-Render: 264 us
-pos = (4.5, 9.72789)
-Physics: 0 us
-Render: 227 us
-pos = (4.5, 9.64331)
-Physics: 1 us
-Render: 255 us
-pos = (4.5, 9.556)
-Physics: 1 us
-Render: 271 us
-pos = (4.5, 9.46597)
-Physics: 1 us
-Render: 233 us
-pos = (4.5, 9.37322)
-Physics: 0 us
-Render: 242 us
-pos = (4.5, 9.27775)
-Physics: 0 us
-Render: 222 us
-pos = (4.5, 9.17956)
-Physics: 1 us
-Render: 251 us
-pos = (4.5, 9.07864)
-Physics: 0 us
-Render: 225 us
-pos = (4.5, 8.975)
-Physics: 0 us
-Render: 221 us
-pos = (4.5, 8.86864)
-Physics: 0 us
-Render: 246 us
-pos = (4.5, 8.75956)
-Physics: 1 us
-Render: 243 us
-pos = (4.5, 8.64775)
-Physics: 1 us
-Render: 261 us
-pos = (4.5, 8.53322)
-Physics: 0 us
-Render: 220 us
-pos = (4.5, 8.41597)
-Physics: 0 us
-Render: 223 us
-pos = (4.5, 8.296)
-Physics: 1 us
-Render: 261 us
-pos = (4.5, 8.17331)
-Physics: 0 us
-Render: 222 us
-pos = (4.5, 8.04789)
-Physics: 0 us
-Render: 235 us
-pos = (4.5, 7.91975)
-Physics: 0 us
-Render: 222 us
-pos = (4.5, 7.78889)
-Physics: 0 us
-Render: 229 us
-pos = (4.5, 7.65531)
-Physics: 0 us
-Render: 255 us
-pos = (4.5, 7.519)
-Physics: 0 us
-Render: 231 us
-pos = (4.5, 7.37997)
-Physics: 0 us
-Render: 236 us
-pos = (4.5, 7.23822)
-Physics: 1 us
-Render: 241 us
-pos = (4.5, 7.09375)
-Physics: 0 us
-Render: 224 us
-pos = (4.5, 6.94656)
-Physics: 0 us
-Render: 226 us
-pos = (4.5, 6.79664)
-Physics: 1 us
-Render: 272 us
-pos = (4.5, 6.644)
-Physics: 0 us
-Render: 228 us
-pos = (4.5, 6.48864)
-Physics: 1 us
-Render: 265 us
-pos = (4.5, 6.33056)
-Physics: 0 us
-Render: 239 us
-pos = (4.5, 6.16975)
-Physics: 1 us
-Render: 261 us
-pos = (4.5, 6.00622)
-Physics: 1 us
-Render: 259 us
-pos = (4.5, 5.83997)
-Physics: 0 us
-Render: 222 us
-pos = (4.5, 5.671)
-Physics: 0 us
-Render: 227 us
-pos = (4.5, 5.49931)
-Physics: 1 us
-Render: 255 us
-pos = (4.5, 5.32489)
-Physics: 1 us
-Render: 266 us
-pos = (4.5, 5.14775)
-Physics: 0 us
-Render: 228 us
-pos = (4.5, 4.96789)
-Physics: 1 us
-Render: 247 us
-pos = (4.5, 4.78531)
-Physics: 0 us
-Render: 232 us
-pos = (4.5, 4.6)
-Physics: 0 us
-Render: 233 us
-pos = (4.5, 4.41197)
-Physics: 1 us
-Render: 259 us
-pos = (4.5, 4.22122)
-Physics: 1 us
-Render: 223 us
-pos = (4.5, 4.02775)
-Physics: 0 us
-Render: 226 us
-pos = (4.5, 3.83156)
-Physics: 1 us
-Render: 256 us
-pos = (4.5, 3.63264)
-Physics: 1 us
-Render: 292 us
-pos = (4.5, 3.431)
-Physics: 0 us
-Render: 221 us
-pos = (4.5, 3.22664)
-Physics: 1 us
-Render: 260 us
-pos = (4.5, 3.01956)
-Physics: 0 us
-Render: 229 us
-pos = (4.5, 2.80975)
-Physics: 0 us
-Render: 231 us
-pos = (4.5, 2.59722)
-Physics: 0 us
-Render: 228 us
-pos = (4.5, 2.38197)
-Physics: 1 us
-Render: 260 us
-pos = (4.5, 2.164)
-Physics: 0 us
-Render: 236 us
-pos = (4.5, 1.94331)
-Physics: 1 us
-Render: 334 us
-pos = (4.5, 1.71989)
-Physics: 0 us
-Render: 214 us
-pos = (4.5, 1.49375)
-Physics: 1 us
-Render: 253 us
-pos = (4.5, 1.26489)
-Physics: 1 us
-Render: 259 us
-pos = (4.5, 1.03331)
-Physics: 2 us
-Render: 223 us
-pos = (4.5, 1.199)
-Physics: 1 us
-Render: 261 us
-pos = (4.5, 1.42864)
-Physics: 1 us
-Render: 258 us
-pos = (4.5, 1.65556)
-Physics: 1 us
-Render: 259 us
-pos = (4.5, 1.87975)
-Physics: 0 us
-Render: 238 us
-pos = (4.5, 2.10122)
-Physics: 0 us
-Render: 232 us
-pos = (4.5, 2.31997)
-Physics: 0 us
-Render: 226 us
-pos = (4.5, 2.536)
-Physics: 1 us
-Render: 261 us
-pos = (4.5, 2.74931)
-Physics: 1 us
-Render: 266 us
-pos = (4.5, 2.95989)
-Physics: 0 us
-Render: 226 us
-pos = (4.5, 3.16775)
-Physics: 1 us
-Render: 267 us
-pos = (4.5, 3.37289)
-Physics: 1 us
-Render: 256 us
-pos = (4.5, 3.57531)
-Physics: 0 us
-Render: 237 us
-pos = (4.5, 3.775)
-Physics: 0 us
-Render: 247 us
-pos = (4.5, 3.97197)
-Physics: 0 us
-Render: 246 us
-pos = (4.5, 4.16622)
-Physics: 1 us
-Render: 222 us
-pos = (4.5, 4.35775)
-Physics: 0 us
-Render: 236 us
-pos = (4.5, 4.54656)
-Physics: 1 us
-Render: 259 us
-pos = (4.5, 4.73264)
-Physics: 1 us
-Render: 242 us
-pos = (4.5, 4.916)
-Physics: 1 us
-Render: 273 us
-pos = (4.5, 5.09664)
-Physics: 0 us
-Render: 237 us
-pos = (4.5, 5.27456)
-Physics: 0 us
-Render: 231 us
-pos = (4.5, 5.44975)
-Physics: 1 us
-Render: 233 us
-pos = (4.5, 5.62222)
-Physics: 0 us
-Render: 265 us
-pos = (4.5, 5.79197)
-Physics: 0 us
-Render: 243 us
-pos = (4.5, 5.959)
-Physics: 1 us
-Render: 236 us
-pos = (4.5, 6.12331)
-Physics: 1 us
-Render: 266 us
-pos = (4.5, 6.28489)
-Physics: 1 us
-Render: 238 us
-pos = (4.5, 6.44375)
-Physics: 1 us
-Render: 261 us
-pos = (4.5, 6.59989)
-Physics: 1 us
-Render: 227 us
-pos = (4.5, 6.75331)
-Physics: 0 us
-Render: 222 us
-pos = (4.5, 6.904)
-Physics: 1 us
-Render: 262 us
-pos = (4.5, 7.05197)
-Physics: 0 us
-Render: 233 us
-pos = (4.5, 7.19722)
-Physics: 1 us
-Render: 223 us
-pos = (4.5, 7.33975)
-Physics: 1 us
-Render: 260 us
-pos = (4.5, 7.47956)
-Physics: 0 us
-Render: 227 us
-pos = (4.5, 7.61664)
-Physics: 0 us
-Render: 223 us
-pos = (4.5, 7.751)
-Physics: 0 us
-Render: 229 us
-pos = (4.5, 7.88264)
-Physics: 0 us
-Render: 225 us
-pos = (4.5, 8.01156)
-Physics: 1 us
-Render: 258 us
-pos = (4.5, 8.13775)
-Physics: 1 us
-Render: 266 us
-pos = (4.5, 8.26122)
-Physics: 1 us
-Render: 247 us
-pos = (4.5, 8.38197)
-Physics: 1 us
-Render: 263 us
-pos = (4.5, 8.5)
-Physics: 1 us
-Render: 264 us
-pos = (4.5, 8.61531)
-Physics: 0 us
-Render: 225 us
-pos = (4.5, 8.72789)
-Physics: 1 us
-Render: 243 us
-pos = (4.5, 8.83775)
-Physics: 1 us
-Render: 238 us
-pos = (4.5, 8.94489)
-Physics: 1 us
-Render: 260 us
-pos = (4.5, 9.04931)
-Physics: 1 us
-Render: 226 us
-pos = (4.5, 9.151)
-Physics: 1 us
-Render: 239 us
-pos = (4.5, 9.24997)
-Physics: 0 us
-Render: 231 us
-pos = (4.5, 9.34622)
-Physics: 1 us
-Render: 227 us
-pos = (4.5, 9.43975)
-Physics: 0 us
-Render: 241 us
-pos = (4.5, 9.53056)
-Physics: 0 us
-Render: 239 us
-pos = (4.5, 9.61864)
-Physics: 0 us
-Render: 241 us
-pos = (4.5, 9.704)
-Physics: 0 us
-Render: 241 us
-pos = (4.5, 9.78664)
-Physics: 1 us
-Render: 260 us
-pos = (4.5, 9.86656)
-Physics: 0 us
-Render: 228 us
-pos = (4.5, 9.94375)
-Physics: 1 us
-Render: 265 us
-pos = (4.5, 10.0182)
-Physics: 0 us
-Render: 224 us
-pos = (4.5, 10.09)
-Physics: 0 us
-Render: 284 us
-pos = (4.5, 10.159)
-Physics: 0 us
-Render: 238 us
-pos = (4.5, 10.2253)
-Physics: 1 us
-Render: 296 us
-pos = (4.5, 10.2889)
-Physics: 1 us
-Render: 290 us
-pos = (4.5, 10.3497)
-Physics: 1 us
-Render: 265 us
-pos = (4.5, 10.4079)
-Physics: 1 us
-Render: 279 us
-pos = (4.5, 10.4633)
-Physics: 1 us
-Render: 272 us
-pos = (4.5, 10.516)
-Physics: 1 us
-Render: 256 us
-pos = (4.5, 10.566)
-Physics: 1 us
-Render: 262 us
-pos = (4.5, 10.6132)
-Physics: 1 us
-Render: 242 us
-pos = (4.5, 10.6577)
-Physics: 1 us
-Render: 280 us
-pos = (4.5, 10.6996)
-Physics: 1 us
-Render: 271 us
-pos = (4.5, 10.7386)
-Physics: 1 us
-Render: 271 us
-pos = (4.5, 10.775)
-Physics: 0 us
-Render: 238 us
-pos = (4.5, 10.8086)
-Physics: 1 us
-Render: 266 us
-pos = (4.5, 10.8396)
-Physics: 1 us
-Render: 233 us
-pos = (4.5, 10.8677)
-Physics: 0 us
-Render: 241 us
-pos = (4.5, 10.8932)
-Physics: 1 us
-Render: 246 us
-pos = (4.5, 10.916)
-Physics: 1 us
-Render: 238 us
-pos = (4.5, 10.936)
-Physics: 1 us
-Render: 269 us
-pos = (4.5, 10.9533)
-Physics: 1 us
-Render: 257 us
-pos = (4.5, 10.9679)
-Physics: 0 us
-Render: 228 us
-pos = (4.5, 10.9797)
-Physics: 1 us
-Render: 255 us
-pos = (4.5, 10.9889)
-Physics: 1 us
-Render: 278 us
-pos = (4.5, 10.9953)
-Physics: 0 us
-Render: 240 us
-pos = (4.5, 10.999)
-Physics: 0 us
-Render: 236 us
-pos = (4.5, 11)
-Physics: 1 us
-Render: 285 us
-pos = (4.5, 10.9982)
-Physics: 1 us
-Render: 234 us
-pos = (4.5, 10.9938)
-Physics: 1 us
-Render: 258 us
-pos = (4.5, 10.9866)
-Physics: 1 us
-Render: 257 us
-pos = (4.5, 10.9766)
-Physics: 1 us
-Render: 259 us
-pos = (4.5, 10.964)
-Physics: 0 us
-Render: 233 us
-pos = (4.5, 10.9486)
-Physics: 0 us
-Render: 282 us
-pos = (4.5, 10.9306)
-Physics: 0 us
-Render: 247 us
-pos = (4.5, 10.9098)
-Physics: 1 us
-Render: 263 us
-pos = (4.5, 10.8862)
-Physics: 1 us
-Render: 263 us
-pos = (4.5, 10.86)
-Physics: 1 us
-Render: 237 us
-pos = (4.5, 10.831)
-Physics: 0 us
-Render: 227 us
-pos = (4.5, 10.7993)
-Physics: 0 us
-Render: 231 us
-pos = (4.5, 10.7649)
-Physics: 1 us
-Render: 265 us
-pos = (4.5, 10.7278)
-Physics: 0 us
-Render: 234 us
-pos = (4.5, 10.6879)
-Physics: 0 us
-Render: 228 us
-pos = (4.5, 10.6453)
-Physics: 1 us
-Render: 268 us
-pos = (4.5, 10.6)
-Physics: 1 us
-Render: 245 us
-pos = (4.5, 10.552)
-Physics: 0 us
-Render: 229 us
-pos = (4.5, 10.5012)
-Physics: 0 us
-Render: 228 us
-pos = (4.5, 10.4478)
-Physics: 1 us
-Render: 238 us
-pos = (4.5, 10.3916)
-Physics: 0 us
-Render: 225 us
-pos = (4.5, 10.3326)
-Physics: 1 us
-Render: 263 us
-pos = (4.5, 10.271)
-Physics: 0 us
-Render: 240 us
-pos = (4.5, 10.2066)
-Physics: 0 us
-Render: 229 us
-pos = (4.5, 10.1396)
-Physics: 0 us
-Render: 226 us
-pos = (4.5, 10.0698)
-Physics: 1 us
-Render: 279 us
-pos = (4.5, 9.99722)
-Physics: 1 us
-Render: 274 us
-pos = (4.5, 9.92197)
-Physics: 1 us
-Render: 256 us
-pos = (4.5, 9.844)
-Physics: 1 us
-Render: 251 us
-pos = (4.5, 9.76331)
-Physics: 1 us
-Render: 259 us
-pos = (4.5, 9.67989)
-Physics: 1 us
-Render: 258 us
-pos = (4.5, 9.59375)
-Physics: 1 us
-Render: 285 us
-pos = (4.5, 9.50489)
-Physics: 0 us
-Render: 232 us
-pos = (4.5, 9.41331)
-Physics: 1 us
-Render: 258 us
-pos = (4.5, 9.319)
-Physics: 1 us
-Render: 273 us
-pos = (4.5, 9.22197)
-Physics: 1 us
-Render: 278 us
-pos = (4.5, 9.12222)
-Physics: 1 us
-Render: 266 us
-pos = (4.5, 9.01975)
-Physics: 0 us
-Render: 266 us
-pos = (4.5, 8.91456)
-Physics: 0 us
-Render: 222 us
-pos = (4.5, 8.80664)
-Physics: 0 us
-Render: 227 us
-pos = (4.5, 8.696)
-Physics: 1 us
-Render: 346 us
-pos = (4.5, 8.58264)
-Physics: 1 us
-Render: 272 us
-pos = (4.5, 8.46656)
-Physics: 1 us
-Render: 283 us
-pos = (4.5, 8.34775)
-Physics: 1 us
-Render: 272 us
-pos = (4.5, 8.22622)
-Physics: 1 us
-Render: 270 us
-pos = (4.5, 8.10197)
-Physics: 0 us
-Render: 228 us
-pos = (4.5, 7.975)
-Physics: 1 us
-Render: 230 us
-pos = (4.5, 7.84531)
-Physics: 1 us
-Render: 248 us
-pos = (4.5, 7.71289)
-Physics: 1 us
-Render: 272 us
-pos = (4.5, 7.57775)
-Physics: 0 us
-Render: 234 us
-pos = (4.5, 7.43989)
-Physics: 0 us
-Render: 231 us
-pos = (4.5, 7.29931)
-Physics: 0 us
-Render: 217 us
-pos = (4.5, 7.156)
-Physics: 1 us
-Render: 234 us
-pos = (4.5, 7.00997)
-Physics: 0 us
-Render: 232 us
-pos = (4.5, 6.86122)
-Physics: 0 us
-Render: 224 us
-pos = (4.5, 6.70975)
-Physics: 0 us
-Render: 235 us
-pos = (4.5, 6.55556)
-Physics: 1 us
-Render: 276 us
-pos = (4.5, 6.39864)
-Physics: 0 us
-Render: 247 us
-pos = (4.5, 6.239)
-Physics: 1 us
-Render: 281 us
-pos = (4.5, 6.07664)
-Physics: 0 us
-Render: 245 us
-pos = (4.5, 5.91156)
-Physics: 0 us
-Render: 248 us
-pos = (4.5, 5.74375)
-Physics: 0 us
-Render: 247 us
-pos = (4.5, 5.57322)
-Physics: 1 us
-Render: 268 us
-pos = (4.5, 5.39997)
-Physics: 1 us
-Render: 245 us
-pos = (4.5, 5.224)
-Physics: 1 us
-Render: 231 us
-pos = (4.5, 5.04531)
-Physics: 0 us
-Render: 244 us
-pos = (4.5, 4.86389)
-Physics: 0 us
-Render: 243 us
-pos = (4.5, 4.67975)
-Physics: 1 us
-Render: 240 us
-pos = (4.5, 4.49289)
-Physics: 1 us
-Render: 243 us
-pos = (4.5, 4.30331)
-Physics: 1 us
-Render: 251 us
-pos = (4.5, 4.111)
-Physics: 1 us
-Render: 263 us
-pos = (4.5, 3.91597)
-Physics: 1 us
-Render: 253 us
-pos = (4.5, 3.71822)
-Physics: 1 us
-Render: 249 us
-pos = (4.5, 3.51775)
-Physics: 1 us
-Render: 237 us
-pos = (4.5, 3.31456)
-Physics: 1 us
-Render: 254 us
-pos = (4.5, 3.10864)
-Physics: 1 us
-Render: 237 us
-pos = (4.5, 2.9)
-Physics: 1 us
-Render: 254 us
-pos = (4.5, 2.68864)
-Physics: 1 us
-Render: 238 us
-pos = (4.5, 2.47456)
-Physics: 1 us
-Render: 249 us
-pos = (4.5, 2.25775)
-Physics: 1 us
-Render: 239 us
-pos = (4.5, 2.03822)
-Physics: 1 us
-Render: 240 us
-pos = (4.5, 1.81597)
-Physics: 1 us
-Render: 258 us
-pos = (4.5, 1.591)
-Physics: 1 us
-Render: 233 us
-pos = (4.5, 1.36331)
-Physics: 1 us
-Render: 251 us
-pos = (4.5, 1.13289)
-Physics: 2 us
-Render: 238 us
-pos = (4.5, 1.09975)
-Physics: 1 us
-Render: 239 us
-pos = (4.5, 1.33056)
-Physics: 1 us
-Render: 240 us
-pos = (4.5, 1.55864)
-Physics: 1 us
-Render: 245 us
-pos = (4.5, 1.784)
-Physics: 16 us
-Render: 235 us
-pos = (4.5, 2.00664)
-Physics: 16 us
-Render: 235 us
-pos = (4.5, 2.22656)
-Physics: 1 us
-Render: 242 us
-pos = (4.5, 2.44375)
-Physics: 1 us
-Render: 251 us
-pos = (4.5, 2.65822)
-Physics: 1 us
-Render: 262 us
-pos = (4.5, 2.86997)
-Physics: 1 us
-Render: 238 us
-pos = (4.5, 3.079)
-Physics: 1 us
-Render: 232 us
-pos = (4.5, 3.28531)
-Physics: 0 us
-Render: 275 us
-pos = (4.5, 3.48889)
-Physics: 1 us
-Render: 264 us
-pos = (4.5, 3.68975)
-Physics: 1 us
-Render: 265 us
-pos = (4.5, 3.88789)
-Physics: 1 us
-Render: 264 us
-pos = (4.5, 4.08331)
-Physics: 1 us
-Render: 259 us
-pos = (4.5, 4.276)
-Physics: 1 us
-Render: 259 us
-pos = (4.5, 4.46597)
-Physics: 1 us
-Render: 251 us
-pos = (4.5, 4.65322)
-Physics: 1 us
-Render: 241 us
-pos = (4.5, 4.83775)
-Physics: 1 us
-Render: 237 us
-pos = (4.5, 5.01956)
-Physics: 0 us
-Render: 233 us
-pos = (4.5, 5.19864)
-Physics: 1 us
-Render: 237 us
-pos = (4.5, 5.375)
-Physics: 0 us
-Render: 232 us
-pos = (4.5, 5.54864)
-Physics: 1 us
-Render: 248 us
-pos = (4.5, 5.71956)
-Physics: 1 us
-Render: 239 us
-pos = (4.5, 5.88775)
-Physics: 1 us
-Render: 238 us
-pos = (4.5, 6.05322)
-Physics: 1 us
-Render: 254 us
-pos = (4.5, 6.21597)
-Physics: 1 us
-Render: 242 us
-pos = (4.5, 6.376)
-Physics: 1 us
-Render: 240 us
-pos = (4.5, 6.53331)
-Physics: 1 us
-Render: 243 us
-pos = (4.5, 6.68789)
-Physics: 0 us
-Render: 248 us
-pos = (4.5, 6.83975)
-Physics: 1 us
-Render: 245 us
-pos = (4.5, 6.98889)
-Physics: 0 us
-Render: 237 us
-pos = (4.5, 7.13531)
-Physics: 1 us
-Render: 259 us
-pos = (4.5, 7.279)
-Physics: 1 us
-Render: 238 us
-pos = (4.5, 7.41997)
-Physics: 1 us
-Render: 253 us
-pos = (4.5, 7.55822)
-Physics: 1 us
-Render: 292 us
-pos = (4.5, 7.69375)
-Physics: 1 us
-Render: 272 us
-pos = (4.5, 7.82656)
-Physics: 1 us
-Render: 246 us
-pos = (4.5, 7.95664)
-Physics: 1 us
-Render: 242 us
-pos = (4.5, 8.084)
-Physics: 1 us
-Render: 267 us
-pos = (4.5, 8.20864)
-Physics: 1 us
-Render: 261 us
-pos = (4.5, 8.33056)
-Physics: 1 us
-Render: 241 us
-pos = (4.5, 8.44975)
-Physics: 1 us
-Render: 240 us
-pos = (4.5, 8.56622)
-Physics: 1 us
-Render: 245 us
-pos = (4.5, 8.67997)
-Physics: 16 us
-Render: 230 us
-pos = (4.5, 8.791)
-Physics: 1 us
-Render: 255 us
-pos = (4.5, 8.89931)
-Physics: 1 us
-Render: 260 us
-pos = (4.5, 9.00489)
-Physics: 1 us
-Render: 266 us
-pos = (4.5, 9.10775)
-Physics: 1 us
-Render: 238 us
-pos = (4.5, 9.20789)
-Physics: 0 us
-Render: 221 us
-pos = (4.5, 9.30531)
-Physics: 1 us
-Render: 265 us
+Stuck ball at (2.21006, 9.40744)
+Stuck ball at (2.59731, 8.52239)
+Stuck ball at (2.10306, 9.39009)
+Stuck ball at (2.05659, 9.51303)
+Stuck ball at (2.56825, 8.55351)
+Stuck ball at (6.45683, 9.51324)
+Stuck ball at (2.1535, 9.37991)
+Stuck ball at (6.44741, 9.45201)
+Stuck ball at (6.28235, 9.38812)
+Stuck ball at (1.98724, 9.47999)
+Stuck ball at (6.46923, 9.4712)
+Stuck ball at (2.22904, 9.38865)
+Stuck ball at (2.11023, 9.40513)
+Stuck ball at (6.48851, 9.46913)
+Stuck ball at (6.45747, 9.46261)
+Stuck ball at (6.43411, 9.39507)
+Stuck ball at (6.44043, 9.43592)
+Stuck ball at (2.16861, 9.40126)
+Stuck ball at (2.53238, 9.12281)
+Stuck ball at (2.16596, 9.39857)
+Stuck ball at (2.55344, 8.53805)
+Stuck ball at (1.94284, 10.5664)
+Stuck ball at (6.35845, 9.40502)
+Stuck ball at (5.99451, 8.56783)
+Stuck ball at (6.46065, 9.4903)
+Stuck ball at (2.54779, 8.57784)
+Stuck ball at (6.38532, 9.40882)
+Stuck ball at (6.43164, 9.49906)
+Stuck ball at (6.37712, 9.44493)
+Stuck ball at (6.47133, 9.44778)
+Stuck ball at (2.51838, 8.5604)
+Stuck ball at (2.10002, 9.41162)
+Stuck ball at (6.47768, 9.48899)
+Stuck ball at (1.98777, 9.478)
+Stuck ball at (2.59175, 9.0989)
+Stuck ball at (6.45413, 9.97117)
+Stuck ball at (6.50523, 9.49618)
+Stuck ball at (6.43473, 9.44693)
+Stuck ball at (2.16568, 9.41583)
+Stuck ball at (5.90778, 8.55008)
+Stuck ball at (2.09604, 9.46693)
+Stuck ball at (2.56711, 8.55906)
+Stuck ball at (6.53112, 10.5662)
+Stuck ball at (6.43439, 9.40437)
+Stuck ball at (2.67007, 8.7278)
+Stuck ball at (2.01666, 9.52689)
+Stuck ball at (2.54796, 8.56976)
+Stuck ball at (1.9521, 10.5712)
+Stuck ball at (6.29175, 9.41647)
+Stuck ball at (2.06165, 9.44707)
+Stuck ball at (5.82624, 9.09528)
+Stuck ball at (6.27531, 9.40979)
+Stuck ball at (1.99872, 9.48783)
+Stuck ball at (2.62386, 8.50873)
+Stuck ball at (2.54983, 8.5446)
+Stuck ball at (5.93793, 8.55653)
+Stuck ball at (6.51918, 9.47383)
+Stuck ball at (2.08422, 9.38441)
+Stuck ball at (6.27597, 9.41535)
+Stuck ball at (2.23579, 9.42267)
+Stuck ball at (6.29701, 9.39751)
+Stuck ball at (2.55625, 8.5603)
+Stuck ball at (6.46985, 9.5254)
+Stuck ball at (2.62599, 8.51528)
+Stuck ball at (6.52238, 9.52092)
+Stuck ball at (2.2017, 9.40668)
+Stuck ball at (2.1782, 9.40423)
+Stuck ball at (2.24347, 9.42735)
+Stuck ball at (2.54991, 8.54824)
+Stuck ball at (6.35029, 9.41535)
+Stuck ball at (1.99215, 9.49243)
+Stuck ball at (6.48653, 9.45841)
+Stuck ball at (5.99001, 8.5666)
+Stuck ball at (2.01923, 9.52336)
+Stuck ball at (2.22218, 9.38923)
+Stuck ball at (5.94026, 8.5492)
+Stuck ball at (2.5475, 8.54917)
+Stuck ball at (2.06955, 9.4662)
+Stuck ball at (2.57007, 8.5298)
+Stuck ball at (6.34125, 9.38733)
+Stuck ball at (6.44327, 9.4678)
+Stuck ball at (6.39968, 9.39159)
+Stuck ball at (2.49851, 8.59072)
+Stuck ball at (1.95992, 9.53512)
+Stuck ball at (6.61283, 10.5844)
+Stuck ball at (2.08442, 9.46677)
+Stuck ball at (6.47956, 9.48279)
+Stuck ball at (5.97704, 8.58061)
+Stuck ball at (2.00822, 9.45339)
+Stuck ball at (6.5648, 10.5703)
+Stuck ball at (6.4852, 9.51053)
+Stuck ball at (2.59042, 8.52783)
+Stuck ball at (5.94269, 9.11402)
+Stuck ball at (2.00095, 9.50875)
+Stuck ball at (6.30339, 9.40213)
+Stuck ball at (6.5148, 9.54986)
+Stuck ball at (6.49069, 9.46357)
+Stuck ball at (1.98472, 9.53978)
+Stuck ball at (2.09777, 9.46238)
+Stuck ball at (6.59203, 10.5795)
+Stuck ball at (6.54769, 10.5682)
+Stuck ball at (2.10542, 9.43224)
+Stuck ball at (6.45832, 9.48903)
+Stuck ball at (2.08084, 9.40486)
+Stuck ball at (6.40527, 9.39567)
+Stuck ball at (6.42079, 9.39525)
+Stuck ball at (2.00404, 9.55029)
+Stuck ball at (2.02748, 9.52899)
+Stuck ball at (6.451, 9.45461)
+Stuck ball at (2.03578, 9.48768)
+Stuck ball at (1.96976, 9.52257)
+Stuck ball at (2.55602, 8.5601)
+Stuck ball at (6.56827, 10.7712)
+Stuck ball at (5.87602, 9.09726)
+Stuck ball at (2.1118, 9.42365)
+Stuck ball at (6.4285, 9.4507)
+Stuck ball at (6.39326, 9.42308)
+Stuck ball at (2.09865, 9.47729)
+Stuck ball at (2.15215, 9.36709)
+Stuck ball at (2.19833, 9.3939)
+Stuck ball at (2.06109, 9.47367)
+Stuck ball at (5.92199, 8.55969)
+Stuck ball at (2.12809, 9.96656)
+Stuck ball at (6.52583, 9.51987)
+Stuck ball at (2.12692, 9.4153)
+Stuck ball at (2.19244, 9.3955)
+Stuck ball at (1.94106, 9.49393)
+Stuck ball at (2.10844, 9.45522)
+Stuck ball at (2.18107, 9.38569)
+Stuck ball at (6.5135, 10.5627)
+Stuck ball at (2.08627, 9.43813)
+Stuck ball at (2.06316, 9.47304)
+Stuck ball at (2.13711, 9.37508)
+Stuck ball at (6.47495, 9.4793)
+Stuck ball at (2.2128, 9.37445)
+Stuck ball at (6.54145, 9.48627)
+Stuck ball at (2.23507, 9.38127)
+Stuck ball at (5.98802, 8.83516)
+Stuck ball at (5.92454, 8.56269)
+Stuck ball at (2.08566, 9.38727)
+Stuck ball at (5.91776, 8.54415)
+Stuck ball at (2.09895, 9.45648)
+Stuck ball at (2.06655, 9.44841)
+Stuck ball at (2.6104, 8.5335)
+Stuck ball at (5.96677, 8.55259)
+Stuck ball at (6.45351, 9.45482)
+Stuck ball at (2.14146, 9.41388)
+Stuck ball at (2.11277, 9.45608)
+Stuck ball at (5.99379, 9.12307)
+Stuck ball at (2.63056, 8.51436)
+Stuck ball at (2.10146, 9.42663)
+Stuck ball at (2.0875, 9.42803)
+Stuck ball at (2.02122, 9.48315)
+Stuck ball at (6.4765, 9.45703)
+Stuck ball at (6.47534, 9.46701)
+Stuck ball at (6.42657, 9.41089)
+Stuck ball at (2.4982, 8.594)
+Stuck ball at (5.96045, 8.54706)
+Stuck ball at (6.34838, 9.97118)
+Stuck ball at (6.49422, 9.51559)
+Stuck ball at (6.54525, 9.51482)
+Stuck ball at (2.63471, 8.50658)
+Stuck ball at (2.18646, 9.36749)
+Stuck ball at (6.28039, 9.39546)
+Stuck ball at (6.28145, 9.37605)
+Stuck ball at (6.43798, 9.44286)
+Stuck ball at (2.05876, 9.49098)
+Stuck ball at (6.4129, 9.45907)
+Stuck ball at (2.14333, 9.97787)
+Stuck ball at (2.11376, 9.40836)
+Stuck ball at (6.33389, 9.97668)
+Stuck ball at (6.45287, 9.39668)
+Stuck ball at (6.41943, 9.48165)
+Stuck ball at (1.99423, 9.50031)
+Stuck ball at (6.48936, 9.45613)
+Stuck ball at (2.07163, 9.50118)
+Stuck ball at (5.93438, 9.11099)
+Stuck ball at (6.27031, 9.41353)
+Stuck ball at (6.41899, 9.43064)
+Stuck ball at (6.56393, 10.7724)
+Stuck ball at (6.48378, 9.51285)
+Stuck ball at (2.57074, 8.53412)
+Stuck ball at (2.15998, 9.38779)
+Stuck ball at (2.04253, 9.50905)
+Stuck ball at (6.39593, 9.39041)
+Stuck ball at (2.61308, 8.51789)
+Stuck ball at (6.38848, 9.39833)
+Stuck ball at (6.53232, 9.47769)
+Stuck ball at (2.00908, 9.49612)
+Stuck ball at (2.16514, 9.97726)
+Stuck ball at (5.90642, 8.54318)
+Stuck ball at (2.52121, 8.57189)
+Stuck ball at (6.46449, 9.44124)
+Stuck ball at (2.11791, 9.41294)
+Stuck ball at (1.98096, 9.53094)
+Stuck ball at (1.99152, 9.48039)
+Stuck ball at (2.18762, 9.39024)
+Stuck ball at (2.55538, 9.11049)
+Stuck ball at (2.25498, 9.38845)
+Stuck ball at (6.48114, 9.53556)
+Stuck ball at (2.07822, 9.4383)
+Stuck ball at (2.61313, 8.51918)
+Stuck ball at (6.4017, 9.46618)
+Stuck ball at (2.03176, 9.49887)
+Stuck ball at (5.90841, 8.51929)
+Stuck ball at (6.49502, 9.49899)
+Stuck ball at (1.25093, 8.72423)
+Stuck ball at (6.47425, 9.52185)
+Stuck ball at (2.57315, 8.54828)
+Stuck ball at (5.95958, 8.56172)
+Stuck ball at (6.00382, 8.58866)
+Stuck ball at (6.41049, 9.453)
+Stuck ball at (6.00429, 8.5979)
+Stuck ball at (6.54819, 9.48439)
+Stuck ball at (6.32131, 9.40951)
+Stuck ball at (2.61488, 8.52906)
+Stuck ball at (5.97866, 8.57818)
+Stuck ball at (5.72061, 9.53009)
+Stuck ball at (1.99476, 9.47141)
+Stuck ball at (6.45307, 9.45428)
+Stuck ball at (6.45179, 9.97117)
+Stuck ball at (6.32946, 9.41317)
+Stuck ball at (6.44553, 9.50119)
+Stuck ball at (2.07656, 9.46668)
+Stuck ball at (2.1408, 9.40885)
+Stuck ball at (6.43831, 9.44424)
+Stuck ball at (5.81464, 9.09369)
+Stuck ball at (2.14496, 9.39242)
+Stuck ball at (6.35053, 9.97691)
+Stuck ball at (1.94557, 9.48793)
+Stuck ball at (2.12275, 9.38006)
+Stuck ball at (5.89466, 8.52148)
+Stuck ball at (1.96535, 9.52787)
+Stuck ball at (1.9812, 9.53061)
+Stuck ball at (6.35159, 9.38621)
+Stuck ball at (6.43771, 9.48991)
+Stuck ball at (6.39169, 9.43172)
+Stuck ball at (5.90389, 8.53662)
+Stuck ball at (6.35911, 9.41101)
+Stuck ball at (6.48146, 9.53251)
+Stuck ball at (6.42645, 9.40623)
+Stuck ball at (5.95228, 8.56173)
+Stuck ball at (6.3354, 9.40868)
+Stuck ball at (5.99359, 9.12589)
+Stuck ball at (2.131, 9.968)
+Stuck ball at (2.11314, 9.45465)
+Stuck ball at (6.44329, 9.47138)
+Stuck ball at (2.02859, 9.49173)
+Stuck ball at (6.4027, 9.38642)
+Stuck ball at (2.63575, 8.7348)
+Stuck ball at (1.96427, 9.50704)
+Stuck ball at (6.29271, 9.3974)
+Stuck ball at (2.55739, 8.55592)
+Stuck ball at (5.96996, 8.58848)
+Stuck ball at (6.49569, 9.51748)
+Stuck ball at (6.40715, 9.42908)
+Stuck ball at (5.91194, 8.53343)
+Stuck ball at (2.15596, 9.39675)
+Stuck ball at (6.49296, 9.53221)
+Stuck ball at (6.61658, 10.5849)
+Stuck ball at (6.54937, 9.48502)
+Stuck ball at (2.17956, 9.3776)
+Stuck ball at (6.27089, 9.40861)
+Stuck ball at (1.991, 9.55408)
+Stuck ball at (2.10033, 9.43385)
+Stuck ball at (6.50558, 10.5653)
+Stuck ball at (2.07176, 9.46639)
+Stuck ball at (5.93758, 9.11148)
+Stuck ball at (6.40564, 9.49339)
+Stuck ball at (6.47832, 9.97211)
+Stuck ball at (2.5583, 8.55714)
+Stuck ball at (2.16759, 9.41081)
+Stuck ball at (2.16707, 9.39986)
+Stuck ball at (6.50817, 10.5651)
+Stuck ball at (6.34893, 9.41838)
+Stuck ball at (6.57711, 10.5728)
+Stuck ball at (6.28362, 9.38441)
+Stuck ball at (5.92522, 8.53918)
+Stuck ball at (6.36634, 9.97237)
+Stuck ball at (6.49195, 9.47933)
+Stuck ball at (6.41853, 9.41569)
+Stuck ball at (2.55604, 8.56372)
+Stuck ball at (6.4552, 9.47646)
+Stuck ball at (6.33268, 9.3884)
+Stuck ball at (6.52594, 9.50316)
+Stuck ball at (1.99371, 9.50437)
+Stuck ball at (6.48465, 9.5243)
+Stuck ball at (2.61134, 8.51777)
+Stuck ball at (6.3912, 9.47007)
+Stuck ball at (2.55295, 9.12055)
+Stuck ball at (6.49089, 9.4653)
+Stuck ball at (6.30222, 9.38947)
+Stuck ball at (6.4684, 9.5046)
+Stuck ball at (5.9798, 8.55716)
+Stuck ball at (6.37034, 9.38263)
+Stuck ball at (6.49119, 9.534)
+Stuck ball at (5.92186, 8.55823)
+Stuck ball at (1.97307, 9.50192)
+Stuck ball at (6.32232, 9.37546)
+Stuck ball at (6.43692, 9.38379)
+Stuck ball at (6.36702, 9.40409)
+Stuck ball at (6.52611, 9.55387)
+Stuck ball at (2.59365, 8.55098)
+Stuck ball at (5.92166, 8.53262)
+Stuck ball at (5.88178, 8.53286)
+Stuck ball at (6.39031, 9.37607)
+Stuck ball at (6.53932, 9.54386)
+Stuck ball at (5.93654, 8.54279)
+Stuck ball at (2.04357, 9.49067)
+Stuck ball at (6.40874, 9.38714)
+Stuck ball at (5.99413, 9.13131)
+Stuck ball at (5.93751, 8.54621)
+Stuck ball at (6.36311, 9.39748)
+Stuck ball at (2.01793, 9.50205)
+Stuck ball at (2.01356, 9.52979)
+Stuck ball at (6.27975, 9.41294)
+Stuck ball at (2.5834, 8.55548)
+Stuck ball at (6.5801, 10.7714)
+Stuck ball at (2.61285, 9.10043)
+Stuck ball at (1.95328, 9.51685)
+Stuck ball at (2.11924, 9.38708)
+Stuck ball at (1.98448, 9.4903)
+Stuck ball at (2.61463, 9.0961)
+Stuck ball at (6.39565, 9.45219)
+Stuck ball at (6.39062, 9.3769)
+Stuck ball at (2.0567, 9.50899)
+Stuck ball at (2.12288, 9.37051)
+Stuck ball at (2.53022, 8.55582)
+Stuck ball at (2.13194, 9.37935)
+Stuck ball at (6.4264, 9.38469)
+Stuck ball at (2.12337, 9.37336)
+Stuck ball at (2.09226, 9.42966)
+Stuck ball at (6.53661, 9.536)
+Stuck ball at (5.98877, 8.56944)
+Stuck ball at (2.12524, 9.37634)
+Stuck ball at (6.42988, 9.96668)
+Stuck ball at (2.1086, 9.39841)
+Stuck ball at (1.99619, 9.47692)
+Stuck ball at (6.42468, 9.38863)
+Stuck ball at (6.42958, 9.48816)
+Stuck ball at (6.46361, 9.47582)
+Stuck ball at (2.1133, 9.97069)
+Stuck ball at (2.07855, 9.46403)
+Stuck ball at (6.47055, 9.47696)
+Stuck ball at (2.14955, 9.38517)
+Stuck ball at (6.44683, 9.51225)
+Stuck ball at (5.86756, 8.72658)
+Stuck ball at (2.12095, 9.44856)
+Stuck ball at (2.0192, 9.49418)
+Stuck ball at (2.55621, 8.55137)
+Stuck ball at (2.10108, 9.38149)
+Stuck ball at (6.39023, 9.43722)
+Stuck ball at (2.55, 9.11809)
+Stuck ball at (6.50479, 9.47217)
+Stuck ball at (2.59791, 8.52491)
+Stuck ball at (2.15699, 9.39854)
+Stuck ball at (5.98126, 8.59656)
+Stuck ball at (2.01108, 9.45524)
+Stuck ball at (6.33343, 9.3979)
+Stuck ball at (2.05666, 9.47643)
+Stuck ball at (6.30913, 9.41279)
+Stuck ball at (6.50864, 9.50658)
+Stuck ball at (6.42639, 9.38696)
+Stuck ball at (6.45212, 9.50239)
+Stuck ball at (2.17307, 9.41171)
+Stuck ball at (5.89867, 8.54216)
+Stuck ball at (2.64511, 9.0963)
+Stuck ball at (2.05946, 9.47252)
+Stuck ball at (6.33208, 9.4044)
+Stuck ball at (6.42319, 9.41196)
+Stuck ball at (6.51994, 9.49728)
+Stuck ball at (2.02931, 9.46586)
+Stuck ball at (6.28381, 9.4175)
+Stuck ball at (6.47026, 9.51694)
+Stuck ball at (2.5052, 9.12363)
+Stuck ball at (5.93639, 8.54352)
+Stuck ball at (2.21773, 9.37615)
+Stuck ball at (6.29625, 9.41098)
+Stuck ball at (2.06983, 9.47678)
+Stuck ball at (5.87167, 9.10535)
+Stuck ball at (2.24327, 9.42118)
+Stuck ball at (1.99054, 9.54644)
+Stuck ball at (2.53709, 9.11526)
+Stuck ball at (2.06763, 9.44274)
+Stuck ball at (2.12108, 9.45988)
+Stuck ball at (1.9971, 9.55228)
+Stuck ball at (2.17124, 9.37093)
+Stuck ball at (1.96865, 10.5667)
+Stuck ball at (2.1757, 9.38916)
+Stuck ball at (2.10432, 9.43688)
+Stuck ball at (2.03908, 9.48736)
+Stuck ball at (5.96658, 8.55671)
+Stuck ball at (6.38019, 9.43573)
+Stuck ball at (2.12179, 9.39002)
+Stuck ball at (6.26855, 9.42773)
+Stuck ball at (6.46568, 9.44871)
+Stuck ball at (2.15566, 9.97118)
+Stuck ball at (6.40893, 9.38345)
+Stuck ball at (5.98758, 9.11966)
+Stuck ball at (1.98696, 9.50884)
+Stuck ball at (2.16229, 9.40544)
+Stuck ball at (5.89813, 8.51901)
+Stuck ball at (2.20897, 9.37816)
+Stuck ball at (2.11672, 9.41537)
+Stuck ball at (6.53713, 9.53678)
+Stuck ball at (2.19805, 9.41779)
+Stuck ball at (2.02013, 9.46338)
+Stuck ball at (1.92729, 10.5735)
+Stuck ball at (2.02871, 9.48239)
+Stuck ball at (6.57652, 10.5742)
+Stuck ball at (6.45794, 9.45119)
+Stuck ball at (5.90558, 8.5292)
+Stuck ball at (5.89869, 8.52908)
+Stuck ball at (6.50259, 10.5652)
+Stuck ball at (6.38594, 9.38749)
+Stuck ball at (2.20856, 9.37433)
+Stuck ball at (1.98334, 9.51391)
+Stuck ball at (6.34732, 9.37778)
+Stuck ball at (6.30408, 9.38635)
+Stuck ball at (6.41205, 9.40222)
+Stuck ball at (6.51053, 9.49693)
+Stuck ball at (2.18807, 9.41554)
+Stuck ball at (2.60116, 8.51986)
+Stuck ball at (2.00912, 9.52157)
+Stuck ball at (2.50789, 8.56883)
+Stuck ball at (2.49193, 8.60524)
+Stuck ball at (2.06226, 9.4661)
+Stuck ball at (2.10995, 9.44131)
+Stuck ball at (2.56795, 8.56113)
+Stuck ball at (2.50739, 8.56651)
+Stuck ball at (6.31604, 9.36821)
+Stuck ball at (2.18514, 9.36598)
+Stuck ball at (1.98236, 9.49859)
+Stuck ball at (6.63189, 10.7705)
+Stuck ball at (5.9655, 8.5891)
+Stuck ball at (6.32482, 9.38561)
+Stuck ball at (2.04124, 9.48287)
+Stuck ball at (5.96466, 8.55674)
+Stuck ball at (5.97626, 9.11897)
+Stuck ball at (2.49962, 8.56631)
+Stuck ball at (5.94299, 8.56295)
+Stuck ball at (6.31422, 9.37212)
+Stuck ball at (5.96298, 8.59039)
+Stuck ball at (2.14849, 9.38802)
+Stuck ball at (5.91603, 8.54224)
+Stuck ball at (1.99786, 9.51591)
+Stuck ball at (6.30108, 9.40117)
+Stuck ball at (5.94785, 9.11724)
+Stuck ball at (6.28697, 9.42031)
+Stuck ball at (5.85643, 8.50151)
+Stuck ball at (5.83673, 9.097)
+Stuck ball at (6.40795, 9.39759)
+Stuck ball at (5.9604, 8.54879)
+Stuck ball at (1.99596, 9.55279)
+Stuck ball at (1.97778, 9.53771)
+Stuck ball at (5.88937, 8.53191)
+Stuck ball at (6.52226, 9.48108)
+Stuck ball at (5.85681, 9.10881)
+Stuck ball at (5.92995, 8.55945)
+Stuck ball at (2.03849, 9.44784)
+Stuck ball at (2.5276, 9.11639)
+Stuck ball at (2.21421, 9.39971)
+Stuck ball at (2.15422, 9.97061)
+Stuck ball at (2.12028, 9.41494)
+Stuck ball at (6.39135, 9.42392)
+Stuck ball at (2.55229, 8.54398)
+Stuck ball at (2.60578, 8.53917)
+Stuck ball at (6.52144, 9.50059)
+Stuck ball at (6.4067, 9.43365)
+Stuck ball at (2.17894, 9.38049)
+Stuck ball at (5.88204, 8.53354)
+Stuck ball at (6.326, 9.381)
+Stuck ball at (6.35017, 9.40476)
+Stuck ball at (2.50921, 8.59765)
+Stuck ball at (5.86537, 8.50857)
+Stuck ball at (2.62627, 9.10207)
+Stuck ball at (6.0045, 8.59552)
+Stuck ball at (6.43851, 9.45541)
+Stuck ball at (6.36809, 9.39056)
+Stuck ball at (6.5129, 9.49778)
+Stuck ball at (6.46249, 9.53424)
+Stuck ball at (2.04176, 9.46018)
+Stuck ball at (2.03542, 9.50504)
+Stuck ball at (6.26386, 9.42411)
+Stuck ball at (6.45435, 9.51361)
+Stuck ball at (6.43974, 9.96885)
+Stuck ball at (2.06972, 9.41256)
+Stuck ball at (6.56458, 10.5712)
+Stuck ball at (1.9554, 10.573)
+Stuck ball at (6.41766, 9.38669)
+Stuck ball at (1.99203, 9.55205)
+Stuck ball at (6.48645, 9.47996)
+Stuck ball at (6.56598, 10.568)
+Stuck ball at (6.44293, 9.51551)
+Stuck ball at (6.34595, 9.97198)
+Stuck ball at (2.03871, 9.45025)
+Stuck ball at (6.50918, 9.52642)
+Stuck ball at (6.49825, 9.53612)
+Stuck ball at (5.94304, 9.11913)
+Stuck ball at (6.30589, 9.39637)
+Stuck ball at (5.88413, 9.1012)
+Stuck ball at (6.36911, 9.41494)
+Stuck ball at (6.41469, 9.37645)
+Stuck ball at (2.02435, 9.44663)
+Stuck ball at (5.95927, 8.54018)
+Stuck ball at (6.42302, 9.41195)
+Stuck ball at (5.92481, 8.52468)
+Stuck ball at (6.44185, 9.43741)
+Stuck ball at (6.2848, 9.37282)
+Stuck ball at (6.43451, 9.44913)
+Stuck ball at (6.4981, 9.50879)
+Stuck ball at (2.07773, 9.43174)
+Stuck ball at (2.09686, 9.39247)
+Stuck ball at (6.38967, 9.47539)
+Stuck ball at (2.22041, 9.37821)
+Stuck ball at (2.54591, 8.57577)
+Stuck ball at (6.43817, 9.47854)
+Stuck ball at (2.15302, 9.80939)
+Stuck ball at (5.96594, 8.55342)
+Stuck ball at (1.97275, 9.54276)
+Stuck ball at (5.92355, 9.10625)
+Stuck ball at (2.15019, 9.39931)
+Stuck ball at (2.07431, 9.82727)
+Stuck ball at (2.07395, 9.46937)
+Stuck ball at (5.93805, 9.10542)
+Stuck ball at (6.37331, 9.39488)
+Stuck ball at (6.39999, 9.44257)
+Stuck ball at (6.32502, 9.38367)
+Stuck ball at (6.28906, 9.38044)
+Stuck ball at (6.41869, 9.45284)
+Stuck ball at (2.17129, 9.41577)
+Stuck ball at (2.67894, 8.7251)
+Stuck ball at (6.4678, 9.53239)
+Stuck ball at (2.61673, 9.10594)
+Stuck ball at (2.13657, 9.39271)
+Stuck ball at (6.37332, 9.41665)
+Stuck ball at (6.31318, 9.38501)
+Stuck ball at (6.49705, 9.46122)
+Stuck ball at (6.33041, 9.39601)
+Stuck ball at (2.12072, 9.44736)
+Stuck ball at (2.03547, 9.53062)
+Stuck ball at (5.99882, 8.5856)
+Stuck ball at (2.05978, 9.43173)
+Stuck ball at (2.01392, 9.53003)
+Stuck ball at (5.92081, 8.5635)
+Stuck ball at (5.91031, 8.52858)
+Stuck ball at (6.34535, 9.38239)
+Stuck ball at (1.97483, 9.50511)
+Stuck ball at (2.21198, 9.3741)
+Stuck ball at (2.21631, 9.41681)
+Stuck ball at (6.54543, 9.48812)
+Stuck ball at (6.48562, 9.46942)
+Stuck ball at (2.06305, 9.46134)
+Stuck ball at (2.0741, 9.4659)
+Stuck ball at (6.41513, 9.45571)
+Stuck ball at (6.56605, 9.49687)
+Stuck ball at (2.00027, 9.5041)
+Stuck ball at (6.40337, 9.41162)
+Stuck ball at (6.32741, 9.40507)
+Stuck ball at (6.44172, 9.43783)
+Stuck ball at (2.17566, 9.37468)
+Stuck ball at (6.39077, 9.41942)
+Stuck ball at (1.94146, 10.5675)
+Stuck ball at (2.0756, 9.49296)
+Stuck ball at (2.04621, 9.49135)
+Stuck ball at (6.48267, 9.47359)
+Stuck ball at (5.97022, 9.1292)
+Stuck ball at (6.37794, 9.96791)
+Stuck ball at (6.53161, 10.5653)
+Stuck ball at (2.01209, 9.46745)
+Stuck ball at (6.38717, 9.456)
+Stuck ball at (5.96808, 8.59438)
+Stuck ball at (1.95165, 10.5698)
+Stuck ball at (5.84245, 8.72813)
+Stuck ball at (1.92535, 9.49927)
+Stuck ball at (2.08742, 9.39114)
+Stuck ball at (2.0834, 9.40881)
+Stuck ball at (2.08576, 9.40897)
+Stuck ball at (6.48195, 9.50422)
+Stuck ball at (2.56473, 8.5329)
+Stuck ball at (1.93424, 10.5673)
+Stuck ball at (2.22346, 9.3846)
+Stuck ball at (5.84032, 9.098)
+Stuck ball at (2.61772, 9.10436)
+Stuck ball at (2.04847, 9.8369)
+Stuck ball at (6.27812, 9.41518)
+Stuck ball at (2.60216, 8.52285)
+Stuck ball at (5.92512, 8.52504)
+Stuck ball at (6.39667, 9.4759)
+Stuck ball at (2.61769, 8.52681)
+Stuck ball at (2.05651, 9.50731)
+Stuck ball at (2.13329, 9.3718)
+Stuck ball at (2.10112, 9.40589)
+Stuck ball at (2.68434, 8.72282)
+Stuck ball at (6.29426, 9.41592)
+Stuck ball at (1.96511, 9.5053)
+Stuck ball at (1.97337, 9.52599)
+Stuck ball at (2.11152, 9.44819)
+Stuck ball at (6.39268, 9.40417)
+Stuck ball at (6.02566, 8.58018)
+Stuck ball at (2.14213, 9.38337)
+Stuck ball at (2.0988, 9.48218)
+Stuck ball at (6.45452, 9.46162)
+Stuck ball at (2.55483, 9.11297)
+Stuck ball at (6.31646, 9.36732)
+Stuck ball at (6.48465, 9.51785)
+Stuck ball at (1.99848, 9.48775)
+Stuck ball at (6.39404, 9.40575)
+Stuck ball at (6.45452, 9.44459)
+Stuck ball at (1.99993, 9.53604)
+Stuck ball at (2.08889, 9.39427)
+Stuck ball at (2.60013, 8.53618)
+Stuck ball at (5.941, 8.54039)
+Stuck ball at (1.99233, 9.55253)
+Stuck ball at (5.93368, 8.54432)
+Stuck ball at (1.96042, 9.53624)
+Stuck ball at (1.94991, 9.48447)
+Stuck ball at (7.20962, 8.71664)
+Stuck ball at (6.54347, 9.48476)
+Stuck ball at (6.50269, 9.5246)
+Stuck ball at (5.93927, 8.57098)
+Stuck ball at (6.56057, 10.5649)
+Stuck ball at (6.39, 9.46771)
+Stuck ball at (5.94588, 8.54086)
+Stuck ball at (2.13499, 9.40285)
+Stuck ball at (2.00519, 9.5005)
+Stuck ball at (6.41777, 9.46246)
+Stuck ball at (2.17461, 9.36809)
+Stuck ball at (2.10478, 9.43006)
+Stuck ball at (5.95557, 8.5452)
+Stuck ball at (6.33094, 9.97399)
+Stuck ball at (6.38386, 9.96862)
+Stuck ball at (6.00204, 8.57173)
+Stuck ball at (5.97187, 8.55343)
+Stuck ball at (6.26479, 9.4257)
+Stuck ball at (6.3542, 9.97153)
+Stuck ball at (6.45194, 9.43467)
+Stuck ball at (6.32941, 9.38921)
+Stuck ball at (6.43728, 9.45607)
+Stuck ball at (6.38945, 9.38518)
+Stuck ball at (2.07565, 9.47905)
+Stuck ball at (2.06188, 9.39313)
+Stuck ball at (6.50387, 9.48411)
+Stuck ball at (6.348, 9.97709)
+Stuck ball at (5.92307, 8.55544)
+Stuck ball at (2.50033, 8.59974)
+Stuck ball at (2.12956, 9.41549)
+Stuck ball at (2.02526, 9.97349)
+Stuck ball at (2.53365, 8.56131)
+Stuck ball at (5.94509, 9.11378)
+Stuck ball at (6.45114, 9.46942)
+Stuck ball at (2.11332, 9.44602)
+Stuck ball at (2.03671, 9.48857)
+Stuck ball at (5.91467, 8.53406)
+Stuck ball at (6.39578, 9.39335)
+Stuck ball at (2.09024, 9.46991)
+Stuck ball at (5.93502, 8.53075)
+Stuck ball at (6.45389, 9.44022)
+Stuck ball at (1.94817, 9.48909)
+Stuck ball at (1.97406, 9.52024)
+Stuck ball at (2.12705, 9.39693)
+Stuck ball at (1.96999, 9.5216)
+Stuck ball at (2.0087, 9.53048)
+Stuck ball at (2.00939, 9.53392)
+Stuck ball at (2.13479, 9.37812)
+Stuck ball at (6.55026, 10.5749)
+Stuck ball at (6.43488, 9.96786)
+Stuck ball at (5.98007, 8.57413)
+Stuck ball at (6.43486, 9.39048)
+Stuck ball at (2.03798, 9.50874)
+Stuck ball at (6.30355, 9.41348)
+Stuck ball at (6.41506, 9.40212)
+Stuck ball at (6.55775, 10.5666)
+Stuck ball at (6.38708, 9.43637)
+Stuck ball at (6.43117, 9.43353)
+Stuck ball at (2.09609, 9.37561)
+Stuck ball at (6.46077, 9.48541)
+Stuck ball at (7.24899, 8.72565)
+Stuck ball at (6.47457, 9.5042)
+Stuck ball at (2.13869, 9.39441)
+Stuck ball at (5.98456, 8.57593)
+Stuck ball at (2.60674, 8.52316)
+Stuck ball at (2.04941, 9.44032)
+Stuck ball at (2.23132, 9.39896)
+Stuck ball at (2.18033, 9.40658)
+Stuck ball at (2.21782, 9.40041)
+Stuck ball at (2.13131, 9.96698)
+Stuck ball at (2.0003, 9.51126)
+Stuck ball at (6.47189, 9.50325)
+Stuck ball at (6.44061, 9.39256)
+Stuck ball at (6.45447, 9.48877)
+Stuck ball at (2.1683, 9.37219)
+Stuck ball at (6.46132, 9.507)
+Stuck ball at (6.49627, 9.9777)
+Stuck ball at (2.04538, 9.51239)
+Stuck ball at (5.84454, 9.09552)
+Stuck ball at (2.00869, 10.5633)
+Stuck ball at (5.91074, 8.52678)
+Stuck ball at (6.45905, 9.47383)
+Stuck ball at (5.99971, 8.58051)
+Stuck ball at (2.11979, 9.45886)
+Stuck ball at (2.35947, 9.50098)
+Stuck ball at (6.31879, 9.39994)
+Stuck ball at (6.30675, 9.41282)
+Stuck ball at (6.38958, 9.45818)
+Stuck ball at (1.98501, 9.54143)
+Stuck ball at (6.2953, 9.37185)
+Stuck ball at (6.53738, 10.5652)
+Stuck ball at (2.17725, 9.40666)
+Stuck ball at (2.00511, 9.52353)
+Stuck ball at (5.94686, 8.57645)
+Stuck ball at (1.99303, 9.49479)
+Stuck ball at (6.45476, 9.52068)
+Stuck ball at (2.05223, 9.46966)
+Stuck ball at (2.01601, 9.51438)
+Stuck ball at (2.03332, 9.48374)
+Stuck ball at (2.00699, 9.47338)
+Stuck ball at (2.16733, 9.40087)
+Stuck ball at (5.90907, 8.54182)
+Stuck ball at (6.52402, 9.55447)
+Stuck ball at (5.98445, 8.56279)
+Stuck ball at (2.00697, 9.48777)
+Stuck ball at (2.52625, 8.7641)
+Stuck ball at (6.29411, 9.40907)
+Stuck ball at (2.09768, 9.49416)
+Stuck ball at (2.10089, 9.4464)
+Stuck ball at (2.0073, 9.45048)
+Stuck ball at (6.5408, 9.54424)
+Stuck ball at (2.06187, 9.49667)
+Stuck ball at (2.18358, 9.37543)
+Stuck ball at (6.32876, 9.38794)
+Stuck ball at (2.52524, 8.58959)
+Stuck ball at (2.01098, 9.46918)
+Stuck ball at (5.98883, 8.57563)
+Stuck ball at (2.08272, 9.46312)
+Stuck ball at (2.59, 8.53976)
+Stuck ball at (6.48975, 9.48976)
+Stuck ball at (6.43909, 9.48071)
+Stuck ball at (2.56742, 8.55375)
+Stuck ball at (6.5513, 9.49183)
+Stuck ball at (2.50331, 8.57935)
+Stuck ball at (6.26717, 9.40779)
+Stuck ball at (6.48386, 9.4869)
+Stuck ball at (6.52941, 10.5763)
+Stuck ball at (6.4812, 9.51659)
+Stuck ball at (2.04627, 9.39803)
+Stuck ball at (6.43589, 9.409)
+Stuck ball at (1.94781, 10.7706)
+Stuck ball at (2.07921, 9.49326)
+Stuck ball at (2.09787, 9.43674)
+Stuck ball at (6.4766, 9.50667)
+Stuck ball at (6.01312, 8.59605)
+Stuck ball at (2.03946, 9.53086)
+Stuck ball at (6.38041, 9.44427)
+Stuck ball at (6.53295, 10.567)
+Stuck ball at (2.16122, 9.40113)
+Stuck ball at (5.99569, 8.59615)
+Stuck ball at (2.50078, 8.59854)
+Stuck ball at (5.88906, 8.53382)
+Stuck ball at (2.07778, 9.45579)
+Stuck ball at (5.96738, 8.58281)
+Stuck ball at (2.11027, 9.43798)
+Stuck ball at (6.30346, 9.38678)
+Stuck ball at (1.99941, 9.50203)
+Stuck ball at (6.43497, 9.43546)
+Stuck ball at (6.47267, 9.503)
+Stuck ball at (5.98607, 8.58392)
+Stuck ball at (6.49622, 9.49336)
+Stuck ball at (5.93249, 8.55189)
+Stuck ball at (6.41704, 9.39028)
+Stuck ball at (2.08047, 9.48139)
+Stuck ball at (5.85218, 8.72807)
+Stuck ball at (6.56444, 10.7709)
+Stuck ball at (6.38865, 9.44128)
+Stuck ball at (6.55306, 9.54812)
+Stuck ball at (2.16272, 9.37003)
+Stuck ball at (6.46084, 9.49116)
+Stuck ball at (6.49315, 10.5625)
+Stuck ball at (6.26156, 9.42209)
+Stuck ball at (2.10244, 9.47189)
+Stuck ball at (6.50013, 9.52619)
+Stuck ball at (6.43009, 9.45759)
+Stuck ball at (2.59586, 8.54692)
+Stuck ball at (1.99719, 9.5036)
+Stuck ball at (6.25225, 9.38589)
+Stuck ball at (5.87193, 9.09473)
+Stuck ball at (5.93234, 8.55683)
+Stuck ball at (2.59484, 9.10491)
+Stuck ball at (2.53885, 9.12243)
+Stuck ball at (6.54389, 9.55933)
+Stuck ball at (5.89642, 9.09651)
+Stuck ball at (2.49791, 8.60479)
+Stuck ball at (5.95427, 8.54227)
+Stuck ball at (2.58592, 8.55485)
+Stuck ball at (2.2207, 9.41557)
+Stuck ball at (2.02887, 9.49124)
+Stuck ball at (6.58788, 10.5738)
+Stuck ball at (6.26906, 9.40187)
+Stuck ball at (5.34329, 9.84982)
+Stuck ball at (6.36275, 9.41779)
+Stuck ball at (1.97353, 9.53146)
+Stuck ball at (1.97049, 9.53265)
+Stuck ball at (6.28458, 9.39479)
+Stuck ball at (2.60594, 8.54417)
+Stuck ball at (6.40446, 9.96656)
+Stuck ball at (2.52405, 8.56918)
+Stuck ball at (2.56456, 8.56786)
+Stuck ball at (2.50907, 8.77267)
+Stuck ball at (2.23425, 9.37825)
+Stuck ball at (2.02091, 9.53891)
+Stuck ball at (2.07863, 9.48015)
+Stuck ball at (5.96628, 8.57994)
+Stuck ball at (6.41173, 9.42991)
+Stuck ball at (1.91733, 10.5736)
+Stuck ball at (1.97634, 9.52881)
+Stuck ball at (2.10372, 9.44778)
+Stuck ball at (2.49058, 8.60239)
+Stuck ball at (6.40939, 9.38945)
+Stuck ball at (2.64786, 8.7259)
+Stuck ball at (2.53032, 8.57288)
+Stuck ball at (6.43176, 9.44838)
+Stuck ball at (6.47714, 9.97187)
+Stuck ball at (2.10588, 9.45789)
+Stuck ball at (6.46544, 9.53303)
+Stuck ball at (6.44951, 9.46402)
+Stuck ball at (2.08716, 9.42537)
+Stuck ball at (1.94468, 10.773)
+Stuck ball at (2.61639, 9.10104)
+Stuck ball at (2.11333, 9.40638)
+Stuck ball at (2.62625, 8.73024)
+Stuck ball at (6.45424, 9.49715)
+Stuck ball at (5.93728, 8.5478)
+Stuck ball at (6.34501, 9.80996)
+Stuck ball at (6.43789, 9.46495)
+Stuck ball at (6.44006, 9.47592)
+Stuck ball at (6.32462, 9.40929)
+Stuck ball at (6.28578, 9.39145)
+Stuck ball at (6.36304, 9.37347)
+Stuck ball at (2.49707, 8.57399)
+Stuck ball at (6.49267, 9.47639)
+Stuck ball at (6.32708, 9.40974)
+Stuck ball at (2.00498, 9.48204)
+Stuck ball at (6.49143, 9.53536)
+Stuck ball at (2.19022, 9.41521)
+Stuck ball at (6.41544, 9.37658)
+Stuck ball at (6.41622, 9.46692)
+Stuck ball at (2.51837, 8.57363)
+Stuck ball at (2.02627, 9.52721)
+Stuck ball at (5.96926, 8.5849)
+Stuck ball at (5.98541, 8.57828)
+Stuck ball at (2.10147, 9.45975)
+Stuck ball at (6.56447, 10.7741)
+Stuck ball at (2.22381, 9.38118)
+Stuck ball at (6.37638, 9.38921)
+Stuck ball at (6.29576, 9.40509)
+Stuck ball at (2.21125, 9.38844)
+Stuck ball at (6.48518, 9.49941)
+Stuck ball at (6.27012, 9.41053)
+Stuck ball at (2.04922, 9.47704)
+Stuck ball at (2.12083, 9.46105)
+Stuck ball at (2.52746, 8.5772)
+Stuck ball at (2.17738, 9.37918)
+Stuck ball at (2.09883, 9.42712)
+Stuck ball at (2.52175, 9.11553)
+Stuck ball at (1.96394, 9.53413)
+Stuck ball at (2.0776, 9.46585)
+Stuck ball at (5.92754, 8.56004)
+Stuck ball at (6.51496, 9.47476)
+Stuck ball at (2.22596, 9.3967)
+Stuck ball at (2.18421, 9.41325)
+Stuck ball at (2.10169, 9.38899)
+Stuck ball at (2.01752, 9.4729)
+Stuck ball at (2.6459, 8.7333)
+Stuck ball at (6.26522, 9.38037)
+Stuck ball at (6.38551, 9.97134)
+Stuck ball at (2.09937, 9.41678)
+Stuck ball at (6.50157, 9.50154)
+Stuck ball at (2.15061, 9.4155)
+Stuck ball at (6.38838, 9.44032)
+Stuck ball at (2.14721, 9.39938)
+Stuck ball at (6.55257, 10.7739)
+Stuck ball at (6.44067, 9.46241)
+Stuck ball at (2.52066, 9.11934)
+Stuck ball at (2.06007, 9.46425)
+Stuck ball at (2.21652, 9.38649)
+Stuck ball at (2.19923, 9.38437)
+Stuck ball at (2.08149, 9.49323)
+Stuck ball at (2.54085, 8.5676)
+Stuck ball at (1.96537, 9.53984)
+Stuck ball at (2.24033, 9.38314)
+Stuck ball at (2.08604, 9.46294)
+Stuck ball at (2.21895, 9.41101)
+Stuck ball at (2.51392, 8.5593)
+Stuck ball at (2.13762, 9.41253)
+Stuck ball at (6.4366, 9.50196)
+Stuck ball at (2.06615, 9.45663)
+Stuck ball at (6.48336, 9.97326)
+Stuck ball at (2.08423, 9.45251)
+Stuck ball at (6.3396, 9.41644)
+Stuck ball at (2.20947, 9.36923)
+Stuck ball at (2.02168, 9.53912)
+Stuck ball at (2.19629, 9.37409)
+Stuck ball at (6.37404, 9.3706)
+Stuck ball at (5.93204, 8.56221)
+Stuck ball at (2.00711, 9.53172)
+Stuck ball at (5.96712, 9.12414)
+Stuck ball at (2.16767, 9.37958)
+Stuck ball at (2.19594, 9.38462)
+Stuck ball at (6.56451, 9.49542)
+Stuck ball at (2.14489, 9.38093)
+Stuck ball at (2.04229, 9.49979)
+Stuck ball at (6.52947, 9.54757)
+Stuck ball at (2.10936, 9.43915)
+Stuck ball at (6.45416, 9.45975)
+Stuck ball at (2.52398, 9.11639)
+Stuck ball at (2.52023, 9.12942)
+Stuck ball at (7.00932, 9.99442)
+Stuck ball at (6.57642, 9.50324)
+Stuck ball at (6.48606, 9.49613)
+Stuck ball at (6.32904, 9.40139)
+Stuck ball at (5.91254, 8.55104)
+Stuck ball at (5.85399, 9.09306)
+Stuck ball at (6.46487, 9.47061)
+Stuck ball at (6.49231, 9.45685)
+Stuck ball at (6.43779, 9.43657)
+Stuck ball at (2.03171, 9.44355)
+Stuck ball at (6.34615, 9.37045)
+Stuck ball at (6.26851, 9.40147)
+Stuck ball at (5.99412, 9.12558)
+Stuck ball at (2.03594, 9.47369)
+Stuck ball at (2.5986, 8.54922)
+Stuck ball at (6.52821, 9.54773)
+Stuck ball at (5.94225, 8.5453)
+Stuck ball at (6.4786, 9.49406)
+Stuck ball at (6.43091, 9.39098)
+Stuck ball at (5.87123, 9.09642)
+Stuck ball at (2.15437, 9.38066)
+Stuck ball at (2.18278, 9.37659)
+Stuck ball at (2.00198, 9.48523)
+Stuck ball at (1.99685, 10.5643)
+Stuck ball at (2.53578, 8.56538)
+Stuck ball at (2.61077, 8.52357)
+Stuck ball at (2.05764, 9.49288)
+Stuck ball at (2.06096, 9.46497)
+Stuck ball at (2.05382, 9.48194)
+Stuck ball at (2.02794, 9.49665)
+Stuck ball at (5.79649, 8.72306)
+Stuck ball at (2.11896, 9.37162)
+Stuck ball at (1.97787, 9.52969)
+Stuck ball at (5.96914, 8.7628)
+Stuck ball at (1.98103, 9.47214)
+Stuck ball at (6.4625, 9.47723)
+Stuck ball at (2.50124, 8.59372)
+Stuck ball at (2.61576, 9.09678)
+Stuck ball at (2.11075, 9.42062)
+Stuck ball at (2.56751, 8.53549)
+Stuck ball at (1.895, 10.5857)
+Stuck ball at (2.55371, 8.53707)
+Stuck ball at (2.56284, 8.53991)
+Stuck ball at (2.18057, 9.39433)
+Stuck ball at (2.10432, 9.45854)
+Stuck ball at (2.17686, 9.39778)
+Stuck ball at (6.48158, 9.48704)
+Stuck ball at (6.47974, 9.53264)
+Stuck ball at (5.94752, 8.53924)
+Stuck ball at (6.30987, 9.40281)
+Stuck ball at (6.42655, 9.38665)
+Stuck ball at (6.37313, 9.96849)
+Stuck ball at (1.98338, 9.52021)
+Stuck ball at (1.96892, 9.47836)
+Stuck ball at (6.3273, 9.38951)
+Stuck ball at (6.47813, 9.52081)
+Stuck ball at (6.52685, 9.47617)
+Stuck ball at (6.37913, 9.39708)
+Stuck ball at (6.28889, 9.38011)
+Stuck ball at (6.41685, 9.43878)
+Stuck ball at (1.98931, 9.52179)
+Stuck ball at (6.46885, 9.50241)
+Stuck ball at (5.88689, 9.09887)
+Stuck ball at (5.92283, 8.52395)
+Stuck ball at (6.42678, 9.45676)
+Stuck ball at (2.50448, 8.57827)
+Stuck ball at (6.30085, 9.39949)
+Stuck ball at (2.55795, 9.10478)
+Stuck ball at (2.06129, 9.4574)
+Stuck ball at (2.0303, 9.47232)
+Stuck ball at (2.01235, 9.48886)
+Stuck ball at (2.02451, 9.53216)
+Stuck ball at (5.96383, 9.1239)
+Stuck ball at (6.47653, 9.49789)
+Stuck ball at (2.64115, 9.10444)
+Stuck ball at (6.41055, 9.39696)
+Stuck ball at (6.38747, 9.44224)
+Stuck ball at (6.41669, 9.42629)
+Stuck ball at (5.95549, 8.55381)
+Stuck ball at (1.98726, 9.52552)
+Stuck ball at (2.03761, 9.96775)
+Stuck ball at (2.01788, 9.97294)
+Stuck ball at (1.98671, 9.52789)
+Stuck ball at (1.97985, 9.51206)
+Stuck ball at (2.56017, 8.57511)
+Stuck ball at (6.31291, 9.40366)
+Stuck ball at (2.04674, 9.52081)
+Stuck ball at (6.38928, 9.37933)
+Stuck ball at (1.98816, 9.55299)
+Stuck ball at (2.58048, 8.536)
+Stuck ball at (5.86216, 8.72821)
+Stuck ball at (5.87638, 8.51614)
+Stuck ball at (6.25466, 9.4226)
+Stuck ball at (1.9786, 9.55631)
+Stuck ball at (2.52819, 8.5955)
+Stuck ball at (5.9937, 9.13059)
+Stuck ball at (6.3306, 9.36721)
+Stuck ball at (5.87975, 8.52241)
+Stuck ball at (5.90862, 8.55476)
+Stuck ball at (2.1524, 9.38757)
+Stuck ball at (2.17076, 9.97758)
+Stuck ball at (1.98674, 9.5128)
+Stuck ball at (2.02685, 9.44713)
+Stuck ball at (6.27012, 9.39911)
+Stuck ball at (6.52967, 9.53642)
+Stuck ball at (5.997, 8.56624)
+Stuck ball at (2.18861, 9.40731)
+Stuck ball at (5.90607, 8.55207)
+Stuck ball at (6.25538, 9.42744)
+Stuck ball at (6.50104, 10.5632)
+Stuck ball at (6.59624, 10.7694)
+Stuck ball at (6.29563, 9.42066)
+Stuck ball at (2.13366, 9.41553)
+Stuck ball at (6.33465, 9.37004)
+Stuck ball at (2.15092, 9.96946)
+Stuck ball at (2.03164, 9.51424)
+Stuck ball at (6.35787, 9.38935)
+Stuck ball at (2.19932, 9.42117)
+Stuck ball at (5.86342, 8.74347)
+Stuck ball at (6.48341, 9.51261)
+Stuck ball at (1.97062, 9.48352)
+Stuck ball at (2.01601, 9.46206)
+Stuck ball at (1.2817, 8.71497)
+Stuck ball at (1.99523, 10.5635)
+Stuck ball at (2.63575, 8.50513)
+Stuck ball at (6.36765, 9.37722)
+Stuck ball at (2.21833, 9.37593)
+Stuck ball at (6.50275, 9.54082)
+Stuck ball at (2.51392, 9.12821)
+Stuck ball at (5.91504, 9.1081)
+Stuck ball at (2.01622, 9.47122)
+Stuck ball at (6.30929, 9.37257)
+Stuck ball at (6.44703, 9.50294)
+Stuck ball at (2.53888, 8.55418)
+Stuck ball at (6.35386, 9.36694)
+Stuck ball at (5.92485, 9.10479)
+Stuck ball at (6.47239, 9.44484)
+Stuck ball at (2.10648, 9.96769)
+Stuck ball at (6.46114, 9.44318)
+Stuck ball at (6.50139, 9.45377)
+Stuck ball at (2.16664, 9.37274)
+Stuck ball at (5.97008, 8.54721)
+Stuck ball at (6.54657, 10.5674)
+Stuck ball at (6.34502, 9.39178)
+Stuck ball at (2.13594, 9.40428)
+Stuck ball at (6.40636, 9.45992)
+Stuck ball at (5.96335, 8.58716)
+Stuck ball at (2.12013, 9.39426)
+Stuck ball at (1.98892, 9.50051)
+Stuck ball at (6.25312, 9.38429)
+Stuck ball at (2.09918, 9.40812)
+Stuck ball at (2.5781, 8.53455)
+Stuck ball at (2.13983, 9.38481)
+Stuck ball at (6.35237, 9.39433)
+Stuck ball at (5.92174, 9.09854)
+Stuck ball at (5.97443, 8.55314)
+Stuck ball at (2.67623, 9.09272)
+Stuck ball at (6.38235, 9.45948)
+Stuck ball at (5.99859, 8.5799)
+Stuck ball at (5.89191, 8.51957)
+Stuck ball at (5.83148, 8.73164)
+Stuck ball at (6.38066, 9.43735)
+Stuck ball at (5.99743, 8.58835)
+Stuck ball at (1.98162, 9.52667)
+Stuck ball at (6.56443, 9.49628)
+Stuck ball at (6.35911, 9.40181)
+Stuck ball at (5.93978, 9.11207)
+Stuck ball at (2.0008, 9.46083)
+Stuck ball at (2.12401, 9.44699)
+Stuck ball at (6.31833, 9.39286)
+Stuck ball at (2.07464, 9.4534)
+Stuck ball at (6.52364, 9.48092)
+Stuck ball at (6.58379, 10.7711)
+Stuck ball at (5.9053, 8.5423)
+Stuck ball at (1.97562, 9.47856)
+Stuck ball at (6.491, 9.47294)
+Stuck ball at (5.79388, 8.72248)
+Stuck ball at (2.56582, 8.54878)
+Stuck ball at (5.99681, 9.12584)
+Stuck ball at (6.36734, 9.39004)
+Stuck ball at (6.48936, 9.46291)
+Stuck ball at (2.06853, 9.48582)
+Stuck ball at (2.19138, 9.37209)
+Stuck ball at (2.11229, 9.46847)
+Stuck ball at (2.10407, 9.45432)
+Stuck ball at (6.50467, 9.54432)
+Stuck ball at (6.42436, 9.4552)
+Stuck ball at (6.52207, 9.49328)
+Stuck ball at (6.38963, 9.42039)
+Stuck ball at (6.40375, 9.48167)
+Stuck ball at (2.66266, 8.72526)
+Stuck ball at (5.89348, 9.10175)
+Stuck ball at (2.14105, 9.96941)
+Stuck ball at (6.54395, 10.5672)
+Stuck ball at (2.01874, 9.53749)
+Stuck ball at (2.52397, 8.55536)
+Stuck ball at (1.99237, 9.52724)
+Stuck ball at (2.66662, 8.7287)
+Stuck ball at (6.41191, 9.45099)
+Stuck ball at (6.48109, 9.47128)
+Stuck ball at (5.98875, 8.57405)
+Stuck ball at (6.29104, 9.42092)
+Stuck ball at (6.50697, 9.49696)
+Stuck ball at (6.2951, 9.38549)
+Stuck ball at (2.19941, 9.38487)
+Stuck ball at (6.48957, 9.45213)
+Stuck ball at (6.00028, 8.58453)
+Stuck ball at (2.09849, 9.4262)
+Stuck ball at (2.57131, 8.54588)
+Stuck ball at (2.15509, 9.37685)
+Stuck ball at (2.03755, 9.46937)
+Stuck ball at (6.46371, 9.44348)
+Stuck ball at (6.50642, 9.53497)
+Stuck ball at (2.01166, 9.47702)
+Stuck ball at (2.05144, 9.45481)
+Stuck ball at (5.93033, 8.54111)
+Stuck ball at (5.96663, 8.57261)
+Stuck ball at (6.5193, 9.51471)
+Stuck ball at (6.28663, 9.39)
+Stuck ball at (2.07721, 9.38263)
+Stuck ball at (2.5108, 9.12475)
+Stuck ball at (6.41466, 9.40786)
+Stuck ball at (6.3883, 9.45484)
+Stuck ball at (6.34009, 9.38969)
+Stuck ball at (2.15127, 9.38403)
+Stuck ball at (2.57085, 9.10421)
+Stuck ball at (2.08851, 9.42563)
+Stuck ball at (6.49634, 9.47667)
+Stuck ball at (2.59543, 9.10535)
+Stuck ball at (2.1913, 9.3799)
+Stuck ball at (6.39503, 9.4475)
+Stuck ball at (2.03581, 9.50947)
+Stuck ball at (2.59203, 8.5358)
+Stuck ball at (5.9619, 8.56383)
+Stuck ball at (6.53238, 10.5722)
+Stuck ball at (6.43702, 9.39293)
+Stuck ball at (2.10614, 9.42824)
+Stuck ball at (5.8893, 9.10694)
+Stuck ball at (2.56475, 8.54404)
+Stuck ball at (6.48866, 9.97526)
+Stuck ball at (2.02642, 9.53655)
+Stuck ball at (2.09247, 9.45752)
+Stuck ball at (2.56759, 8.53971)
+Stuck ball at (2.11544, 9.45304)
+Stuck ball at (2.07879, 9.38694)
+Stuck ball at (2.56485, 8.5713)
+Stuck ball at (6.36284, 9.38293)
+Stuck ball at (2.53684, 8.557)
+Stuck ball at (6.52036, 9.49664)
+Stuck ball at (1.9962, 9.47254)
+Stuck ball at (6.51224, 9.47034)
+Stuck ball at (2.0851, 9.43683)
+Stuck ball at (6.45977, 9.49942)
+Stuck ball at (6.36446, 9.41876)
+Stuck ball at (6.35468, 9.38308)
+Stuck ball at (1.97591, 9.53922)
+Stuck ball at (1.98003, 9.48414)
+Stuck ball at (6.43448, 9.43383)
+Stuck ball at (6.49485, 9.53463)
+Stuck ball at (2.51663, 9.12793)
+Stuck ball at (2.55741, 8.56923)
+Stuck ball at (2.57594, 8.54008)
+Stuck ball at (2.1208, 9.44059)
+Stuck ball at (6.50997, 9.48806)
+Stuck ball at (6.34578, 9.41105)
+Stuck ball at (2.10405, 9.39572)
+Stuck ball at (1.94451, 10.5663)
+Stuck ball at (2.0191, 9.97226)
+Stuck ball at (2.01589, 9.47485)
+Stuck ball at (5.96792, 8.57476)
+Stuck ball at (2.59655, 8.52325)
+Stuck ball at (2.10848, 9.43733)
+Stuck ball at (2.04616, 9.44944)
+Stuck ball at (5.91012, 8.54026)
+Stuck ball at (6.36237, 9.40075)
+Stuck ball at (1.94993, 9.49138)
+Stuck ball at (2.01005, 9.47299)
+Stuck ball at (2.01407, 9.4589)
+Stuck ball at (2.08522, 9.41577)
+Stuck ball at (5.87794, 9.10931)
+Stuck ball at (2.63712, 9.10133)
+Stuck ball at (2.66301, 8.72964)
+Stuck ball at (6.26765, 9.38539)
+Stuck ball at (6.49337, 9.45127)
+Stuck ball at (5.89159, 8.51645)
+Stuck ball at (2.52773, 9.12087)
+Stuck ball at (6.31789, 9.38872)
+Stuck ball at (2.09387, 9.38192)
+Stuck ball at (6.29027, 9.40379)
+Stuck ball at (6.42218, 9.39778)
+Stuck ball at (2.17979, 9.38893)
+Stuck ball at (5.93568, 8.53486)
+Stuck ball at (2.55717, 9.11018)
+Stuck ball at (6.36036, 9.39968)
+Stuck ball at (1.96982, 9.50335)
+Stuck ball at (6.48065, 9.47062)
+Stuck ball at (6.33957, 9.40207)
+Stuck ball at (2.14567, 9.38788)
+Stuck ball at (1.90248, 10.5822)
+Stuck ball at (2.04996, 9.45834)
+Stuck ball at (2.51084, 8.59624)
+Stuck ball at (6.31665, 9.38508)
+Stuck ball at (6.34461, 9.97671)
+Stuck ball at (6.48335, 9.52859)
+Stuck ball at (2.13556, 9.413)
+Stuck ball at (5.89396, 8.51979)
+Stuck ball at (2.10287, 9.44309)
+Stuck ball at (2.05035, 9.51419)
+Stuck ball at (6.38436, 9.41091)
+Stuck ball at (2.10685, 9.43698)
+Stuck ball at (2.23406, 9.4262)
+Stuck ball at (2.51209, 8.56645)
+Stuck ball at (2.05443, 9.49572)
+Stuck ball at (6.49679, 9.45834)
+Stuck ball at (6.01195, 8.57517)
+Stuck ball at (2.12219, 9.41191)
+Stuck ball at (2.03153, 9.44547)
+Stuck ball at (6.41614, 9.45169)
+Stuck ball at (2.04105, 9.52622)
+Stuck ball at (2.63858, 9.10387)
+Stuck ball at (6.29954, 9.38948)
+Stuck ball at (2.52259, 9.12785)
+Stuck ball at (2.11657, 9.45825)
+Stuck ball at (2.03244, 9.4531)
+Stuck ball at (5.92416, 8.53781)
+Stuck ball at (5.86265, 8.5075)
+Stuck ball at (5.89519, 9.10729)
+Stuck ball at (2.09477, 9.44634)
+Stuck ball at (5.92682, 9.10631)
+Stuck ball at (6.40655, 9.41027)
+Stuck ball at (5.99454, 8.58298)
+Stuck ball at (2.63923, 9.10885)
+Stuck ball at (6.59261, 10.5721)
+Stuck ball at (2.11545, 9.4185)
+Stuck ball at (1.9727, 9.51795)
+Stuck ball at (6.586, 9.50358)
+Stuck ball at (6.27856, 9.42061)
+Stuck ball at (1.98189, 9.53758)
+Stuck ball at (5.89853, 8.52856)
+Stuck ball at (2.6078, 8.53991)
+Stuck ball at (5.92861, 8.56246)
+Stuck ball at (6.44079, 9.50491)
+Stuck ball at (6.32826, 9.39179)
+Stuck ball at (2.17061, 9.36974)
+Stuck ball at (2.09228, 9.41043)
+Stuck ball at (2.0588, 9.45235)
+Stuck ball at (6.43663, 9.49559)
+Stuck ball at (2.01135, 9.45826)
+Stuck ball at (1.99169, 9.50204)
+Stuck ball at (2.07268, 9.45661)
+Stuck ball at (2.01328, 9.49036)
+Stuck ball at (2.1175, 9.40448)
+Stuck ball at (6.2963, 9.39787)
+Stuck ball at (2.18003, 9.39635)
+Stuck ball at (6.49255, 9.5195)
+Stuck ball at (6.51611, 9.51163)
+Stuck ball at (6.51899, 9.48394)
+Stuck ball at (1.96469, 10.5666)
+Stuck ball at (2.09036, 9.47627)
+Stuck ball at (1.89813, 10.7687)
+Stuck ball at (6.46115, 9.44813)
+Stuck ball at (2.60234, 8.53245)
+Stuck ball at (2.50943, 9.12376)
+Stuck ball at (2.20956, 9.37665)
+Stuck ball at (5.84936, 8.73831)
+Stuck ball at (2.05427, 9.49804)
+Stuck ball at (2.01241, 9.4973)
+Stuck ball at (6.52099, 9.55455)
+Stuck ball at (6.29202, 9.38816)
+Stuck ball at (2.57983, 8.73724)
+Stuck ball at (2.5706, 8.52658)
+Stuck ball at (5.80111, 8.80249)
+Stuck ball at (2.13451, 9.97584)
+Stuck ball at (6.4547, 9.47618)
+Stuck ball at (5.91605, 8.53271)
+Stuck ball at (2.14604, 9.39257)
+Stuck ball at (6.43439, 9.46465)
+Stuck ball at (2.20012, 9.42069)
+Stuck ball at (6.53399, 9.47925)
+Stuck ball at (2.20974, 9.41249)
+Stuck ball at (2.2408, 9.42362)
+Stuck ball at (2.21578, 9.41503)
+Stuck ball at (2.1632, 9.40129)
+Stuck ball at (6.38227, 9.43266)
+Stuck ball at (1.97488, 9.5046)
+Stuck ball at (6.46582, 9.53967)
+Stuck ball at (2.07529, 9.47597)
+Stuck ball at (5.96472, 8.55186)
+Stuck ball at (6.29616, 9.39787)
+Stuck ball at (6.46875, 9.47477)
+Stuck ball at (2.18717, 9.41591)
+Stuck ball at (2.52136, 9.12227)
+Stuck ball at (2.19359, 9.38779)
+Stuck ball at (2.57476, 8.52582)
+Stuck ball at (5.92065, 8.55209)
+Stuck ball at (2.05608, 9.46697)
+Stuck ball at (5.98517, 8.59219)
+Stuck ball at (6.32945, 9.38763)
+Stuck ball at (2.09174, 9.46091)
+Stuck ball at (2.0611, 9.46115)
+Stuck ball at (6.4073, 9.45928)
+Stuck ball at (6.51204, 9.52368)
+Stuck ball at (2.09485, 9.37835)
+Stuck ball at (6.38935, 9.45517)
+Stuck ball at (2.18505, 9.41165)
+Stuck ball at (6.30647, 9.39214)
+Stuck ball at (5.96896, 8.54989)
+Stuck ball at (2.00512, 9.49753)
+Stuck ball at (1.96556, 9.55355)
+Stuck ball at (1.97846, 9.49839)
+Stuck ball at (2.02016, 9.50586)
+Stuck ball at (2.04101, 9.45172)
+Stuck ball at (2.0202, 9.54164)
+Stuck ball at (5.8826, 8.52538)
+Stuck ball at (2.61164, 8.53496)
+Stuck ball at (2.83462, 8.50155)
+Stuck ball at (2.54911, 8.58104)
+Stuck ball at (6.4587, 9.53035)
+Stuck ball at (6.25412, 9.37687)
+Stuck ball at (2.07453, 9.44289)
+Stuck ball at (6.43953, 9.45884)
+Stuck ball at (2.02768, 9.47563)
+Stuck ball at (5.9162, 8.535)
+Stuck ball at (1.98964, 10.5636)
+Stuck ball at (6.36498, 9.40926)
+Stuck ball at (6.37216, 9.38763)
+Stuck ball at (2.6219, 8.51817)
+Stuck ball at (2.19756, 9.39004)
+Stuck ball at (6.41609, 9.38823)
+Stuck ball at (5.95089, 8.5827)
+Stuck ball at (2.56209, 8.56575)
+Stuck ball at (2.15992, 9.41584)
+Stuck ball at (6.47605, 9.47137)
+Stuck ball at (6.42008, 9.37932)
+Stuck ball at (5.97206, 9.11988)
+Stuck ball at (2.5207, 9.12359)
+Stuck ball at (6.44474, 9.44736)
+Stuck ball at (6.47057, 9.50985)
+Stuck ball at (2.14611, 9.38611)
+Stuck ball at (2.1539, 9.39564)
+Stuck ball at (6.4651, 9.51506)
+Stuck ball at (2.00472, 9.47166)
+Stuck ball at (6.47167, 9.49431)
+Stuck ball at (2.50413, 8.5702)
+Stuck ball at (2.14307, 9.41144)
+Stuck ball at (6.49752, 9.5512)
+Stuck ball at (6.35504, 9.37926)
+Stuck ball at (1.97394, 9.52931)
+Stuck ball at (2.58117, 8.5395)
+Stuck ball at (6.5149, 9.47291)
+Stuck ball at (6.49884, 9.50502)
+Stuck ball at (2.50662, 8.58558)
+Stuck ball at (2.08196, 9.44691)
+Stuck ball at (6.44141, 9.49463)
+Stuck ball at (6.44623, 9.46153)
+Stuck ball at (6.46729, 9.50512)
+Stuck ball at (5.8936, 8.5146)
+Stuck ball at (2.13696, 9.3749)
+Stuck ball at (2.51424, 8.57268)
+Stuck ball at (6.33839, 9.37636)
+Stuck ball at (1.91464, 10.5735)
+Stuck ball at (1.96716, 9.53651)
+Stuck ball at (6.3025, 9.41687)
+Stuck ball at (2.57079, 9.10465)
+Stuck ball at (5.927, 9.10586)
+Stuck ball at (2.57984, 8.54705)
+Stuck ball at (6.2849, 9.39577)
+Stuck ball at (2.55302, 8.56548)
+Stuck ball at (2.535, 8.59169)
+Stuck ball at (6.35072, 9.96914)
+Stuck ball at (6.4464, 9.96689)
+Stuck ball at (6.47847, 9.50131)
+Stuck ball at (6.36987, 9.37289)
+Stuck ball at (6.00123, 9.12949)
+Stuck ball at (1.90691, 10.579)
+Stuck ball at (6.33909, 9.37607)
+Stuck ball at (6.49548, 9.5254)
+Stuck ball at (6.43715, 9.96732)
+Stuck ball at (6.51768, 9.50951)
+Stuck ball at (5.92129, 8.54885)
+Stuck ball at (6.4136, 9.39592)
+Stuck ball at (2.00274, 9.49529)
+Stuck ball at (6.54967, 10.7731)
+Stuck ball at (2.56889, 8.53299)
+Stuck ball at (5.82002, 9.34772)
+Stuck ball at (2.52756, 8.56164)
+Stuck ball at (6.49888, 9.55314)
+Stuck ball at (2.66015, 9.09676)
+Stuck ball at (2.04928, 9.4794)
+Stuck ball at (5.89883, 8.5332)
+Stuck ball at (6.38762, 9.44095)
+Stuck ball at (6.39228, 9.47269)
+Stuck ball at (2.05531, 9.43234)
+Stuck ball at (2.00009, 9.49444)
+Stuck ball at (6.47199, 9.50999)
+Stuck ball at (5.84385, 9.09753)
+Stuck ball at (2.55324, 8.54525)
+Stuck ball at (6.29168, 9.40246)
+Stuck ball at (2.04595, 9.46645)
+Stuck ball at (2.56124, 9.11445)
+Stuck ball at (6.50833, 9.55376)
+Stuck ball at (5.91778, 8.55213)
+Stuck ball at (6.38707, 9.45571)
+Stuck ball at (6.31912, 9.40928)
+Stuck ball at (6.51641, 9.47732)
+Stuck ball at (5.95425, 8.57956)
+Stuck ball at (6.41013, 9.43657)
+Stuck ball at (6.33271, 9.38641)
+Stuck ball at (5.95593, 9.11749)
+Stuck ball at (2.02262, 9.47085)
+Stuck ball at (6.46488, 9.47714)
+Stuck ball at (2.21101, 9.39963)
+Stuck ball at (1.96876, 9.52656)
+Stuck ball at (2.13074, 9.4026)
+Stuck ball at (6.40176, 9.47231)
+Stuck ball at (6.48116, 9.45452)
+Stuck ball at (2.08244, 9.4086)
+Stuck ball at (2.05419, 9.43581)
+Stuck ball at (2.15083, 9.39534)
+Stuck ball at (2.03741, 9.44705)
+Stuck ball at (2.55305, 8.58022)
+Stuck ball at (7.22686, 8.71771)

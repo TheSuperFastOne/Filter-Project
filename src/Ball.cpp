@@ -96,7 +96,7 @@ bool Ball::handleCollisionWithCircle(const Ball& otherball, double deltaTime, co
     // If already moving apart...
     if (v1.dot(p1-p2) > 0)
     {
-        std::cout << "moving apart\n";
+        //std::cout << "moving apart\n";
         // moving apart
         return false;
 
