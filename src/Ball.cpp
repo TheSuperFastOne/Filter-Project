@@ -106,7 +106,7 @@ bool Ball::handleCollisionWithCircle(const Ball& otherball, double deltaTime, co
     //Binary search for time of impact
     double lo = 0.0, hi = deltaTime;
     double toi;
-    for (int i = 0; i < 20; ++i)
+    for (int i = 0; i < 25; ++i)
     {
         double mid = (lo + hi) * 0.5;
         Vec2 p1mid = p1 + v1 * mid + gravity * (0.5 * mid * mid);

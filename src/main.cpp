@@ -5,6 +5,11 @@
 #include <random>
 #include <math.h>
 #include <fstream>
+#include <thread>
+#include <vector>
+#include <fstream>
+#include <random>
+#include <mutex>
 
 #include "../include/Ball.hpp"
 #include "../include/RenderWindow.hpp"
@@ -46,7 +51,17 @@ int main(int argc, char* argv[])
     float grinderCircleRad = 3; // METERS
     float ballRad = 1.0; // METERS
     float gapDistance = 0.5;
-    Vec2 spawnedPos = getRandomPositionVector(ballRad, grinderCircleRad*2+gapDistance+ballRad, 8.5, 11.0); // MaxX is the same as WORLD_WIDTH - ballRad.
+
+
+    bool testing = false;
+    Vec2 wantToTest = Vec2(5.34329, 9.84982); // For testing individual cases
+    Vec2 spawnedPos = wantToTest;
+    if (!testing)
+    {
+        // If i'm not testing, spawn randomly
+        Vec2 spawnedPos = getRandomPositionVector(ballRad, grinderCircleRad*2+gapDistance+ballRad, 8.5, 11.0); // MaxX is the same as WORLD_WIDTH - ballRad.
+    }
+
 
     const int WINDOW_HEIGHT = 1200; // Pixels
     const double WORLD_WIDTH = gapDistance + grinderCircleRad*2 + ballRad*2; // Meters
@@ -56,26 +71,26 @@ int main(int argc, char* argv[])
 
     Ball ball(spawnedPos, Vec2(0, 0), ballRad, window.getRenderer());
     
-    const double physicsFps = 1200; // 180 Frames per Second (expect this number to be really inconsistent I never really update it)
+    const double physicsFps = 1500; // 180 Frames per Second (expect this number to be really inconsistent I never really update it)
     const double physicsDeltaTime = 1.0 / physicsFps; // However-many seconds per frame i can't be bothered to type that into a fucking calculator
     const double targetMs = 1000.0 / physicsFps; // Milliseconds
     const Uint64 perfFreq = SDL_GetPerformanceFrequency();
 
 
 
-    const double renderFps = 120;
+    const double renderFps = 60;
     const double renderDeltaTime = 1.0 / renderFps;
     const double renderTargetMs = 1000.0 / renderFps;
 
     Vec2 gravity(0, -9.8);
-    bool render = true; // If false, don't render and also, don't wait at all.
+    bool render = false; // If false, don't render and also, don't wait at all.
 
     bool running = true;
     SDL_Event event;
     double previousEnergy = 0.0;
     int bounces = 0;
 
-    int trials_num = 100000000; // Goddamn thats big im js tryna get some data yk
+    int trials_num = 2147000000; // Goddamn thats big im js tryna get some data yk
     int trial = 1;
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------------------//
@@ -119,7 +134,7 @@ Ball grinder2(Vec2(WORLD_WIDTH,4.5), Vec2(0, 0), grinderCircleRad, window.getRen
             bool collided5 = ball.handleCollisionWithCircle(grinder2, physicsDeltaTime, gravity);
             if (collided4 || collided5) {
                 bounces++;
-                if (bounces > 1000)
+                if (bounces > 1500)
                 {
                     std::cout << "Goddamn it ball got stuck\n";
                     stuckFile << "Stuck ball at (" << spawnedPos.getX() << ", " << spawnedPos.getY() << ")\n";
@@ -142,7 +157,7 @@ Ball grinder2(Vec2(WORLD_WIDTH,4.5), Vec2(0, 0), grinderCircleRad, window.getRen
             }
             if (collided1)
             {
-                std::cout << bounces << " bounces on trial " << trial << "\n";
+                //std::cout << bounces << " bounces on trial " << trial << "\n";
                 bounces = 0;
                 trial++;
                 if (trial > trials_num)
@@ -224,3 +239,4 @@ Ball grinder2(Vec2(WORLD_WIDTH,4.5), Vec2(0, 0), grinderCircleRad, window.getRen
     }
     stuckFile.close();
 }
+
