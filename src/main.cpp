@@ -30,9 +30,13 @@ Vec2 getRandomPositionVector(std::mt19937& gen, float minX, float maxX, float mi
 }
 
 // Smart random position generator (around points from dataset)
-Vec2 getSmartRandomPositionVector(std::mt19937& gen, const std::vector<std::pair<double, double>>& points) {
+Vec2 getSmartRandomPositionVector(
+    std::mt19937& gen,
+    const std::vector<std::pair<double, double>>& points,
+    float minX, float maxX, float minY, float maxY
+) {
     std::uniform_int_distribution<size_t> pick_point(0, points.size() - 1);
-    std::uniform_real_distribution<double> dist_d(0.0, 0.05);
+    std::uniform_real_distribution<double> dist_d(0.0, 0.015625);
     std::uniform_real_distribution<double> dist_theta(0.0, 2 * M_PI);
 
     auto [x_ref, y_ref] = points[pick_point(gen)];
@@ -40,6 +44,11 @@ Vec2 getSmartRandomPositionVector(std::mt19937& gen, const std::vector<std::pair
     double theta = dist_theta(gen);
     double x_new = x_ref + d * std::cos(theta);
     double y_new = y_ref + d * std::sin(theta);
+
+    // Clamp to bounds
+    x_new = std::max(static_cast<double>(minX), std::min(x_new, static_cast<double>(maxX)));
+    y_new = std::max(static_cast<double>(minY), std::min(y_new, static_cast<double>(maxY)));
+
     return Vec2(x_new, y_new);
 }
 
@@ -57,8 +66,8 @@ void run_trials(int thread_id, int trials_num, float grinderCircleRad, float bal
 
     int trial = 1;
     while (trial <= trials_num) {
-        //Vec2 spawnedPos = getSmartRandomPositionVector(gen, stuck_points);
-        Vec2 spawnedPos = getRandomPositionVector(gen, ballRad, grinderCircleRad*2+gapDistance+ballRad, 8.5, 11.0);
+        Vec2 spawnedPos = getSmartRandomPositionVector(gen, stuck_points, ballRad, grinderCircleRad*2+gapDistance+ballRad, 8.5, 11.0);
+        //Vec2 spawnedPos = getRandomPositionVector(gen, ballRad, grinderCircleRad*2+gapDistance+ballRad, 8.5, 11.0);
         Ball ball(spawnedPos, Vec2(0, 0), ballRad, nullptr);
 
         int bounces = 0;
