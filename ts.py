@@ -1,9 +1,12 @@
 import matplotlib.pyplot as plt
 
-# Read coordinates from output.txt
+# Toggle this to choose which plot to show
+show_mirrored = True  # Set to False to show original
+
+# Read coordinates from merged_stuck_points.txt
 xs, ys = [], []
 xs_mirrored, ys_mirrored = [], []
-with open("output.txt") as f:
+with open("merged_stuck_points.txt") as f:
     for line in f:
         if "Stuck ball at" in line:
             parts = line.strip().split('(')[1].split(')')[0].split(',')
@@ -13,20 +16,19 @@ with open("output.txt") as f:
             xs_mirrored.append(abs(4.25 - x))
             ys_mirrored.append(y)
 
-fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 6), sharey=True)
+fig, ax = plt.subplots(figsize=(7, 6))
 
-# Original
-ax1.scatter(xs, ys, c='blue', marker='o')
-ax1.set_xlabel('X Position')
-ax1.set_ylabel('Y Position')
-ax1.set_title('Original Start Positions')
-ax1.grid(True)
+if show_mirrored:
+    ax.scatter(xs_mirrored, ys_mirrored, c='red', marker='x')
+    ax.set_xlabel('Mirrored X Position (4.25-x)')
+    ax.set_title('Mirrored Start Positions')
+else:
+    ax.scatter(xs, ys, c='blue', marker='o')
+    ax.set_xlabel('X Position')
+    ax.set_title('Original Start Positions')
 
-# Mirrored
-ax2.scatter(xs_mirrored, ys_mirrored, c='red', marker='x')
-ax2.set_xlabel('Mirrored X Position (4.25-x)')
-ax2.set_title('Mirrored Start Positions')
-ax2.grid(True)
+ax.set_ylabel('Y Position')
+ax.grid(True)
 
 plt.tight_layout()
 plt.show()

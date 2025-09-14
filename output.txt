@@ -1,7 +1,0 @@
-Stuck ball at (6.61137, 10.5823)
-Stuck ball at (1.99173, 9.47407)
-Stuck ball at (6.47635, 9.53457)
-Stuck ball at (5.91884, 8.55162)
-Stuck ball at (6.31236, 9.41118)
-Stuck ball at (5.99152, 9.13059)
-Stuck ball at (2.10519, 9.37804)
