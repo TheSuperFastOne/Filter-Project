@@ -1,7 +1,7 @@
 merged_points = set()
 
 for i in range(16):
-    filename = f"output_thread{i}.txt"
+    filename = f"outputthreadtxts/output_thread{i}.txt"
     try:
         with open(filename, "r") as f:
             for line in f:

@@ -36,7 +36,7 @@ Vec2 getSmartRandomPositionVector(
     float minX, float maxX, float minY, float maxY
 ) {
     std::uniform_int_distribution<size_t> pick_point(0, points.size() - 1);
-    std::uniform_real_distribution<double> dist_d(0.0, 0.015625);
+    std::uniform_real_distribution<double> dist_d(0.0, 0.00390625);
     std::uniform_real_distribution<double> dist_theta(0.0, 2 * M_PI);
 
     auto [x_ref, y_ref] = points[pick_point(gen)];
@@ -53,7 +53,8 @@ Vec2 getSmartRandomPositionVector(
 }
 
 void run_trials(int thread_id, int trials_num, float grinderCircleRad, float ballRad, float gapDistance, double WORLD_WIDTH) {
-    std::ofstream stuckFile("output_thread" + std::to_string(thread_id) + ".txt", std::ios::app);
+    std::ofstream stuckFile("outputthreadtxts/output_thread" + std::to_string(thread_id) + ".txt", std::ios::app);
+    stuckFile << std::setprecision(16);
 
     std::random_device rd;
     std::mt19937 gen(rd() + thread_id);
@@ -66,8 +67,8 @@ void run_trials(int thread_id, int trials_num, float grinderCircleRad, float bal
 
     int trial = 1;
     while (trial <= trials_num) {
-        Vec2 spawnedPos = getSmartRandomPositionVector(gen, stuck_points, ballRad, grinderCircleRad*2+gapDistance+ballRad, 8.5, 11.0);
-        //Vec2 spawnedPos = getRandomPositionVector(gen, ballRad, grinderCircleRad*2+gapDistance+ballRad, 8.5, 11.0);
+        //Vec2 spawnedPos = getSmartRandomPositionVector(gen, stuck_points, ballRad, grinderCircleRad*2+gapDistance+ballRad, 8.5, 11.0);
+        Vec2 spawnedPos = getRandomPositionVector(gen, ballRad, grinderCircleRad*2+gapDistance+ballRad, 8.5, 11.0);
         Ball ball(spawnedPos, Vec2(0, 0), ballRad, nullptr);
 
         int bounces = 0;
