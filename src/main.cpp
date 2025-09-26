@@ -54,10 +54,12 @@ Vec2 getSmartRandomPositionVector(
 
 void run_trials(int thread_id, int trials_num, float grinderCircleRad, float ballRad, float gapDistance, double WORLD_WIDTH) {
     std::ofstream stuckFile("outputthreadtxts/output_thread" + std::to_string(thread_id) + ".txt", std::ios::app);
+    std::ofstream Trial("outputthreadtxts/output_thread_bounces" + std::to_string(thread_id) + ".txt", std::ios::app);
     stuckFile << std::setprecision(16);
 
     std::random_device rd;
     std::mt19937 gen(rd() + thread_id);
+    bool bounceslog = true;
     
 
     Vec2 gravity(0, -9.8);
@@ -89,7 +91,7 @@ void run_trials(int thread_id, int trials_num, float grinderCircleRad, float bal
 
             if (collided4 || collided5) {
                 bounces++;
-                if (bounces > 1500) {
+                if (bounces > 1200) {
                     stuckFile << "Stuck ball at (" << spawnedPos.getX() << ", " << spawnedPos.getY() << ")\n";
                     stuckFile.flush();
                     trial_done = true;
@@ -98,6 +100,12 @@ void run_trials(int thread_id, int trials_num, float grinderCircleRad, float bal
             }
             if (collided1) {
                 trial_done = true;
+                if (bounceslog)
+                {
+                    Trial << bounces << "\n";
+                    Trial.flush();
+                }
+                
                 continue;
             }
 
@@ -122,9 +130,9 @@ int main(int argc, char* argv[])
 {
     float grinderCircleRad = 3; // METERS
     float ballRad = 1.0; // METERS
-    float gapDistance = 0.5;
+    float gapDistance = 1;
     double WORLD_WIDTH = gapDistance + grinderCircleRad*2 + ballRad*2;
-    int trials_num = 2147000000; // Total trials you want
+    int trials_num = 1000000; // Total trials you want
 
     int num_threads = std::thread::hardware_concurrency(); // Or set manually
     int trials_per_thread = trials_num / num_threads;

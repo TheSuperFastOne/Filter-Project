@@ -51,6 +51,8 @@
     "variant": "cpp",
     "algorithm": "cpp",
     "charconv": "cpp",
-    "chrono": "cpp"
+    "chrono": "cpp",
+    "fstream": "cpp",
+    "iomanip": "cpp"
   }
 }
