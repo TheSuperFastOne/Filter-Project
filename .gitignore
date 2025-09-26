@@ -1,0 +1,14 @@
+# Ignore all .txt files in outputthreadtxts
+/outputthreadtxts/*.txt
+
+# Ignore top-level merged/output .txt files
+/DataAnalysis/merged_stuck_points.txt
+/DataAnalysis/output.txt
+
+# If you want to ignore any .txt files anywhere (safest)
+*.txt
+
+game
+
+# But still track documentation like README.txt if needed
+!README.txt
